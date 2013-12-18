@@ -1,0 +1,202 @@
+{
+  version: 0,
+  paper: {
+    margin: {bottom:20.0,left:20.0,right:20.0,top:20.0},
+    scale_unit: "point",
+    type: "a4"
+  },
+  group: {
+    contents: [
+      {
+        size: {
+          initial: 20.0
+        },
+        elements: [
+          {type:"text",layout:{x1:0.0,y1:0.0,x2:555.0,y2:20.0},text:"ドキュメントの「特徴と機能一覧」ページに掲載したサンプルです"}
+        ]
+      },
+      {
+        size: {
+          initial: 200.0,
+          not_extendable: true
+        },
+        group: {
+          id: "feature1",
+          contents: [
+            {
+              aggregate_src: true,
+              elements: [
+                {type:"rect",layout:{x1:0.0,y1:0.0,x2:260.0,y2:0.0,rev_y2:true},round:10.0}
+              ],
+              group: {
+                keys: ["KEY1"],
+                contents: [
+                  {
+                    aggregate_src: true,
+                    elements: [
+                      {type:"field",layout:{x1:10.0,y1:0.0,x2:80.0,y2:0.0,rev_y2:true},exp:".KEY1",halign:"left",valign:"center"},
+                      {type:"line",layout:{x1:10.0,y1:0.0,x2:80.0,y2:0.0,rev_y1:true,rev_y2:true}}
+                    ],
+                    group: {
+                      keys: ["KEY2"],
+                      contents: [
+                        {
+                          aggregate_src: true,
+                          elements: [
+                            {type:"field",layout:{x1:80.0,y1:0.0,x2:150.0,y2:0.0,rev_y2:true},exp:".KEY2",halign:"left",valign:"center"},
+                            {type:"line",layout:{x1:80.0,y1:0.0,x2:150.0,y2:0.0,rev_y1:true,rev_y2:true}}
+                          ],
+                          group: {
+                            detail: true,
+                            contents: [
+                              {
+                                size: {
+                                  initial: 20.0
+                                },
+                                aggregate_src: true,
+                                elements: [
+                                  {type:"field",layout:{x1:150.0,y1:0.0,x2:250.0,y2:20.0},exp:".VALUE",halign:"left",valign:"center"},
+                                  {type:"line",layout:{x1:150.0,y1:20.0,x2:250.0,y2:20.0}}
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        size: {
+          initial: 200.0,
+          not_extendable: true
+        },
+        aggregate_src: true,
+        group: {
+          id: "feature2",
+          keys: ["REGION"],
+          contents: [
+            {
+              size: {
+                initial: 20.0
+              },
+              elements: [
+                {type:"rect",layout:{x1:0.0,y1:0.0,x2:240.0,y2:20.0},fill_color:"silver",line_width:0.0},
+                {type:"field",layout:{x1:0.0,y1:0.0,x2:240.0,y2:20.0},exp:".REGION",halign:"left",valign:"center"}
+              ]
+            },
+            {
+              aggregate_src: true,
+              group: {
+                max_count: 4.0,
+                contents: [
+                  {
+                    aggregate_src: true,
+                    group: {
+                      detail: true,
+                      layout: {
+                        size: 20.0,
+                        direction: "horizontal"
+                      },
+                      contents: [
+                        {
+                          size: {
+                            initial: 60.0
+                          },
+                          aggregate_src: true,
+                          elements: [
+                            {type:"field",layout:{x1:0.0,y1:0.0,x2:60.0,y2:20.0},exp:".PREF",halign:"left",valign:"center"}
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        size: {
+          initial: 180.0,
+          not_extendable: true
+        },
+        group: {
+          id: "feature3",
+          contents: [
+            {
+              size: {
+                initial: 20.0
+              },
+              elements: [
+                {type:"line",layout:{x1:0.0,y1:20.0,x2:260.0,y2:20.0}},
+                {type:"text",layout:{x1:0.0,y1:0.0,x2:90.0,y2:20.0},halign:"left",text:"改行して\r\n全体を表示",valign:"center"},
+                {type:"text",layout:{x1:90.0,y1:0.0,x2:180.0,y2:20.0},halign:"left",text:"縮小して\r\n全体を表示",valign:"center"},
+                {type:"text",layout:{x1:180.0,y1:0.0,x2:260.0,y2:20.0},halign:"left",text:"小数点位置固定",valign:"center"}
+              ]
+            },
+            {
+              aggregate_src: true,
+              group: {
+                detail: true,
+                contents: [
+                  {
+                    size: {
+                      initial: 20.0
+                    },
+                    aggregate_src: true,
+                    elements: [
+                      {type:"line",layout:{x1:0.0,y1:20.0,x2:260.0,y2:20.0},line_style:"dot"},
+                      {type:"field",layout:{x1:0.0,y1:0.0,x2:90.0,y2:20.0},exp:".WRAP",halign:"left",valign:"center",wrap:true},
+                      {type:"field",layout:{x1:90.0,y1:0.0,x2:180.0,y2:20.0},exp:".SHRINK",halign:"left",shrink_to_fit:true,valign:"center"},
+                      {type:"field",layout:{x1:180.0,y1:0.0,x2:260.0,y2:20.0},decimal_place:3.0,exp:".FIXDEC",formatter:{format:"#,##0.###",type:"default"},halign:"right",valign:"center"}
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        size: {
+          initial: 200.0
+        },
+        group: {
+          id: "feature4",
+          detail: true,
+          layout: {
+            max_count: 8.0,
+            blank: true
+          },
+          contents: [
+            {
+              size: {
+                initial: 20.0
+              },
+              aggregate_src: true,
+              elements: [
+                {type:"rect",layout:{x1:0.0,y1:0.0,x2:260.0,y2:20.0},background:true,fill_color:"silver",line_width:0.0,visibility_cond:"toggle"},
+                {type:"line",layout:{x1:260.0,y1:20.0,x2:0.0,y2:20.0},line_style:"dot",visibility_cond:"(not state.last2)"},
+                {type:"line",layout:{x1:0.0,y1:0.0,x2:260.0,y2:0.0},line_width:2.0,visibility_cond:"state.first"},
+                {type:"line",layout:{x1:0.0,y1:20.0,x2:260.0,y2:20.0},line_width:2.0,visibility_cond:"state.last2"},
+                {type:"field",layout:{x1:0.0,y1:0.0,x2:30.0,y2:20.0},exp:"(+ state.index 1)",halign:"center",valign:"center"},
+                {type:"field",layout:{x1:30.0,y1:0.0,x2:130.0,y2:20.0},exp:".VALUE",halign:"left",valign:"center"},
+                {type:"text",layout:{x1:130.0,y1:0.0,x2:260.0,y2:20.0},halign:"left",text:"(最初の行)",valign:"center",visibility_cond:"state.first"},
+                {type:"text",layout:{x1:130.0,y1:0.0,x2:260.0,y2:20.0},halign:"left",text:"(最後のデータ行)",valign:"center",visibility_cond:"state.last"},
+                {type:"text",layout:{x1:130.0,y1:0.0,x2:260.0,y2:20.0},halign:"left",text:"(最初の空白行)",valign:"center",visibility_cond:"state.blank_first"},
+                {type:"text",layout:{x1:130.0,y1:0.0,x2:260.0,y2:20.0},halign:"left",text:"(最後の行)",valign:"center",visibility_cond:"state.last2"}
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

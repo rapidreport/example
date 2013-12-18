@@ -1,0 +1,144 @@
+{
+  version: 0,
+  paper: {
+    margin: {bottom:30,left:30,right:30,top:30},
+    scale_unit: "point",
+    type: "a4"
+  },
+  font: {size:8},
+  custom_fields: [
+    {key:"KINGAKU",exp:"(* .SURYO .TANKA)"}
+  ],
+  group: {
+    id: "hat_group",
+    keys: ["HAT_ID"],
+    page_break: true,
+    contents: [
+      {
+        size: {
+          initial: 180
+        },
+        every_page: true,
+        elements: [
+          {type:"line",layout:{x1:185.0,y1:30.0,x2:350.0,y2:30.0}},
+          {type:"text",layout:{x1:185.0,y1:10.0,x2:350.0,y2:30.0},font:{size:20},halign:"center",text:"発注書",valign:"center"},
+          {type:"line",layout:{x1:0,y1:70,x2:315,y2:70}},
+          {type:"line",layout:{x1:0.0,y1:130.0,x2:185.0,y2:130.0}},
+          {type:"text",layout:{x1:0.0,y1:115.0,x2:50.0,y2:130.0},font:{size:10},halign:"left",text:"合計金額",valign:"center"},
+          {type:"text",layout:{x1:390.0,y1:40.0,x2:535.0,y2:50.0},font:{size:10},halign:"right",text:"営業推進部",valign:"center"},
+          {type:"text",layout:{x1:390.0,y1:30.0,x2:535.0,y2:40.0},font:{size:10},halign:"right",text:"ABC工業株式会社",valign:"center"},
+          {type:"text",layout:{x1:390.0,y1:60.0,x2:535.0,y2:70.0},halign:"right",text:"TEL 11-1111-1111",valign:"center"},
+          {type:"text",layout:{x1:390.0,y1:70.0,x2:535.0,y2:80.0},halign:"right",text:"FAX 22-2222-2222",valign:"center"},
+          {type:"text",layout:{x1:390.0,y1:80.0,x2:535.0,y2:90.0},halign:"right",text:"E-MAIL edi@abc.co.jp",valign:"center"},
+          {name:".TOKUI_NM",type:"text",layout:{x1:0,y1:40,x2:315,y2:50},font:{size:10},text:"#{.TOKUI_NM} 御中",valign:"center"},
+          {type:"text",layout:{y1:60,x2:315,y2:70},font:{size:10},text:"#{.TOKUI_TANTO_NM} 様",valign:"center"},
+          {type:"field",layout:{x1:50.0,y1:115.0,x2:185.0,y2:130.0},exp:"sum.KINGAKU",font:{size:10.0},formatter:{format:"￥#,###-",type:"default"},halign:"right",valign:"center",xls_format:"\\\\#,###"}
+        ],
+        group: {
+          id: "group_shonin",
+          layout: {
+            x: 350,
+            y: 100
+          },
+          contents: [
+            {
+              size: {
+                initial: 15
+              },
+              elements: [
+                {type:"rect"},
+                {type:"text",layout:{},halign:"center",text:"承認者",valign:"center"}
+              ]
+            },
+            {
+              size: {
+                initial: 60
+              },
+              elements: [
+                {type:"rect"}
+              ],
+              group: {
+                detail: true,
+                contents: [
+                  {
+                    size: {
+                      initial: 15
+                    },
+                    elements: [
+                      {type:"field",layout:{},exp:".SHONIN_NM",halign:"left",valign:"center"}
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        size: {
+          initial: 20
+        },
+        every_page: true,
+        elements: [
+          {type:"rect",layout:{x1:0,x2:535}},
+          {type:"line",layout:{x1:20,x2:20,y2:20}},
+          {type:"line",layout:{x1:350.0,y1:0.0,x2:350.0,y2:20.0}},
+          {type:"line",layout:{x1:390,x2:390,y2:20}},
+          {type:"line",layout:{x1:435,x2:435,y2:20}},
+          {type:"line",layout:{x1:480,x2:480,y2:20}},
+          {type:"text",layout:{x1:0,x2:20},halign:"right",text:"No.",valign:"center"},
+          {type:"text",layout:{x1:20.0,y1:0.0,x2:350.0,y2:10.0},halign:"left",text:"商品名",valign:"center"},
+          {type:"text",layout:{x1:20.0,y1:10.0,x2:350.0,y2:20.0},halign:"left",text:"商品コード",valign:"center"},
+          {type:"text",layout:{x1:350.0,y1:0.0,x2:390.0,y2:10.0},halign:"right",text:"数量",valign:"center"},
+          {type:"text",layout:{x1:390,x2:435,y2:10},halign:"right",text:"単価",valign:"center"},
+          {type:"text",layout:{x1:435,x2:480,y2:10},halign:"right",text:"金額",valign:"center"},
+          {type:"text",layout:{x1:480,x2:535,y2:10},halign:"center",text:"出荷日",valign:"center"}
+        ]
+      },
+      {
+        aggregate_src: true,
+        group: {
+          detail: true,
+          layout: {
+            max_count: 20,
+            blank: true
+          },
+          contents: [
+            {
+              size: {
+                initial: 20
+              },
+              aggregate_src: true,
+              elements: [
+                {type:"rect",layout:{x1:0,x2:535}},
+                {type:"line",layout:{x1:20,x2:20}},
+                {type:"line",layout:{x1:350.0,y1:0.0,x2:350.0,y2:20.0}},
+                {type:"line",layout:{x1:390,x2:390,y2:20}},
+                {type:"line",layout:{x1:435,x2:435,y2:20}},
+                {type:"line",layout:{x1:480,x2:480,y2:20}},
+                {type:"line",layout:{x1:535,x2:535,y2:20}},
+                {type:"field",layout:{x1:20.0,y1:0.0,x2:350.0,y2:10.0},exp:".HIN_NM",valign:"center"},
+                {type:"field",layout:{x1:20.0,y1:10.0,x2:350.0,y2:20.0},exp:".HIN_CD",valign:"center"},
+                {type:"field",layout:{x2:20},exp:"(+ state.index 1)",halign:"center",valign:"center"},
+                {type:"field",layout:{x1:350.0,y1:0.0,x2:390.0,y2:10.0},exp:".SURYO",halign:"right",valign:"center",xls_format:"#"},
+                {type:"field",layout:{x1:390,y1:0,x2:435,y2:10},exp:".TANKA",formatter:{format:"#,###",type:"default"},halign:"right",valign:"center",xls_format:"#,###"},
+                {type:"field",layout:{x1:480,y1:0,x2:535,y2:10},exp:".SHUKKABI",formatter:{format:"MM/dd",type:"default"},halign:"center",valign:"center",xls_format:"mm/dd"},
+                {type:"field",layout:{x1:435,y1:0,x2:480,y2:10},exp:".KINGAKU",formatter:{format:"#,###",type:"default"},halign:"right",valign:"center",xls_format:"#,###"}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        size: {
+          initial: 40
+        },
+        every_page: true,
+        elements: [
+          {type:"rect",layout:{x1:0.0,y1:0.0,x2:535.0,y2:0.0,rev_y2:true}},
+          {type:"text",layout:{x1:0.0,y1:0.0,x2:50.0,y2:15.0},font:{underline:true},halign:"left",text:"備考欄",valign:"center"}
+        ]
+      }
+    ]
+  }
+}
