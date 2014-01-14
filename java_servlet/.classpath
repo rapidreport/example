@@ -9,9 +9,9 @@
 	<classpathentry kind="lib" path="WEB-INF/lib/poi-3.9-20121203.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/systembase.barcode-1.2.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/systembase.core-1.6.jar"/>
-	<classpathentry kind="lib" path="WEB-INF/lib/systembase.report-4.6.jar"/>
-	<classpathentry kind="lib" path="WEB-INF/lib/systembase.report.pdf-4.6.jar"/>
-	<classpathentry kind="lib" path="WEB-INF/lib/systembase.report.xls-4.6.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/systembase.report-4.7.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/systembase.report.pdf-4.7.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/systembase.report.xls-4.7.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/zxing.core-2.0.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/zxing.javase-2.0.jar"/>
 	<classpathentry kind="var" path="TOMCAT_HOME/lib/servlet-api.jar"/>
