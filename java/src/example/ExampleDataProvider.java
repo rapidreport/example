@@ -4,6 +4,7 @@ import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import jp.co.systembase.core.DataTable;
 import jp.co.systembase.report.Report;
@@ -12,6 +13,7 @@ import jp.co.systembase.report.data.GroupDataProvider;
 import jp.co.systembase.report.data.ReportDataSource;
 import jp.co.systembase.report.renderer.pdf.PdfRenderer;
 import jp.co.systembase.report.renderer.xls.XlsRenderer;
+import jp.co.systembase.report.renderer.xlsx.XlsxRenderer;
 
 // 機能サンプル データの部分割り当て
 public class ExampleDataProvider {
@@ -45,6 +47,20 @@ public class ExampleDataProvider {
 			try{
 				HSSFWorkbook workBook = new HSSFWorkbook();
 				XlsRenderer renderer = new XlsRenderer(workBook);
+				renderer.newSheet("example_dataprovider");
+				pages.render(renderer);
+				workBook.write(fos);
+			}finally{
+				fos.close();
+			}
+		}
+
+		// XLSX出力
+		{
+			FileOutputStream fos = new FileOutputStream("output/example_dataprovider.xlsx");
+			try{
+				XSSFWorkbook workBook = new XSSFWorkbook();
+				XlsxRenderer renderer = new XlsxRenderer(workBook);
 				renderer.newSheet("example_dataprovider");
 				pages.render(renderer);
 				workBook.write(fos);

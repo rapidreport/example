@@ -3,6 +3,7 @@ package example;
 import java.io.FileOutputStream;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import jp.co.systembase.core.DataTable;
 import jp.co.systembase.report.Report;
@@ -15,6 +16,7 @@ import jp.co.systembase.report.data.DummyDataSource;
 import jp.co.systembase.report.data.ReportDataSource;
 import jp.co.systembase.report.renderer.pdf.PdfRenderer;
 import jp.co.systembase.report.renderer.xls.XlsRenderer;
+import jp.co.systembase.report.renderer.xlsx.XlsxRenderer;
 
 // 機能サンプル ページ挿入
 public class ExamplePage {
@@ -51,6 +53,20 @@ public class ExamplePage {
 			try{
 				HSSFWorkbook workBook = new HSSFWorkbook();
 				XlsRenderer renderer = new XlsRenderer(workBook);
+				renderer.newSheet("example_page");
+				pages.render(renderer);
+				workBook.write(fos);
+			}finally{
+				fos.close();
+			}
+		}
+
+		// XLSX出力
+		{
+			FileOutputStream fos = new FileOutputStream("output/example_page.xlsx");
+			try{
+				XSSFWorkbook workBook = new XSSFWorkbook();
+				XlsxRenderer renderer = new XlsxRenderer(workBook);
 				renderer.newSheet("example_page");
 				pages.render(renderer);
 				workBook.write(fos);

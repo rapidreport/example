@@ -19,10 +19,14 @@ import jp.co.systembase.report.renderer.pdf.PdfRenderer;
 import jp.co.systembase.report.renderer.pdf.PdfRendererSetting;
 import jp.co.systembase.report.renderer.xls.XlsRenderer;
 import jp.co.systembase.report.renderer.xls.XlsRendererSetting;
+import jp.co.systembase.report.renderer.xlsx.XlsxRenderer;
+import jp.co.systembase.report.renderer.xlsx.XlsxRendererSetting;
 import jp.co.systembase.report.textformatter.ITextFormatter;
 
 import org.apache.poi.hssf.usermodel.HSSFPatriarch;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.xssf.usermodel.XSSFDrawing;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import com.lowagie.text.pdf.PdfContentByte;
 
@@ -64,6 +68,24 @@ public class ExampleExtention {
 			try {
 				HSSFWorkbook workBook = new HSSFWorkbook();
 				XlsRenderer renderer = new XlsRenderer(workBook, xlsSetting);
+				renderer.newSheet("example_extention");
+				pages.render(renderer);
+				workBook.write(fos);
+			} finally {
+				fos.close();
+			}
+		}
+
+		// XLSX出力
+		{
+			// チェックボックスレンダラが設定されたSettingオブジェクトを用意します
+			XlsxRendererSetting xlsxSetting = new XlsxRendererSetting();
+			xlsxSetting.elementRendererMap.put("checkbox", new XlsxCheckBoxRenderer());
+
+			FileOutputStream fos = new FileOutputStream("output\\example_extention.xlsx");
+			try {
+				XSSFWorkbook workBook = new XSSFWorkbook();
+				XlsxRenderer renderer = new XlsxRenderer(workBook, xlsxSetting);
 				renderer.newSheet("example_extention");
 				pages.render(renderer);
 				workBook.write(fos);
@@ -207,8 +229,87 @@ public class ExampleExtention {
 				}
 				if (index > 0)
 				{
-					HSSFPatriarch p = (HSSFPatriarch)page.renderer.sheet.getDrawingPatriarch();
+					HSSFPatriarch p = page.renderer.sheet.getDrawingPatriarch();
 					p.createPicture(shape.getHSSFClientAnchor(page.topRow), index);
+				}
+			}
+		}
+	}
+
+	// チェックボックスを描く要素レンダラ(XLSX)
+	public static class XlsxCheckBoxRenderer
+	  implements jp.co.systembase.report.renderer.xlsx.elementrenderer.IElementRenderer
+	{
+		public void collect(
+				XlsxRenderer renderer, 
+				ReportDesign reportDesign, 
+				Region region, 
+				ElementDesign design, 
+				Object data)
+		{
+			Region r = region.toPointScale(reportDesign);
+			jp.co.systembase.report.renderer.xlsx.component.Shape shape =
+					new jp.co.systembase.report.renderer.xlsx.component.Shape();
+			shape.region = r;
+			shape.renderer = new CheckBoxShapeRenderer(data);
+			renderer.currentPage.shapes.add(shape);
+		}
+
+		private static BufferedImage checkedImage = null;
+		private static BufferedImage noCheckedImage = null;
+
+		private static void createImage()
+		{
+			if (checkedImage == null)
+			{
+				checkedImage = new BufferedImage(40, 40, BufferedImage.TYPE_INT_RGB);
+				Graphics g = checkedImage.getGraphics();
+				g.setColor(Color.WHITE);
+				g.fillRect(0, 0, 40, 40);
+				g.setColor(Color.BLACK);
+				g.drawRect(10, 10, 20, 20);
+				g.setColor(RenderUtil.getColor("steelblue"));
+				int x[] = {10, 15, 30, 15};
+				int y[] = {15, 30, 10, 20};
+				g.fillPolygon(x, y, 4);
+			}
+			if (noCheckedImage == null)
+			{
+				noCheckedImage = new BufferedImage(40, 40, BufferedImage.TYPE_INT_RGB);
+				Graphics g = noCheckedImage.getGraphics();
+				g.setColor(Color.WHITE);
+				g.fillRect(0, 0, 40, 40);
+				g.setColor(Color.BLACK);
+				g.drawRect(10, 10, 20, 20);
+			}
+		}
+
+		public static class CheckBoxShapeRenderer
+		  implements jp.co.systembase.report.renderer.xlsx.elementrenderer.IShapeRenderer
+		{
+			public Object data;
+			public CheckBoxShapeRenderer(Object data)
+			{
+				this.data = data;
+			}
+			public void render(
+					jp.co.systembase.report.renderer.xlsx.component.Page page, 
+					jp.co.systembase.report.renderer.xlsx.component.Shape shape)
+			{
+				createImage();
+				int index;
+				if (ReportUtil.condition(this.data))
+				{
+					index = page.renderer.getImageIndex(checkedImage);
+				}
+				else
+				{
+					index = page.renderer.getImageIndex(noCheckedImage);
+				}
+				if (index > 0)
+				{
+					XSSFDrawing d = page.renderer.sheet.createDrawingPatriarch();
+					d.createPicture(shape.getXSSFClientAnchor(page.topRow), index);
 				}
 			}
 		}

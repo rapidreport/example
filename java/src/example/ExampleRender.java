@@ -51,6 +51,20 @@ public class ExampleRender {
 				fos.close();
 			}
 		}
+
+		// XLSX出力
+		{
+			FileOutputStream fos = new FileOutputStream("output/example_render.xls");
+			try{
+				HSSFWorkbook workBook = new HSSFWorkbook();
+				XlsRenderer renderer = new XlsRenderer(workBook);
+				renderer.newSheet("example_render");
+				pages.render(renderer);
+				workBook.write(fos);
+			}finally{
+				fos.close();
+			}
+		}
 	}
 
 	// 要素に動的な修正を加えるカスタマイザ

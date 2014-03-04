@@ -8,8 +8,10 @@ import jp.co.systembase.report.ReportPages;
 import jp.co.systembase.report.data.ReportDataSource;
 import jp.co.systembase.report.renderer.pdf.PdfRenderer;
 import jp.co.systembase.report.renderer.xls.XlsRenderer;
+import jp.co.systembase.report.renderer.xlsx.XlsxRenderer;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 // 機能サンプル 絶対座標による配置
 public class ExampleLocate {
@@ -36,6 +38,20 @@ public class ExampleLocate {
 			try {
 				HSSFWorkbook workBook = new HSSFWorkbook();
 				XlsRenderer renderer = new XlsRenderer(workBook);
+				renderer.newSheet("example_locate");
+				pages.render(renderer);
+				workBook.write(fos);
+			} finally {
+				fos.close();
+			}
+		}
+
+		// XLSX出力
+		{
+			FileOutputStream fos = new FileOutputStream("output\\example_locate.xlsx");
+			try {
+				XSSFWorkbook workBook = new XSSFWorkbook();
+				XlsxRenderer renderer = new XlsxRenderer(workBook);
 				renderer.newSheet("example_locate");
 				pages.render(renderer);
 				workBook.write(fos);
