@@ -306,7 +306,7 @@ public class ExampleExtention {
 				{
 					index = page.renderer.getImageIndex(noCheckedImage);
 				}
-				if (index > 0)
+				if (index >= 0)
 				{
 					XSSFDrawing d = page.renderer.sheet.createDrawingPatriarch();
 					d.createPicture(shape.getXSSFClientAnchor(page.topRow), index);
