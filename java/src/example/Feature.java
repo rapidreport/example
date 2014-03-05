@@ -10,8 +10,10 @@ import jp.co.systembase.report.data.GroupDataProvider;
 import jp.co.systembase.report.data.ReportDataSource;
 import jp.co.systembase.report.renderer.pdf.PdfRenderer;
 import jp.co.systembase.report.renderer.xls.XlsRenderer;
+import jp.co.systembase.report.renderer.xlsx.XlsxRenderer;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 // 「特徴と機能一覧」ページに掲載したサンプル
 public class Feature {
@@ -47,6 +49,20 @@ public class Feature {
 			try{
 				HSSFWorkbook workBook = new HSSFWorkbook();
 				XlsRenderer renderer = new XlsRenderer(workBook);
+				renderer.newSheet("feature");
+				pages.render(renderer);
+				workBook.write(fos);
+			}finally{
+				fos.close();
+			}
+		}
+
+		// XLSX出力
+		{
+			FileOutputStream fos = new FileOutputStream("output/feature.xlsx");
+			try{
+				XSSFWorkbook workBook = new XSSFWorkbook();
+				XlsxRenderer renderer = new XlsxRenderer(workBook);
 				renderer.newSheet("feature");
 				pages.render(renderer);
 				workBook.write(fos);
