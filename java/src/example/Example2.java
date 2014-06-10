@@ -21,7 +21,7 @@ public class Example2 {
 	public static void main(String[] args) throws Exception {
 
 		// 帳票定義を読込みます
-		Report report = new Report(ReadUtil.readJson("report\\example2.rrpt"));
+		Report report = new Report(ReadUtil.readJson("report/example2.rrpt"));
 
 		// globalScopeに値を登録します
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
@@ -38,7 +38,7 @@ public class Example2 {
 
 		// PDF出力
 		{
-			FileOutputStream fos = new FileOutputStream("output\\example2.pdf");
+			FileOutputStream fos = new FileOutputStream("output/example2.pdf");
 			try {
 				PdfRenderer renderer = new PdfRenderer(fos);
 				pages.render(renderer);
@@ -49,7 +49,7 @@ public class Example2 {
 
 		// XLS出力
 		{
-			FileOutputStream fos = new FileOutputStream("output\\example2.xls");
+			FileOutputStream fos = new FileOutputStream("output/example2.xls");
 			try {
 				HSSFWorkbook workBook = new HSSFWorkbook();
 				XlsRenderer renderer = new XlsRenderer(workBook);
@@ -64,7 +64,7 @@ public class Example2 {
 
 		// XLSX出力
 		{
-			FileOutputStream fos = new FileOutputStream("output\\example2.xlsx");
+			FileOutputStream fos = new FileOutputStream("output/example2.xlsx");
 			try {
 				XSSFWorkbook workBook = new XSSFWorkbook();
 				XlsxRenderer renderer = new XlsxRenderer(workBook);

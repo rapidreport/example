@@ -20,7 +20,7 @@ public class Example1 {
 	public static void main(String[] args) throws Exception {
 
 		// 帳票定義を読込みます
-		Report report = new Report(ReadUtil.readJson("report\\example1.rrpt"));
+		Report report = new Report(ReadUtil.readJson("report/example1.rrpt"));
 
 		// 帳票にデータを渡します
 		// ReportDataSourceにはResultSetまたはListを渡すことができます
@@ -34,7 +34,7 @@ public class Example1 {
 
 		// PDF出力
 		{
-			FileOutputStream fos = new FileOutputStream("output\\example1.pdf");
+			FileOutputStream fos = new FileOutputStream("output/example1.pdf");
 			try {
 				PdfRenderer renderer = new PdfRenderer(fos);
 				// バックスラッシュ文字を円マーク文字に変換します
@@ -47,7 +47,7 @@ public class Example1 {
 
 		// XLS出力
 		{
-			FileOutputStream fos = new FileOutputStream("output\\example1.xls");
+			FileOutputStream fos = new FileOutputStream("output/example1.xls");
 			try {
 				HSSFWorkbook workBook = new HSSFWorkbook();
 				XlsRenderer renderer = new XlsRenderer(workBook);
@@ -62,7 +62,7 @@ public class Example1 {
 
 		// XLSX出力
 		{
-			FileOutputStream fos = new FileOutputStream("output\\example1.xlsx");
+			FileOutputStream fos = new FileOutputStream("output/example1.xlsx");
 			try {
 				XSSFWorkbook workBook = new XSSFWorkbook();
 				XlsxRenderer renderer = new XlsxRenderer(workBook);

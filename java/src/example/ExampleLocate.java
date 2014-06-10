@@ -18,13 +18,13 @@ public class ExampleLocate {
 
 	public static void main(String[] args) throws Exception {
 
-		Report report = new Report(ReadUtil.readJson("report\\example_locate.rrpt"));
+		Report report = new Report(ReadUtil.readJson("report/example_locate.rrpt"));
 		report.fill(new ReportDataSource(getDataTable()));
 		ReportPages pages = report.getPages();
 
 		// PDF出力
 		{
-			FileOutputStream fos = new FileOutputStream("output\\example_locate.pdf");
+			FileOutputStream fos = new FileOutputStream("output/example_locate.pdf");
 			try {
 				pages.render(new PdfRenderer(fos));
 			} finally {
@@ -34,7 +34,7 @@ public class ExampleLocate {
 
 		// XLS出力
 		{
-			FileOutputStream fos = new FileOutputStream("output\\example_locate.xls");
+			FileOutputStream fos = new FileOutputStream("output/example_locate.xls");
 			try {
 				HSSFWorkbook workBook = new HSSFWorkbook();
 				XlsRenderer renderer = new XlsRenderer(workBook);
@@ -48,7 +48,7 @@ public class ExampleLocate {
 
 		// XLSX出力
 		{
-			FileOutputStream fos = new FileOutputStream("output\\example_locate.xlsx");
+			FileOutputStream fos = new FileOutputStream("output/example_locate.xlsx");
 			try {
 				XSSFWorkbook workBook = new XSSFWorkbook();
 				XlsxRenderer renderer = new XlsxRenderer(workBook);

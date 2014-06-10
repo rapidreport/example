@@ -16,7 +16,7 @@ public class Example2Huge {
 	public static void main(String[] args) throws Exception {
 
 		// 帳票定義を読込みます
-		Report report = new Report(ReadUtil.readJson("report\\example2.rrpt"));
+		Report report = new Report(ReadUtil.readJson("report/example2.rrpt"));
 
 		// globalScopeに値を登録します
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
@@ -36,7 +36,7 @@ public class Example2Huge {
 
 		// PDF出力
 		{
-			FileOutputStream fos = new FileOutputStream("output\\example2_huge.pdf");
+			FileOutputStream fos = new FileOutputStream("output/example2_huge.pdf");
 			try {
 				PdfRenderer renderer = new PdfRenderer(fos);
 				pages.render(renderer);

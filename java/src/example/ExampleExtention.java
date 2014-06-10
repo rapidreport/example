@@ -39,7 +39,7 @@ public class ExampleExtention {
 		ReportSetting setting = new ReportSetting();
 		setting.textFormatterMap.put("yubin", new YubinTextFormatter());
 
-		Report report = new Report(ReadUtil.readJson("report\\example_extention.rrpt"), setting);
+		Report report = new Report(ReadUtil.readJson("report/example_extention.rrpt"), setting);
 		report.fill(new ReportDataSource(getDataTable()));
 		ReportPages pages = report.getPages();
 
@@ -49,7 +49,7 @@ public class ExampleExtention {
 			PdfRendererSetting pdfSetting = new PdfRendererSetting();
 			pdfSetting.elementRendererMap.put("checkbox", new PdfCheckBoxRenderer());
 
-			FileOutputStream fos = new FileOutputStream("output\\example_extention.pdf");
+			FileOutputStream fos = new FileOutputStream("output/example_extention.pdf");
 			try {
 				PdfRenderer renderer = new PdfRenderer(fos, pdfSetting);
 				pages.render(renderer);
@@ -64,7 +64,7 @@ public class ExampleExtention {
 			XlsRendererSetting xlsSetting = new XlsRendererSetting();
 			xlsSetting.elementRendererMap.put("checkbox", new XlsCheckBoxRenderer());
 
-			FileOutputStream fos = new FileOutputStream("output\\example_extention.xls");
+			FileOutputStream fos = new FileOutputStream("output/example_extention.xls");
 			try {
 				HSSFWorkbook workBook = new HSSFWorkbook();
 				XlsRenderer renderer = new XlsRenderer(workBook, xlsSetting);

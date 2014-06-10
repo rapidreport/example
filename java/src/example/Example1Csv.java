@@ -21,7 +21,7 @@ public class Example1Csv {
 	public static void main(String[] args) throws Exception {
 
 		// 帳票定義を読込みます
-		Report report = new Report(ReadUtil.readJson("report\\example1.rrpt"));
+		Report report = new Report(ReadUtil.readJson("report/example1.rrpt"));
 
 		// CSVファイルから帳票にデータを渡します
 		InputStream is = new FileInputStream("report\\data.csv");
@@ -41,7 +41,7 @@ public class Example1Csv {
 
 		// PDF出力
 		{
-			FileOutputStream fos = new FileOutputStream("output\\example1csv.pdf");
+			FileOutputStream fos = new FileOutputStream("output/example1csv.pdf");
 			try {
 				PdfRenderer renderer = new PdfRenderer(fos);
 				// バックスラッシュ文字を円マーク文字に変換します
@@ -54,7 +54,7 @@ public class Example1Csv {
 
 		// XLS出力
 		{
-			FileOutputStream fos = new FileOutputStream("output\\example1csv.xls");
+			FileOutputStream fos = new FileOutputStream("output/example1csv.xls");
 			try {
 				HSSFWorkbook workBook = new HSSFWorkbook();
 				XlsRenderer renderer = new XlsRenderer(workBook);
@@ -69,7 +69,7 @@ public class Example1Csv {
 
 		// XLSX出力
 		{
-			FileOutputStream fos = new FileOutputStream("output\\example1csv.xlsx");
+			FileOutputStream fos = new FileOutputStream("output/example1csv.xlsx");
 			try {
 				XSSFWorkbook workBook = new XSSFWorkbook();
 				XlsxRenderer renderer = new XlsxRenderer(workBook);
