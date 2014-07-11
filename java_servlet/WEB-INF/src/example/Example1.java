@@ -26,7 +26,7 @@ public class Example1 extends HttpServlet {
 		try {
 			// 帳票定義を読込みます
 			Report report = new Report(ReadUtil.readJson(
-					getServletContext().getRealPath("WEB-INF\\report\\example1.rrpt")));
+					getServletContext().getRealPath("WEB-INF/report/example1.rrpt")));
 
 			// 帳票にデータを渡します
 			report.fill(new ReportDataSource(getDataTable()));

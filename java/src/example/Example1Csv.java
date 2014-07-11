@@ -24,7 +24,7 @@ public class Example1Csv {
 		Report report = new Report(ReadUtil.readJson("report/example1.rrpt"));
 
 		// CSVファイルから帳票にデータを渡します
-		InputStream is = new FileInputStream("report\\data.csv");
+		InputStream is = new FileInputStream("report/data.csv");
 		try{
 			Reader r = new InputStreamReader(is, "shift-jis");
 			try{
