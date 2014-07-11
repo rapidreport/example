@@ -2,6 +2,7 @@
 Imports System.Windows.Forms.DataVisualization.Charting
 
 Imports NPOI.HSSF.UserModel
+Imports NPOI.XSSF.UserModel
 
 Imports jp.co.systembase.json
 Imports jp.co.systembase.report
@@ -13,6 +14,8 @@ Imports jp.co.systembase.report.renderer.pdf
 Imports jp.co.systembase.report.renderer.pdf.imageloader
 Imports jp.co.systembase.report.renderer.xls
 Imports jp.co.systembase.report.renderer.xls.imageloader
+Imports jp.co.systembase.report.renderer.xlsx
+Imports jp.co.systembase.report.renderer.xlsx.imageloader
 
 ' 機能サンプル 動的画像(グラフ)表示
 Module ExampleImage
@@ -51,6 +54,20 @@ Module ExampleImage
             ' イメージローダを登録します
             renderer.ImageLoaderMap.Add("image", New XlsImageLoader(imageMap))
             renderer.ImageLoaderMap.Add("graph", New XlsGraphImageLoader())
+
+            pages.Render(renderer)
+            workbook.Write(fs)
+        End Using
+
+        ' XLSX出力
+        Using fs As New FileStream("output\example_image.xlsx", IO.FileMode.Create)
+            Dim workbook As New XSSFWorkbook
+            Dim renderer As New XlsxRenderer(workbook)
+            renderer.NewSheet("example_image")
+
+            ' イメージローダを登録します
+            renderer.ImageLoaderMap.Add("image", New XlsxImageLoader(imageMap))
+            renderer.ImageLoaderMap.Add("graph", New XlsxGraphImageLoader())
 
             pages.Render(renderer)
             workbook.Write(fs)
@@ -132,6 +149,23 @@ Module ExampleImage
         ' 画像をキャッシュするためのDictionary
         Private cachedImage As New Dictionary(Of Object, Image)
         Public Function GetImage(param As Object) As Image Implements IXlsImageLoader.GetImage
+            If param Is Nothing Then
+                Return Nothing
+            End If
+            ' 画像がキャッシュになければ生成します
+            If Not Me.cachedImage.ContainsKey(param) Then
+                Me.cachedImage.Add(param, getGraphImage(param))
+            End If
+            Return Me.cachedImage(param)
+        End Function
+    End Class
+
+    ' グラフの画像をExcel(XLSX)に埋め込むためのイメージローダ
+    Private Class XlsxGraphImageLoader
+        Implements IXlsxImageLoader
+        ' 画像をキャッシュするためのDictionary
+        Private cachedImage As New Dictionary(Of Object, Image)
+        Public Function GetImage(param As Object) As Image Implements IXlsxImageLoader.GetImage
             If param Is Nothing Then
                 Return Nothing
             End If

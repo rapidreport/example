@@ -7,7 +7,9 @@ using System.Data;
 using System.Drawing;
 
 using iTextSharp.text.pdf;
+using NPOI.SS.UserModel;
 using NPOI.HSSF.UserModel;
+using NPOI.XSSF.UserModel;
 
 using jp.co.systembase.json;
 using jp.co.systembase.report;
@@ -16,6 +18,7 @@ using jp.co.systembase.report.data;
 using jp.co.systembase.report.renderer.gdi;
 using jp.co.systembase.report.renderer.pdf;
 using jp.co.systembase.report.renderer.xls;
+using jp.co.systembase.report.renderer.xlsx;
 
 // System.Drawing.Regionと名前衝突するのでエイリアスを定義しておきます
 using Region = jp.co.systembase.report.component.Region;
@@ -56,6 +59,20 @@ namespace example
 
                 HSSFWorkbook workbook = new HSSFWorkbook();
                 XlsRenderer renderer = new XlsRenderer(workbook, xlsSetting);
+                renderer.NewSheet("example_extention");
+                pages.Render(renderer);
+                workbook.Write(fs);
+            }
+
+            // XLSX出力
+            using (FileStream fs = new FileStream("output\\example_extention.xlsx", FileMode.Create))
+            {
+                // チェックボックスレンダラが設定されたSettingオブジェクトを用意します
+                XlsxRendererSetting xlsxSetting = new XlsxRendererSetting();
+                xlsxSetting.ElementRendererMap.Add("checkbox", new XlsxCheckBoxRenderer());
+
+                XSSFWorkbook workbook = new XSSFWorkbook();
+                XlsxRenderer renderer = new XlsxRenderer(workbook, xlsxSetting);
                 renderer.NewSheet("example_extention");
                 pages.Render(renderer);
                 workbook.Write(fs);
@@ -171,10 +188,10 @@ namespace example
             jp.co.systembase.report.renderer.xls.elementrenderer.IElementRenderer
         {
             public void Collect(
-                XlsRenderer renderer, 
-                ReportDesign reportDesign, 
-                Region region, 
-                ElementDesign design, 
+                XlsRenderer renderer,
+                ReportDesign reportDesign,
+                Region region,
+                ElementDesign design,
                 object data)
             {
                 Region r = region.ToPointScale(reportDesign);
@@ -219,7 +236,7 @@ namespace example
                     this.data = data;
                 }
                 public void Render(
-                    jp.co.systembase.report.renderer.xls.component.Page page, 
+                    jp.co.systembase.report.renderer.xls.component.Page page,
                     jp.co.systembase.report.renderer.xls.component.Shape shape)
                 {
                     createImage();
@@ -236,6 +253,81 @@ namespace example
                     {
                         HSSFPatriarch p = (HSSFPatriarch)page.Renderer.Sheet.DrawingPatriarch;
                         p.CreatePicture(shape.GetHSSFClientAnchor(page.TopRow), index);
+                    }
+                }
+            }
+        }
+
+        // チェックボックスを描く要素レンダラ(XLSX)
+        public class XlsxCheckBoxRenderer :
+            jp.co.systembase.report.renderer.xlsx.elementrenderer.IElementRenderer
+        {
+            public void Collect(
+                XlsxRenderer renderer,
+                ReportDesign reportDesign,
+                Region region,
+                ElementDesign design,
+                object data)
+            {
+                Region r = region.ToPointScale(reportDesign);
+                jp.co.systembase.report.renderer.xlsx.component.Shape shape =
+                    new jp.co.systembase.report.renderer.xlsx.component.Shape();
+                shape.Region = r;
+                shape.Renderer = new CheckBoxShapeRenderer(data);
+                renderer.CurrentPage.Shapes.Add(shape);
+            }
+
+            private static Image checkedImage = null;
+            private static Image noCheckedImage = null;
+
+            private static void createImage()
+            {
+                if (checkedImage == null)
+                {
+                    checkedImage = new Bitmap(40, 40);
+                    Graphics g = Graphics.FromImage(checkedImage);
+                    g.DrawRectangle(Pens.Black, 10, 10, 20, 20);
+                    Point[] p = {
+                      new Point(10, 15),
+                      new Point(15, 30),
+                      new Point(30, 10),
+                      new Point(15, 20)};
+                    g.FillPolygon(Brushes.SteelBlue, p);
+                }
+                if (noCheckedImage == null)
+                {
+                    noCheckedImage = new Bitmap(40, 40);
+                    Graphics g = Graphics.FromImage(noCheckedImage);
+                    g.DrawRectangle(Pens.Black, 10, 10, 20, 20);
+                }
+            }
+
+            public class CheckBoxShapeRenderer :
+                jp.co.systembase.report.renderer.xlsx.elementrenderer.IShapeRenderer
+            {
+                public Object data;
+                public CheckBoxShapeRenderer(Object data)
+                {
+                    this.data = data;
+                }
+                public void Render(
+                    jp.co.systembase.report.renderer.xlsx.component.Page page,
+                    jp.co.systembase.report.renderer.xlsx.component.Shape shape)
+                {
+                    createImage();
+                    int index;
+                    if ((bool)this.data)
+                    {
+                        index = page.Renderer.GetImageIndex(checkedImage);
+                    }
+                    else
+                    {
+                        index = page.Renderer.GetImageIndex(noCheckedImage);
+                    }
+                    if (index >= 0)
+                    {
+                        IDrawing p = page.Renderer.Sheet.CreateDrawingPatriarch();
+                        p.CreatePicture(shape.GetXSSFClientAnchor(page.TopRow), index);
                     }
                 }
             }

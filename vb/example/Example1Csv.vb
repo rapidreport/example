@@ -2,12 +2,14 @@
 Imports System.Text
 
 Imports NPOI.HSSF.UserModel
+Imports NPOI.XSSF.UserModel
 
 Imports jp.co.systembase.json
 Imports jp.co.systembase.report
 Imports jp.co.systembase.report.renderer.gdi
 Imports jp.co.systembase.report.renderer.pdf
 Imports jp.co.systembase.report.renderer.xls
+Imports jp.co.systembase.report.renderer.xlsx
 
 ' 基本サンプル1 見積書 (CSVデータソース)
 Module Example1Csv
@@ -37,6 +39,16 @@ Module Example1Csv
         Using fs As New FileStream("output\example1csv.xls", FileMode.Create)
             Dim workbook As New HSSFWorkbook
             Dim renderer As New XlsRenderer(workbook)
+            ' Renderメソッドを呼ぶ前に必ずNewSheetメソッドを呼んでワークシートを作成します
+            renderer.NewSheet("見積書")
+            pages.Render(renderer)
+            workbook.Write(fs)
+        End Using
+
+        ' XLSX出力
+        Using fs As New FileStream("output\example1csv.xlsx", FileMode.Create)
+            Dim workbook As New XSSFWorkbook
+            Dim renderer As New XlsxRenderer(workbook)
             ' Renderメソッドを呼ぶ前に必ずNewSheetメソッドを呼んでワークシートを作成します
             renderer.NewSheet("見積書")
             pages.Render(renderer)

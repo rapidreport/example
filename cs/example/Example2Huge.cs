@@ -6,14 +6,10 @@ using System.IO;
 using System.Data;
 using System.Diagnostics;
 
-using NPOI.HSSF.UserModel;
-
 using jp.co.systembase.json;
 using jp.co.systembase.report;
 using jp.co.systembase.report.data;
-using jp.co.systembase.report.renderer.gdi;
 using jp.co.systembase.report.renderer.pdf;
-using jp.co.systembase.report.renderer.xls;
 
 // 基本サンプル2 売上明細表（PDF1000ページ）
 namespace example

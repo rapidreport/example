@@ -1,6 +1,7 @@
 ﻿Imports System.IO
 
 Imports NPOI.HSSF.UserModel
+Imports NPOI.XSSF.UserModel
 
 Imports jp.co.systembase.json
 Imports jp.co.systembase.report
@@ -8,6 +9,7 @@ Imports jp.co.systembase.report.data
 Imports jp.co.systembase.report.renderer.gdi
 Imports jp.co.systembase.report.renderer.pdf
 Imports jp.co.systembase.report.renderer.xls
+Imports jp.co.systembase.report.renderer.xlsx
 
 ' 基本サンプル2 売上明細表
 Module Example2
@@ -41,6 +43,16 @@ Module Example2
         Using fs As New FileStream("output\example2.xls", IO.FileMode.Create)
             Dim workbook As New HSSFWorkbook
             Dim renderer As New XlsRenderer(workbook)
+            ' Renderメソッドを呼ぶ前に必ずNewSheetメソッドを呼んでワークシートを作成します
+            renderer.NewSheet("売上明細表")
+            pages.Render(renderer)
+            workbook.Write(fs)
+        End Using
+
+        ' XLSX出力
+        Using fs As New FileStream("output\example2.xlsx", IO.FileMode.Create)
+            Dim workbook As New XSSFWorkbook
+            Dim renderer As New XlsxRenderer(workbook)
             ' Renderメソッドを呼ぶ前に必ずNewSheetメソッドを呼んでワークシートを作成します
             renderer.NewSheet("売上明細表")
             pages.Render(renderer)

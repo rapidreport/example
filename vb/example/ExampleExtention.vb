@@ -1,5 +1,10 @@
 ﻿Imports System.IO
 
+Imports iTextSharp.text.pdf
+Imports NPOI.SS.UserModel
+Imports NPOI.HSSF.UserModel
+Imports NPOI.XSSF.UserModel
+
 Imports jp.co.systembase.report
 Imports jp.co.systembase.report.textformatter
 Imports jp.co.systembase.report.component
@@ -7,12 +12,10 @@ Imports jp.co.systembase.report.data
 Imports jp.co.systembase.json
 
 Imports jp.co.systembase.report.renderer
+Imports jp.co.systembase.report.renderer.gdi
 Imports jp.co.systembase.report.renderer.pdf
 Imports jp.co.systembase.report.renderer.xls
-Imports jp.co.systembase.report.renderer.gdi
-
-Imports iTextSharp.text.pdf
-Imports NPOI.HSSF.UserModel
+Imports jp.co.systembase.report.renderer.xlsx
 
 ' 機能サンプル　カスタム書式/要素
 Module ExampleExtention
@@ -45,6 +48,19 @@ Module ExampleExtention
 
             Dim workbook As New HSSFWorkbook
             Dim renderer As New XlsRenderer(workbook, xlsSetting)
+            renderer.NewSheet("example_extention")
+            pages.Render(renderer)
+            workbook.Write(fs)
+        End Using
+
+        ' XLSX出力
+        Using fs As New FileStream("output\example_extention.xlsx", IO.FileMode.Create)
+            ' チェックボックスレンダラが設定されたSettingオブジェクトを用意します
+            Dim xlsxSetting As New XlsxRendererSetting
+            xlsxSetting.ElementRendererMap.Add("checkbox", New XlsxCheckBoxRenderer)
+
+            Dim workbook As New XSSFWorkbook
+            Dim renderer As New XlsxRenderer(workbook, xlsxSetting)
             renderer.NewSheet("example_extention")
             pages.Render(renderer)
             workbook.Write(fs)
@@ -202,6 +218,68 @@ Module ExampleExtention
                 If index > 0 Then
                     Dim p As HSSFPatriarch = page.Renderer.Sheet.DrawingPatriarch
                     p.CreatePicture(shape.GetHSSFClientAnchor(page.TopRow), index)
+                End If
+            End Sub
+        End Class
+    End Class
+
+    ' チェックボックスを描く要素レンダラ(XLSX)
+    Public Class XlsxCheckBoxRenderer
+        Implements xlsx.elementrenderer.IElementRenderer
+        Public Sub Collect( _
+          renderer As xlsx.XlsxRenderer, _
+          reportDesign As ReportDesign, _
+          region As Region, _
+          design As ElementDesign, _
+          data As Object) Implements xlsx.elementrenderer.IElementRenderer.Collect
+            Dim r As Region = region.ToPointScale(reportDesign)
+            Dim shape As New xlsx.component.Shape
+            shape.Region = r
+            shape.Renderer = New CheckBoxShapeRenderer(data)
+            renderer.CurrentPage.Shapes.Add(shape)
+        End Sub
+
+        Private Shared checkedImage As Image = Nothing
+        Private Shared noCheckedImage As Image = Nothing
+
+        Private Shared Sub createImage()
+            If checkedImage Is Nothing Then
+                checkedImage = New Bitmap(40, 40)
+                Dim g As Graphics = Graphics.FromImage(checkedImage)
+                g.DrawRectangle(Pens.Black, 10, 10, 20, 20)
+                Dim p As Point() = { _
+                    New Point(10, 15), _
+                    New Point(15, 30), _
+                    New Point(30, 10), _
+                    New Point(15, 20)}
+                g.FillPolygon(Brushes.SteelBlue, p)
+            End If
+            If noCheckedImage Is Nothing Then
+                noCheckedImage = New Bitmap(40, 40)
+                Dim g As Graphics = Graphics.FromImage(noCheckedImage)
+                g.DrawRectangle(Pens.Black, 10, 10, 20, 20)
+            End If
+        End Sub
+
+        Public Class CheckBoxShapeRenderer
+            Implements xlsx.elementrenderer.IShapeRenderer
+            Public data As Object
+            Public Sub New(ByVal data As Object)
+                Me.data = data
+            End Sub
+            Public Sub Render( _
+              ByVal page As xlsx.component.Page, _
+              ByVal shape As xlsx.component.Shape) Implements xlsx.elementrenderer.IShapeRenderer.Render
+                createImage()
+                Dim index As Integer
+                If Me.data Then
+                    index = page.Renderer.GetImageIndex(checkedImage)
+                Else
+                    index = page.Renderer.GetImageIndex(noCheckedImage)
+                End If
+                If index >= 0 Then
+                    Dim p As IDrawing = page.Renderer.Sheet.CreateDrawingPatriarch
+                    p.CreatePicture(shape.GetXSSFClientAnchor(page.TopRow), index)
                 End If
             End Sub
         End Class

@@ -6,6 +6,7 @@ using System.IO;
 using System.Data;
 
 using NPOI.HSSF.UserModel;
+using NPOI.XSSF.UserModel;
 
 using jp.co.systembase.json;
 using jp.co.systembase.report;
@@ -13,6 +14,7 @@ using jp.co.systembase.report.data;
 using jp.co.systembase.report.renderer.gdi;
 using jp.co.systembase.report.renderer.pdf;
 using jp.co.systembase.report.renderer.xls;
+using jp.co.systembase.report.renderer.xlsx;
 
 // 基本サンプル1 見積書
 namespace example
@@ -45,6 +47,17 @@ namespace example
             {
                 HSSFWorkbook workbook = new HSSFWorkbook();
                 XlsRenderer renderer = new XlsRenderer(workbook);
+                // Renderメソッドを呼ぶ前に必ずNewSheetメソッドを呼んでワークシートを作成します
+                renderer.NewSheet("見積書");
+                pages.Render(renderer);
+                workbook.Write(fs);
+            }
+
+            // XLSX出力
+            using (FileStream fs = new FileStream("output\\example1.xlsx", FileMode.Create))
+            {
+                XSSFWorkbook workbook = new XSSFWorkbook();
+                XlsxRenderer renderer = new XlsxRenderer(workbook);
                 // Renderメソッドを呼ぶ前に必ずNewSheetメソッドを呼んでワークシートを作成します
                 renderer.NewSheet("見積書");
                 pages.Render(renderer);

@@ -6,6 +6,7 @@ using System.IO;
 using System.Data;
 
 using NPOI.HSSF.UserModel;
+using NPOI.XSSF.UserModel;
 
 using jp.co.systembase.json;
 using jp.co.systembase.report;
@@ -15,6 +16,7 @@ using jp.co.systembase.report.customizer;
 using jp.co.systembase.report.renderer.gdi;
 using jp.co.systembase.report.renderer.pdf;
 using jp.co.systembase.report.renderer.xls;
+using jp.co.systembase.report.renderer.xlsx;
 
 // 機能サンプル サブページ
 namespace example
@@ -50,6 +52,16 @@ namespace example
             {
                 HSSFWorkbook workbook = new HSSFWorkbook();
                 XlsRenderer renderer = new XlsRenderer(workbook);
+                renderer.NewSheet("example_subpage");
+                pages.Render(renderer);
+                workbook.Write(fs);
+            }
+
+            // XLSX出力
+            using (FileStream fs = new FileStream("output\\example_subpage.xlsx", FileMode.Create))
+            {
+                XSSFWorkbook workbook = new XSSFWorkbook();
+                XlsxRenderer renderer = new XlsxRenderer(workbook);
                 renderer.NewSheet("example_subpage");
                 pages.Render(renderer);
                 workbook.Write(fs);

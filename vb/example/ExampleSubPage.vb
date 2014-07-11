@@ -1,6 +1,7 @@
 ﻿Imports System.IO
 
 Imports NPOI.HSSF.UserModel
+Imports NPOI.XSSF.UserModel
 
 Imports jp.co.systembase.json
 Imports jp.co.systembase.report
@@ -11,6 +12,8 @@ Imports jp.co.systembase.report.renderer.pdf
 Imports jp.co.systembase.report.renderer.pdf.imageloader
 Imports jp.co.systembase.report.renderer.xls
 Imports jp.co.systembase.report.renderer.xls.imageloader
+Imports jp.co.systembase.report.renderer.xlsx
+Imports jp.co.systembase.report.renderer.xlsx.imageloader
 
 ' 機能サンプル サブページ
 Module ExampleSubPage
@@ -39,6 +42,15 @@ Module ExampleSubPage
         Using fs As New FileStream("output\example_subpage.xls", IO.FileMode.Create)
             Dim workbook As New HSSFWorkbook
             Dim renderer As New XlsRenderer(workbook)
+            renderer.NewSheet("example_subpage")
+            pages.Render(renderer)
+            workbook.Write(fs)
+        End Using
+
+        ' XLSX出力
+        Using fs As New FileStream("output\example_subpage.xlsx", IO.FileMode.Create)
+            Dim workbook As New XSSFWorkbook
+            Dim renderer As New XlsxRenderer(workbook)
             renderer.NewSheet("example_subpage")
             pages.Render(renderer)
             workbook.Write(fs)

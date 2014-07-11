@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Windows.Forms.DataVisualization.Charting;
 
 using NPOI.HSSF.UserModel;
+using NPOI.XSSF.UserModel;
 
 using jp.co.systembase.json;
 using jp.co.systembase.report;
@@ -19,6 +20,8 @@ using jp.co.systembase.report.renderer.pdf;
 using jp.co.systembase.report.renderer.pdf.imageloader;
 using jp.co.systembase.report.renderer.xls;
 using jp.co.systembase.report.renderer.xls.imageloader;
+using jp.co.systembase.report.renderer.xlsx;
+using jp.co.systembase.report.renderer.xlsx.imageloader;
 
 // 機能サンプル 動的画像(グラフ)の表示
 namespace example
@@ -62,6 +65,21 @@ namespace example
                 // イメージローダを登録します
                 renderer.ImageLoaderMap.Add("image", new XlsImageLoader(imageMap));
                 renderer.ImageLoaderMap.Add("graph", new XlsGraphImageLoader());
+
+                pages.Render(renderer);
+                workbook.Write(fs);
+            }
+
+            // XLSX出力
+            using (FileStream fs = new FileStream("output\\example_image.xlsx", FileMode.Create))
+            {
+                XSSFWorkbook workbook = new XSSFWorkbook();
+                XlsxRenderer renderer = new XlsxRenderer(workbook);
+                renderer.NewSheet("example_image");
+
+                // イメージローダを登録します
+                renderer.ImageLoaderMap.Add("image", new XlsxImageLoader(imageMap));
+                renderer.ImageLoaderMap.Add("graph", new XlsxGraphImageLoader());
 
                 pages.Render(renderer);
                 workbook.Write(fs);
@@ -148,8 +166,28 @@ namespace example
             }
         }
 
-        // グラフの画像を直接印刷・プレビューに埋め込むためのイメージローダ
+        // グラフの画像をXLSに埋め込むためのイメージローダ
         private class XlsGraphImageLoader : IXlsImageLoader
+        {
+            // 画像をキャッシュするためのDictionary
+            private Dictionary<Object, Image> cachedImage = new Dictionary<object, Image>();
+            public Image GetImage(object param)
+            {
+                if (param == null)
+                {
+                    return null;
+                }
+                // 画像がキャッシュになければ生成します
+                if (!this.cachedImage.ContainsKey(param))
+                {
+                    this.cachedImage.Add(param, getGraphImage(param));
+                }
+                return this.cachedImage[param];
+            }
+        }
+
+        // グラフの画像をXLSXに埋め込むためのイメージローダ
+        private class XlsxGraphImageLoader : IXlsxImageLoader
         {
             // 画像をキャッシュするためのDictionary
             private Dictionary<Object, Image> cachedImage = new Dictionary<object, Image>();
