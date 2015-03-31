@@ -61,6 +61,11 @@ namespace example
             ExampleRender.Run();
         }
 
+        private void BtnExampleCustomize_Click(object sender, EventArgs e)
+        {
+            ExampleCustomize.Run();
+        }
+
         private void BtnExampleSubPage_Click(object sender, EventArgs e)
         {
             ExampleSubPage.Run();

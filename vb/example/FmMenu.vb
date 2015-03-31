@@ -36,6 +36,10 @@
         ExampleRender.Run()
     End Sub
 
+    Private Sub btnElementCustomize_Click(sender As System.Object, e As System.EventArgs) Handles btnElementCustomize.Click
+        ExampleCustomize.Run()
+    End Sub
+
     Private Sub BtnExampleSubPage_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnExampleSubPage.Click
         ExampleSubPage.Run()
     End Sub

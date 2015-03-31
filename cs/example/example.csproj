@@ -110,6 +110,7 @@
     <Compile Include="Example1Csv.cs" />
     <Compile Include="Example2.cs" />
     <Compile Include="Example2Huge.cs" />
+    <Compile Include="ExampleCustomize.cs" />
     <Compile Include="ExampleDataProvider.cs" />
     <Compile Include="ExampleExtention.cs" />
     <Compile Include="ExampleImage.cs" />
@@ -156,6 +157,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="report\example2.rrpt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\example_customize.rrpt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="report\example_dataprovider.rrpt">

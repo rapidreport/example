@@ -1,0 +1,30 @@
+{
+  version: 0,
+  paper: {
+    margin: {bottom:10,left:10,right:10,top:10},
+    scale_unit: "mm",
+    type: "a4"
+  },
+  group: {
+    contents: [
+      {
+        group: {
+          detail: true,
+          contents: [
+            {
+              id: "content_example",
+              size: {
+                initial: 20.0
+              },
+              elements: [
+                {type:"line",layout:{x1:0.0,y1:20.0,x2:190.0,y2:20.0}},
+                {type:"field",layout:{x1:0,x2:30},customize:[{cond:"(< .NUM 0)",exp:"'red'",property:"color"}],exp:".NUM",font:{size:20.0},halign:"right",valign:"center"},
+                {type:"rect",layout:{x1:100.0,y1:5.0,x2:100.0,y2:15.0},customize:[{cond:"true",exp:"(if (< .NUM 0) 'pink' 'lightblue')",property:"fill_color"},{cond:"(>= .NUM 0)",exp:"(+ 100 .NUM)",property:"layout.x2"},{cond:"(< .NUM 0)",exp:"(+ 100 .NUM)",property:"layout.x1"}],line_width:0}
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

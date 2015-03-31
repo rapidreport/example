@@ -36,6 +36,7 @@ Partial Class FmMenu
         Me.BtnExample1Csv = New System.Windows.Forms.Button()
         Me.BtnExampleImage = New System.Windows.Forms.Button()
         Me.BtnExtention = New System.Windows.Forms.Button()
+        Me.btnElementCustomize = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'BtnExample1
@@ -67,7 +68,7 @@ Partial Class FmMenu
         '
         'BtnOpenOutput
         '
-        Me.BtnOpenOutput.Location = New System.Drawing.Point(12, 449)
+        Me.BtnOpenOutput.Location = New System.Drawing.Point(12, 478)
         Me.BtnOpenOutput.Name = "BtnOpenOutput"
         Me.BtnOpenOutput.Size = New System.Drawing.Size(170, 23)
         Me.BtnOpenOutput.TabIndex = 13
@@ -107,12 +108,12 @@ Partial Class FmMenu
         Me.BtnExampleRender.Name = "BtnExampleRender"
         Me.BtnExampleRender.Size = New System.Drawing.Size(170, 23)
         Me.BtnExampleRender.TabIndex = 8
-        Me.BtnExampleRender.Text = "動的Element"
+        Me.BtnExampleRender.Text = "動的要素"
         Me.BtnExampleRender.UseVisualStyleBackColor = True
         '
         'BtnExampleSubPage
         '
-        Me.BtnExampleSubPage.Location = New System.Drawing.Point(12, 290)
+        Me.BtnExampleSubPage.Location = New System.Drawing.Point(12, 319)
         Me.BtnExampleSubPage.Name = "BtnExampleSubPage"
         Me.BtnExampleSubPage.Size = New System.Drawing.Size(170, 23)
         Me.BtnExampleSubPage.TabIndex = 9
@@ -130,7 +131,7 @@ Partial Class FmMenu
         '
         'BtnFeature
         '
-        Me.BtnFeature.Location = New System.Drawing.Point(12, 409)
+        Me.BtnFeature.Location = New System.Drawing.Point(12, 438)
         Me.BtnFeature.Name = "BtnFeature"
         Me.BtnFeature.Size = New System.Drawing.Size(170, 23)
         Me.BtnFeature.TabIndex = 12
@@ -148,7 +149,7 @@ Partial Class FmMenu
         '
         'BtnExampleImage
         '
-        Me.BtnExampleImage.Location = New System.Drawing.Point(12, 319)
+        Me.BtnExampleImage.Location = New System.Drawing.Point(12, 348)
         Me.BtnExampleImage.Name = "BtnExampleImage"
         Me.BtnExampleImage.Size = New System.Drawing.Size(170, 23)
         Me.BtnExampleImage.TabIndex = 10
@@ -157,22 +158,32 @@ Partial Class FmMenu
         '
         'BtnExtention
         '
-        Me.BtnExtention.Location = New System.Drawing.Point(12, 348)
+        Me.BtnExtention.Location = New System.Drawing.Point(12, 377)
         Me.BtnExtention.Name = "BtnExtention"
         Me.BtnExtention.Size = New System.Drawing.Size(170, 23)
         Me.BtnExtention.TabIndex = 11
         Me.BtnExtention.Text = "カスタム書式/要素"
         Me.BtnExtention.UseVisualStyleBackColor = True
         '
+        'btnElementCustomize
+        '
+        Me.btnElementCustomize.Location = New System.Drawing.Point(12, 290)
+        Me.btnElementCustomize.Name = "btnElementCustomize"
+        Me.btnElementCustomize.Size = New System.Drawing.Size(170, 23)
+        Me.btnElementCustomize.TabIndex = 8
+        Me.btnElementCustomize.Text = "動的要素(デザイナのみ)"
+        Me.btnElementCustomize.UseVisualStyleBackColor = True
+        '
         'FmMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(194, 485)
+        Me.ClientSize = New System.Drawing.Size(194, 510)
         Me.Controls.Add(Me.BtnFeature)
         Me.Controls.Add(Me.BtnExtention)
         Me.Controls.Add(Me.BtnExampleImage)
         Me.Controls.Add(Me.BtnExampleSubPage)
+        Me.Controls.Add(Me.btnElementCustomize)
         Me.Controls.Add(Me.BtnExampleRender)
         Me.Controls.Add(Me.BtnExamplePage)
         Me.Controls.Add(Me.BtnExampleRegion)
@@ -204,5 +215,6 @@ Partial Class FmMenu
     Friend WithEvents BtnExample1Csv As System.Windows.Forms.Button
     Friend WithEvents BtnExampleImage As System.Windows.Forms.Button
     Friend WithEvents BtnExtention As System.Windows.Forms.Button
+    Friend WithEvents btnElementCustomize As System.Windows.Forms.Button
 
 End Class
