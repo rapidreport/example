@@ -12,7 +12,6 @@
           detail: true,
           contents: [
             {
-              id: "content_example",
               size: {
                 initial: 20.0
               },
