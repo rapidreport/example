@@ -64,16 +64,18 @@ Module Feature
 
     Private Function getDataTable1() As DataTable
         Dim ret As New DataTable
-        ret.Columns.Add("KEY1", GetType(String))
-        ret.Columns.Add("KEY2", GetType(String))
-        ret.Columns.Add("VALUE", GetType(String))
-        ret.Rows.Add("大分類Ａ", "小分類１", "データ１")
-        ret.Rows.Add("大分類Ａ", "小分類１", "データ２")
-        ret.Rows.Add("大分類Ａ", "小分類２", "データ３")
-        ret.Rows.Add("大分類Ｂ", "小分類３", "データ４")
-        ret.Rows.Add("大分類Ｂ", "小分類３", "データ５")
-        ret.Rows.Add("大分類Ｂ", "小分類３", "データ６")
-        ret.Rows.Add("大分類Ｃ", "小分類４", "データ７")
+        ret.Columns.Add("KUBUN1", GetType(String))
+        ret.Columns.Add("KUBUN2", GetType(String))
+        ret.Columns.Add("ZAISHITSU", GetType(String))
+        ret.Columns.Add("TANI", GetType(String))
+        ret.Columns.Add("TANKA", GetType(Decimal))
+        ret.Columns.Add("SURYO", GetType(Decimal))
+        ret.Rows.Add("内装", "床", "フローリング", "㎡", 7250, 20)
+        ret.Rows.Add("内装", "床", "畳", "枚", 4500, 12)
+        ret.Rows.Add("内装", "壁", "壁紙", "㎡", 1000, 30)
+        ret.Rows.Add("外装", "屋根", "瓦", "枚", 13000, 40)
+        ret.Rows.Add("外装", "屋根", "トタン", "㎡", 3920, 60)
+        ret.Rows.Add("外装", "屋根", "化粧スレート", "㎡", 5000, 45)
         Return ret
     End Function
 
@@ -112,11 +114,14 @@ Module Feature
 
     Private Function getDataTable4() As DataTable
         Dim ret As New DataTable
-        ret.Columns.Add("VALUE", GetType(String))
-        ret.Rows.Add("AAAA")
-        ret.Rows.Add("BBBB")
-        ret.Rows.Add("CCCC")
-        ret.Rows.Add("DDDD")
+        ret.Columns.Add("SHOHIN_CD", GetType(String))
+        ret.Columns.Add("SHOHIN_NM", GetType(String))
+        ret.Columns.Add("SURYO", GetType(Decimal))
+        ret.Columns.Add("TANI", GetType(String))
+        ret.Columns.Add("TANKA", GetType(Decimal))
+        ret.Rows.Add("SH-A0011", "冷凍コロッケ", 25, "袋", 35)
+        ret.Rows.Add("SH-A0012", "冷凍ピザ", 8, "袋", 410)
+        ret.Rows.Add("SH-B1005", "カップラーメン醤油味", 40, "個", 90)
         Return ret
     End Function
 
