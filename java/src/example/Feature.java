@@ -37,7 +37,9 @@ public class Feature {
 		{
 			FileOutputStream fos = new FileOutputStream("output/feature.pdf");
 			try{
-				pages.render(new PdfRenderer(fos));
+				PdfRenderer renderer = new PdfRenderer(fos);
+				renderer.setting.replaceBackslashToYen = true;
+				pages.render(renderer);
 			}finally{
 				fos.close();
 			}
@@ -72,56 +74,59 @@ public class Feature {
 		}
 	}
 
-	private static DataTable getDataTable1(){
-		DataTable ret = new DataTable();
-		ret.setFieldNames("KEY1", "KEY2", "VALUE");
-		ret.addRecord().puts("大分類Ａ", "小分類１", "データ１");
-		ret.addRecord().puts("大分類Ａ", "小分類１", "データ２");
-		ret.addRecord().puts("大分類Ａ", "小分類２", "データ３");
-		ret.addRecord().puts("大分類Ｂ", "小分類３", "データ４");
-		ret.addRecord().puts("大分類Ｂ", "小分類３", "データ５");
-		ret.addRecord().puts("大分類Ｂ", "小分類３", "データ６");
-		ret.addRecord().puts("大分類Ｃ", "小分類４", "データ７");
-		return ret;
-	}
+	private static DataTable getDataTable1()
+    {
+        DataTable ret = new DataTable();
+        ret.setFieldNames("KUBUN1", "KUBUN2", "ZAISHITSU", "TANI", "TANKA", "SURYO");
+        ret.addRecord().puts("内装", "床", "フローリング", "㎡", 7250, 20);
+        ret.addRecord().puts("内装", "床", "畳", "枚", 4500, 12);
+        ret.addRecord().puts("内装", "壁", "壁紙", "㎡", 1000, 30);
+        ret.addRecord().puts("外装", "屋根", "瓦", "枚", 13000, 40);
+        ret.addRecord().puts("外装", "屋根", "トタン", "㎡", 3920, 60);
+        ret.addRecord().puts("外装", "屋根", "化粧スレート", "㎡", 5000, 45);
+        return ret;
+    }
 
-	private static DataTable getDataTable2(){
-		DataTable ret = new DataTable();
-		ret.setFieldNames("REGION", "PREF");
-		ret.addRecord().puts("北海道", "北海道");
-		ret.addRecord().puts("東北", "青森");
-		ret.addRecord().puts("東北", "岩手");
-		ret.addRecord().puts("東北", "秋田");
-		ret.addRecord().puts("東北", "宮城");
-		ret.addRecord().puts("東北", "山形");
-		ret.addRecord().puts("東北", "福島");
-		ret.addRecord().puts("関東", "茨城");
-		ret.addRecord().puts("関東", "栃木");
-		ret.addRecord().puts("関東", "群馬");
-		ret.addRecord().puts("関東", "埼玉");
-		ret.addRecord().puts("関東", "千葉");
-		ret.addRecord().puts("関東", "東京");
-		ret.addRecord().puts("関東", "神奈川");
-		return ret;
-	}
+    private static DataTable getDataTable2()
+    {
+        DataTable ret = new DataTable();
+        ret.setFieldNames("REGION", "PREF");
+        ret.addRecord().puts("北海道", "北海道");
+        ret.addRecord().puts("東北", "青森");
+        ret.addRecord().puts("東北", "岩手");
+        ret.addRecord().puts("東北", "秋田");
+        ret.addRecord().puts("東北", "宮城");
+        ret.addRecord().puts("東北", "山形");
+        ret.addRecord().puts("東北", "福島");
+        ret.addRecord().puts("関東", "茨城");
+        ret.addRecord().puts("関東", "栃木");
+        ret.addRecord().puts("関東", "群馬");
+        ret.addRecord().puts("関東", "埼玉");
+        ret.addRecord().puts("関東", "ちば");
+        ret.addRecord().puts("関東", "東京");
+        ret.addRecord().puts("関東", "神奈川");
+        return ret;
+    }
 
-	private static DataTable getDataTable3(){
-		DataTable ret = new DataTable();
-		ret.setFieldNames("WRAP", "SHRINK", "FIXDEC");
-		ret.addRecord().puts("RapidReport", "ラピッドレポート", 12345);
-		ret.addRecord().puts("RapidReport 帳票ツール", "ラピッドレポート　帳票ツール", 1234.1);
-		ret.addRecord().puts("開発者のための帳票ツール", "開発者のための帳票ツール", 123.12);
-		ret.addRecord().puts("(株)システムベース", "(株)システムベース", 12.123);
-		return ret;
-	}
+    private static DataTable getDataTable3()
+    {
+        DataTable ret = new DataTable();
+        ret.setFieldNames("WRAP", "SHRINK", "FIXDEC");
+        ret.addRecord().puts("RapidRport", "ラピッドレポート", 12345);
+        ret.addRecord().puts("RapidReport 帳票ツール", "ラピッドレポート　帳票ツール", 1234.1);
+        ret.addRecord().puts("開発者のための帳票ツール", "開発者のための帳票ツール", 123.12);
+        ret.addRecord().puts("(株)システムベース", "(株)システムベース", 12.123);
+        return ret;
+    }
 
-	private static DataTable getDataTable4(){
-		DataTable ret = new DataTable();
-		ret.setFieldNames("VALUE");
-		ret.addRecord().puts("AAAA");
-		ret.addRecord().puts("BBBB");
-		ret.addRecord().puts("CCCC");
-		ret.addRecord().puts("DDDD");
-		return ret;
-	}
+    private static DataTable getDataTable4()
+    {
+        DataTable ret = new DataTable();
+        ret.setFieldNames("SHOHIN_CD", "SHOHIN_NM", "SURYO", "TANI", "TANKA");
+        ret.addRecord().puts("SH-A0011", "冷凍コロッケ", 25, "袋", 35);
+        ret.addRecord().puts("SH-A0012", "冷凍ピザ", 8, "袋", 410);
+        ret.addRecord().puts("SH-B1005", "カップラーメン醤油味", 40, "個", 90);
+        return ret;
+    }
+    
 }
