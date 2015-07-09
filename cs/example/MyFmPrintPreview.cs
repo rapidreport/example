@@ -82,7 +82,6 @@ namespace example
                     this.PrintPreview.HandleKeyDownEvent(e);
                     break;
             }
-
         }
 
         // 印刷ボタン押下
