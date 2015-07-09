@@ -37,6 +37,7 @@ Partial Class FmMenu
         Me.BtnExampleImage = New System.Windows.Forms.Button()
         Me.BtnExtention = New System.Windows.Forms.Button()
         Me.btnElementCustomize = New System.Windows.Forms.Button()
+        Me.BtnCustomPreview = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'BtnExample1
@@ -68,10 +69,10 @@ Partial Class FmMenu
         '
         'BtnOpenOutput
         '
-        Me.BtnOpenOutput.Location = New System.Drawing.Point(12, 478)
+        Me.BtnOpenOutput.Location = New System.Drawing.Point(12, 500)
         Me.BtnOpenOutput.Name = "BtnOpenOutput"
         Me.BtnOpenOutput.Size = New System.Drawing.Size(170, 23)
-        Me.BtnOpenOutput.TabIndex = 13
+        Me.BtnOpenOutput.TabIndex = 15
         Me.BtnOpenOutput.Text = "PDF,XLS出力フォルダを開く"
         Me.BtnOpenOutput.UseVisualStyleBackColor = True
         '
@@ -116,7 +117,7 @@ Partial Class FmMenu
         Me.BtnExampleSubPage.Location = New System.Drawing.Point(12, 319)
         Me.BtnExampleSubPage.Name = "BtnExampleSubPage"
         Me.BtnExampleSubPage.Size = New System.Drawing.Size(170, 23)
-        Me.BtnExampleSubPage.TabIndex = 9
+        Me.BtnExampleSubPage.TabIndex = 10
         Me.BtnExampleSubPage.Text = "サブページ"
         Me.BtnExampleSubPage.UseVisualStyleBackColor = True
         '
@@ -131,10 +132,10 @@ Partial Class FmMenu
         '
         'BtnFeature
         '
-        Me.BtnFeature.Location = New System.Drawing.Point(12, 438)
+        Me.BtnFeature.Location = New System.Drawing.Point(12, 460)
         Me.BtnFeature.Name = "BtnFeature"
         Me.BtnFeature.Size = New System.Drawing.Size(170, 23)
-        Me.BtnFeature.TabIndex = 12
+        Me.BtnFeature.TabIndex = 14
         Me.BtnFeature.Text = "特徴と機能一覧"
         Me.BtnFeature.UseVisualStyleBackColor = True
         '
@@ -152,7 +153,7 @@ Partial Class FmMenu
         Me.BtnExampleImage.Location = New System.Drawing.Point(12, 348)
         Me.BtnExampleImage.Name = "BtnExampleImage"
         Me.BtnExampleImage.Size = New System.Drawing.Size(170, 23)
-        Me.BtnExampleImage.TabIndex = 10
+        Me.BtnExampleImage.TabIndex = 11
         Me.BtnExampleImage.Text = "動的画像(グラフ)表示"
         Me.BtnExampleImage.UseVisualStyleBackColor = True
         '
@@ -161,7 +162,7 @@ Partial Class FmMenu
         Me.BtnExtention.Location = New System.Drawing.Point(12, 377)
         Me.BtnExtention.Name = "BtnExtention"
         Me.BtnExtention.Size = New System.Drawing.Size(170, 23)
-        Me.BtnExtention.TabIndex = 11
+        Me.BtnExtention.TabIndex = 12
         Me.BtnExtention.Text = "カスタム書式/要素"
         Me.BtnExtention.UseVisualStyleBackColor = True
         '
@@ -170,16 +171,26 @@ Partial Class FmMenu
         Me.btnElementCustomize.Location = New System.Drawing.Point(12, 290)
         Me.btnElementCustomize.Name = "btnElementCustomize"
         Me.btnElementCustomize.Size = New System.Drawing.Size(170, 23)
-        Me.btnElementCustomize.TabIndex = 8
+        Me.btnElementCustomize.TabIndex = 9
         Me.btnElementCustomize.Text = "動的要素(デザイナのみ)"
         Me.btnElementCustomize.UseVisualStyleBackColor = True
+        '
+        'BtnCustomPreview
+        '
+        Me.BtnCustomPreview.Location = New System.Drawing.Point(12, 406)
+        Me.BtnCustomPreview.Name = "BtnCustomPreview"
+        Me.BtnCustomPreview.Size = New System.Drawing.Size(170, 23)
+        Me.BtnCustomPreview.TabIndex = 13
+        Me.BtnCustomPreview.Text = "プレビュー画面のカスタマイズ"
+        Me.BtnCustomPreview.UseVisualStyleBackColor = True
         '
         'FmMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(194, 510)
+        Me.ClientSize = New System.Drawing.Size(194, 532)
         Me.Controls.Add(Me.BtnFeature)
+        Me.Controls.Add(Me.BtnCustomPreview)
         Me.Controls.Add(Me.BtnExtention)
         Me.Controls.Add(Me.BtnExampleImage)
         Me.Controls.Add(Me.BtnExampleSubPage)
@@ -216,5 +227,6 @@ Partial Class FmMenu
     Friend WithEvents BtnExampleImage As System.Windows.Forms.Button
     Friend WithEvents BtnExtention As System.Windows.Forms.Button
     Friend WithEvents btnElementCustomize As System.Windows.Forms.Button
+    Friend WithEvents BtnCustomPreview As System.Windows.Forms.Button
 
 End Class

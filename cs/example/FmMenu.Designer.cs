@@ -43,14 +43,15 @@
             this.BtmExampleImage = new System.Windows.Forms.Button();
             this.BtnExtention = new System.Windows.Forms.Button();
             this.btnElementRenderer = new System.Windows.Forms.Button();
+            this.BtnCustomPreview = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtnFeature
             // 
-            this.BtnFeature.Location = new System.Drawing.Point(12, 430);
+            this.BtnFeature.Location = new System.Drawing.Point(12, 460);
             this.BtnFeature.Name = "BtnFeature";
             this.BtnFeature.Size = new System.Drawing.Size(170, 23);
-            this.BtnFeature.TabIndex = 13;
+            this.BtnFeature.TabIndex = 14;
             this.BtnFeature.Text = "特徴と機能一覧";
             this.BtnFeature.UseVisualStyleBackColor = true;
             this.BtnFeature.Click += new System.EventHandler(this.BtnFeature_Click);
@@ -107,10 +108,10 @@
             // 
             // BtnOpenOutput
             // 
-            this.BtnOpenOutput.Location = new System.Drawing.Point(12, 470);
+            this.BtnOpenOutput.Location = new System.Drawing.Point(12, 500);
             this.BtnOpenOutput.Name = "BtnOpenOutput";
             this.BtnOpenOutput.Size = new System.Drawing.Size(170, 23);
-            this.BtnOpenOutput.TabIndex = 14;
+            this.BtnOpenOutput.TabIndex = 15;
             this.BtnOpenOutput.Text = "PDF,XLS出力フォルダを開く";
             this.BtnOpenOutput.UseVisualStyleBackColor = true;
             this.BtnOpenOutput.Click += new System.EventHandler(this.BtnOpenOutput_Click);
@@ -195,11 +196,22 @@
             this.btnElementRenderer.UseVisualStyleBackColor = true;
             this.btnElementRenderer.Click += new System.EventHandler(this.BtnExampleCustomize_Click);
             // 
+            // BtnCustomPreview
+            // 
+            this.BtnCustomPreview.Location = new System.Drawing.Point(12, 407);
+            this.BtnCustomPreview.Name = "BtnCustomPreview";
+            this.BtnCustomPreview.Size = new System.Drawing.Size(170, 23);
+            this.BtnCustomPreview.TabIndex = 13;
+            this.BtnCustomPreview.Text = "プレビュー画面のカスタマイズ";
+            this.BtnCustomPreview.UseVisualStyleBackColor = true;
+            this.BtnCustomPreview.Click += new System.EventHandler(this.BtnCustomPreview_Click);
+            // 
             // FmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(194, 500);
+            this.ClientSize = new System.Drawing.Size(194, 532);
+            this.Controls.Add(this.BtnCustomPreview);
             this.Controls.Add(this.BtnFeature);
             this.Controls.Add(this.BtnExtention);
             this.Controls.Add(this.BtmExampleImage);
@@ -240,6 +252,7 @@
         internal System.Windows.Forms.Button BtmExampleImage;
         internal System.Windows.Forms.Button BtnExtention;
         internal System.Windows.Forms.Button btnElementRenderer;
+        internal System.Windows.Forms.Button BtnCustomPreview;
     }
 }
 

@@ -52,6 +52,10 @@
         ExampleExtention.Run()
     End Sub
 
+    Private Sub BtnCustomPreview_Click(sender As System.Object, e As System.EventArgs) Handles BtnCustomPreview.Click
+        ExampleCustomPreview.Run()
+    End Sub
+
     Private Sub BtnFeature_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnFeature.Click
         Feature.Run()
     End Sub

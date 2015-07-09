@@ -149,6 +149,7 @@
     <Compile Include="CsvDataSource.vb" />
     <Compile Include="Example1Csv.vb" />
     <Compile Include="ExampleCustomize.vb" />
+    <Compile Include="ExampleCustomPreview.vb" />
     <Compile Include="ExampleDataProvider.vb" />
     <Compile Include="ExampleExtention.vb" />
     <Compile Include="ExampleImage.vb" />
@@ -183,6 +184,12 @@
     <Compile Include="Example2.vb" />
     <Compile Include="ExampleLocate.vb" />
     <Compile Include="Example2Huge.vb" />
+    <Compile Include="MyFmPrintPreview.Designer.vb">
+      <DependentUpon>MyFmPrintPreview.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MyFmPrintPreview.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FmMenu.resx">
@@ -193,6 +200,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyFmPrintPreview.resx">
+      <DependentUpon>MyFmPrintPreview.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

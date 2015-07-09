@@ -81,6 +81,11 @@ namespace example
             ExampleExtention.Run();
         }
 
+        private void BtnCustomPreview_Click(object sender, EventArgs e)
+        {
+            ExampleCustomPreview.Run();
+        }
+
         private void BtnFeature_Click(object sender, EventArgs e)
         {
             Feature.Run();
