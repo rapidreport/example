@@ -39,7 +39,7 @@ namespace example
                 // 「画面サイズに合わせて拡大/縮小」状態にします
                 this.PrintPreview.ZoomFit();
             }
-            this.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.MyFmPrintPreview_MouseWheel);
+            this.MouseWheel += new MouseEventHandler(this.MyFmPrintPreview_MouseWheel);
         }
 
         // マウスホイール操作
