@@ -37,7 +37,7 @@ namespace example
                 this.PrintPreviewZoom.Init(this.PrintPreview);
                 this.PrintPreviewSearch.Init(this.PrintPreview, this.PrintPreviewSearchPanel);
                 // 「画面サイズに合わせて拡大/縮小」状態にします
-                this.PrintPreview.ZoomFit();
+                this.PrintPreviewZoom.AutoFit = true;
             }
             this.MouseWheel += new MouseEventHandler(this.MyFmPrintPreview_MouseWheel);
         }

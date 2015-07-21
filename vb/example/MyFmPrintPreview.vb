@@ -25,7 +25,7 @@ Public Class MyFmPrintPreview
             Me.PrintPreviewZoom.Init(Me.PrintPreview)
             Me.PrintPreviewSearch.Init(Me.PrintPreview, Me.PrintPreviewSearchPanel)
             ' 「画面サイズに合わせて拡大/縮小」状態にします
-            Me.PrintPreview.ZoomFit()
+            Me.PrintPreviewZoom.AutoFit = True
         End Using
     End Sub
 
