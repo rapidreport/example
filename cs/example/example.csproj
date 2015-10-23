@@ -115,7 +115,8 @@
     <Compile Include="ExampleDataProvider.cs" />
     <Compile Include="ExampleExtention.cs" />
     <Compile Include="ExampleImage.cs" />
-    <Compile Include="ExampleLocale.cs" />
+    <Compile Include="ExampleLocate.cs" />
+    <Compile Include="ExampleMergeContent.cs" />
     <Compile Include="ExamplePage.cs" />
     <Compile Include="ExampleRegion.cs" />
     <Compile Include="ExampleRender.cs" />
@@ -184,6 +185,9 @@
     <None Include="report\example_locate.rrpt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="report\example_mergecontent.rrpt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="report\example_page1.rrpt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -197,6 +201,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="report\example_render.rrpt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\example_shared.rrpt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="report\example_subpage1.rrpt">

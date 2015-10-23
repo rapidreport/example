@@ -19,7 +19,7 @@ using jp.co.systembase.report.renderer.xlsx;
 // 機能サンプル 絶対座標による配置
 namespace example
 {
-    class ExampleLocale
+    class ExampleLocate
     {
 
         public static void Run()

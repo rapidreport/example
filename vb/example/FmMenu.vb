@@ -56,6 +56,10 @@
         ExampleCustomPreview.Run()
     End Sub
 
+    Private Sub BtnMergeContent_Click(sender As System.Object, e As System.EventArgs) Handles BtnMergeContent.Click
+        ExampleMergeContent.Run()
+    End Sub
+
     Private Sub BtnFeature_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnFeature.Click
         Feature.Run()
     End Sub

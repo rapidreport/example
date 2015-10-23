@@ -43,7 +43,7 @@ namespace example
 
         private void BtnExampleLocate_Click(object sender, EventArgs e)
         {
-            ExampleLocale.Run();
+            ExampleLocate.Run();
         }
 
         private void BtnExampleRegion_Click(object sender, EventArgs e)
@@ -84,6 +84,11 @@ namespace example
         private void BtnCustomPreview_Click(object sender, EventArgs e)
         {
             ExampleCustomPreview.Run();
+        }
+
+        private void BtnMergeContent_Click(object sender, EventArgs e)
+        {
+            ExampleMergeContent.Run();
         }
 
         private void BtnFeature_Click(object sender, EventArgs e)

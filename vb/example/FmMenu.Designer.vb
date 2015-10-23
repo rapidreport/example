@@ -38,6 +38,7 @@ Partial Class FmMenu
         Me.BtnExtention = New System.Windows.Forms.Button()
         Me.btnElementCustomize = New System.Windows.Forms.Button()
         Me.BtnCustomPreview = New System.Windows.Forms.Button()
+        Me.BtnMergeContent = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'BtnExample1
@@ -69,10 +70,10 @@ Partial Class FmMenu
         '
         'BtnOpenOutput
         '
-        Me.BtnOpenOutput.Location = New System.Drawing.Point(12, 500)
+        Me.BtnOpenOutput.Location = New System.Drawing.Point(12, 517)
         Me.BtnOpenOutput.Name = "BtnOpenOutput"
         Me.BtnOpenOutput.Size = New System.Drawing.Size(170, 23)
-        Me.BtnOpenOutput.TabIndex = 15
+        Me.BtnOpenOutput.TabIndex = 16
         Me.BtnOpenOutput.Text = "PDF,XLS出力フォルダを開く"
         Me.BtnOpenOutput.UseVisualStyleBackColor = True
         '
@@ -132,10 +133,10 @@ Partial Class FmMenu
         '
         'BtnFeature
         '
-        Me.BtnFeature.Location = New System.Drawing.Point(12, 460)
+        Me.BtnFeature.Location = New System.Drawing.Point(12, 464)
         Me.BtnFeature.Name = "BtnFeature"
         Me.BtnFeature.Size = New System.Drawing.Size(170, 23)
-        Me.BtnFeature.TabIndex = 14
+        Me.BtnFeature.TabIndex = 15
         Me.BtnFeature.Text = "特徴と機能一覧"
         Me.BtnFeature.UseVisualStyleBackColor = True
         '
@@ -184,12 +185,22 @@ Partial Class FmMenu
         Me.BtnCustomPreview.Text = "プレビュー画面のカスタマイズ"
         Me.BtnCustomPreview.UseVisualStyleBackColor = True
         '
+        'BtnMergeContent
+        '
+        Me.BtnMergeContent.Location = New System.Drawing.Point(12, 435)
+        Me.BtnMergeContent.Name = "BtnMergeContent"
+        Me.BtnMergeContent.Size = New System.Drawing.Size(170, 23)
+        Me.BtnMergeContent.TabIndex = 14
+        Me.BtnMergeContent.Text = "差込コンテント"
+        Me.BtnMergeContent.UseVisualStyleBackColor = True
+        '
         'FmMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(194, 532)
+        Me.ClientSize = New System.Drawing.Size(194, 552)
         Me.Controls.Add(Me.BtnFeature)
+        Me.Controls.Add(Me.BtnMergeContent)
         Me.Controls.Add(Me.BtnCustomPreview)
         Me.Controls.Add(Me.BtnExtention)
         Me.Controls.Add(Me.BtnExampleImage)
@@ -228,5 +239,6 @@ Partial Class FmMenu
     Friend WithEvents BtnExtention As System.Windows.Forms.Button
     Friend WithEvents btnElementCustomize As System.Windows.Forms.Button
     Friend WithEvents BtnCustomPreview As System.Windows.Forms.Button
+    Friend WithEvents BtnMergeContent As System.Windows.Forms.Button
 
 End Class

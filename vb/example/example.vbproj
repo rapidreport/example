@@ -153,6 +153,7 @@
     <Compile Include="ExampleDataProvider.vb" />
     <Compile Include="ExampleExtention.vb" />
     <Compile Include="ExampleImage.vb" />
+    <Compile Include="ExampleMergeContent.vb" />
     <Compile Include="ExamplePage.vb" />
     <Compile Include="ExampleRegion.vb" />
     <Compile Include="ExampleRender.vb" />
@@ -239,6 +240,9 @@
     <None Include="report\example_locate.rrpt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="report\example_mergecontent.rrpt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="report\example_page1.rrpt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -252,6 +256,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="report\example_render.rrpt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\example_shared.rrpt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="report\example_subpage1.rrpt">
