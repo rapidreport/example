@@ -24,7 +24,7 @@ namespace example
 
         public static void Run()
         {
-            // 差込みを行うコンテントを、あらかじめSharedContentに追加しておきます
+            // 差込みを行うコンテントを、あらかじめ共有コンテントへ登録しておきます
             ReportDesign sharedReport = new ReportDesign(Json.Read("report/example_shared.rrpt"));
             Report.AddSharedContent("company_info", sharedReport);
 

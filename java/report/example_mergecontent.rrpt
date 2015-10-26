@@ -46,6 +46,7 @@
         ],
         sub: [
           {
+            caption: "会社情報 (差し込み先)",
             layout: {x1:340.0,x2:540.0,y1:150.0,y2:230.0},
             merge_content_id: "company_info",
             elements: [

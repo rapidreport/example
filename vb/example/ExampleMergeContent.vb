@@ -16,7 +16,7 @@ Module ExampleMergeContent
 
     Public Sub Run()
 
-        ' 差込みを行うコンテントを、あらかじめSharedContentに追加しておきます
+        ' 差込みを行うコンテントを、あらかじめ共有コンテントへ登録しておきます
         Dim sharedReport As New ReportDesign(Json.Read("report/example_shared.rrpt"))
         jp.co.systembase.report.Report.AddSharedContent("company_info", sharedReport)
 

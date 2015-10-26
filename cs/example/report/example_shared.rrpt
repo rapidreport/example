@@ -11,6 +11,7 @@
         size: {
           initial: 80.0
         },
+        caption: "会社情報 (差し込む内容)",
         elements: [
           {type:"field",layout:{x1:15.0,y1:5.0,x2:195.0,y2:25.0},exp:"global.company_name",halign:"left",valign:"center"},
           {type:"field",layout:{x1:55.0,y1:25.0,x2:195.0,y2:45.0},exp:"global.tel",halign:"left",valign:"center"},

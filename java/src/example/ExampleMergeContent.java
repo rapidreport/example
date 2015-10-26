@@ -20,7 +20,7 @@ public class ExampleMergeContent {
 
 	public static void main(String[] args) throws Throwable {
 		
-		// 差込みを行うコンテントを、あらかじめSharedContentに追加しておきます
+		// 差込みを行うコンテントを、あらかじめ共有コンテントへ登録しておきます
 		ReportDesign sharedReport = new ReportDesign(ReadUtil.readJson("report/example_shared.rrpt"));
 		Report.addSharedContent("company_info", sharedReport);
 		
