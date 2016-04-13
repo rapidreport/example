@@ -6,11 +6,14 @@ obj
 /cp.bat
 /cs/example/lib/*.dll
 /cs_asp/example/bin/*.dll
+/cs_pdf2/example/lib/*.dll
 /java/lib/*.jar
 /java_gae/war/WEB-INF/lib/*.jar
+/java_pdf2/lib/*.jar
 /java_servlet/WEB-INF/lib/*.jar
 /java_servlet/work
 /vb/example/lib/*.dll
+/vb_pdf2/example/lib/*.dll
 /vb_asp/example/bin/*.dll
 /java/output/*
 
