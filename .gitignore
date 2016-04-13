@@ -16,6 +16,7 @@ obj
 /vb_pdf2/example/lib/*.dll
 /vb_asp/example/bin/*.dll
 /java/output/*
+/java_pdf2/output/*
 
 /java/bin
 
