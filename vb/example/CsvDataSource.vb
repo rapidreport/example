@@ -37,7 +37,8 @@ Public Class CsvDataSource
     Public Function [Get](i As Integer, key As String) As Object Implements IReportDataSource.Get
         Dim j As Integer = colNames.IndexOf(key)
         If j = -1 Then
-            Return Nothing
+            ' 不明な列名が指定されたら例外を発生させる
+            Throw New UnknownFieldException(Me, i, key)
         Else
             Return parseValue(rows(i)(j))
         End If
@@ -83,7 +84,8 @@ Public Class CsvDataSource
                     If q Then
                         sb.Append(vbCrLf)
                     End If
-                Else                    ' それ以外の文字を値に追加
+                Else
+                    ' それ以外の文字を値に追加
                     sb.Append(Convert.ToChar(c))
                 End If
             End If

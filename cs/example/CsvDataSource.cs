@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 
 using jp.co.systembase.report.data;
+using jp.co.systembase.report.component;
 
 namespace example
 {
@@ -50,7 +51,8 @@ namespace example
             int j = colNames.IndexOf(key);
             if (j == -1)
             {
-                return null;
+                // 不明な列名が指定されたら例外を発生させます
+                throw new UnknownFieldException(this, i, key);
             }
             else
             {

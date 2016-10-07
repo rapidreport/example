@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
+import jp.co.systembase.report.component.UnknownFieldException;
 import jp.co.systembase.report.data.IReportDataSource;
 
 //CSVデータを帳票に渡すためのクラス
@@ -42,10 +43,11 @@ public class CsvDataSource implements IReportDataSource{
 
 	// i行目のkey列の値を返します
 	@Override
-	public Object get(int i, String key) {
+	public Object get(int i, String key) throws UnknownFieldException {
 		int j = colNames.indexOf(key);
 		if (j == -1){
-			return null;
+			// 不明な列名が指定されたら例外を発生させます
+			throw new UnknownFieldException(this, i, key);
 		}else{
 			return parseValue(rows.get(i).get(j));
 		}
