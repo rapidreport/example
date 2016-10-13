@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import jp.co.systembase.report.component.UnknownFieldException;
+import jp.co.systembase.report.data.UnknownFieldException;
 import jp.co.systembase.report.data.IReportDataSource;
 
 //CSVデータを帳票に渡すためのクラス
