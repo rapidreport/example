@@ -1,0 +1,204 @@
+{
+  version: 0,
+  paper: {
+    margin: {bottom:20.0,left:20.0,right:20.0,top:20.0},
+    scale_unit: "point",
+    type: "a4"
+  },
+  caption: "納品書",
+  group: {
+    contents: [
+      {
+        size: {
+          initial: 187.0
+        },
+        caption: "ヘッダ(控)",
+        elements: [
+          {type:"rect",layout:{x1:13.0,y1:161.0,x2:522.0,y2:187.0},background:true,fill_color:"#e6e6fa",line_width:0},
+          {type:"line",layout:{x1:13,y1:161,x2:522,y2:161},background:true},
+          {type:"line",layout:{x1:13,y1:187,x2:522,y2:187},background:true},
+          {type:"line",layout:{x1:13,y1:161,x2:13,y2:187},background:true},
+          {type:"line",layout:{x1:144,y1:161,x2:144,y2:187},background:true},
+          {type:"line",layout:{x1:209,y1:161,x2:209,y2:187},background:true},
+          {type:"line",layout:{x1:274,y1:161,x2:274,y2:187},background:true},
+          {type:"line",layout:{x1:313,y1:161,x2:313,y2:187},background:true},
+          {type:"line",layout:{x1:379,y1:161,x2:379,y2:187},background:true},
+          {type:"line",layout:{x1:444,y1:161,x2:444,y2:187},background:true},
+          {type:"line",layout:{x1:522,y1:161,x2:522,y2:187},background:true},
+          {type:"text",layout:{x1:118.0,y1:5.0,x2:353.0,y2:32.0},font:{name:"mincho",size:20},halign:"center",text:"納品書（控）",valign:"center"},
+          {type:"text",layout:{x1:405.0,y1:5.0,x2:457.0,y2:15.0},font:{name:"mincho"},text:"伝票No.",valign:"center"},
+          {type:"field",layout:{x1:457.0,y1:5.0,x2:522.0,y2:15.0},exp:".denpyo_no",font:{name:"mincho"},formatter:{format:"0000000000",type:"default"},halign:"center",valign:"center"},
+          {type:"field",layout:{x1:405.0,y1:15.0,x2:483.0,y2:26.0},exp:"current_time",font:{name:"mincho"},formatter:{format:"yyyy年MM月dd日",type:"default"},halign:"right",valign:"center"},
+          {type:"field",layout:{x1:13.0,y1:37.0,x2:235.0,y2:59.0},exp:".kokyaku_nm",font:{name:"mincho",size:12,underline:1},valign:"center"},
+          {type:"text",layout:{x1:300.0,y1:48.0,x2:417.0,y2:59.0},font:{name:"mincho"},text:"株式会社システムベース",valign:"center"},
+          {type:"field",layout:{x1:13.0,y1:64.0,x2:235.0,y2:75.0},exp:".kokyaku_yubin",font:{name:"mincho"},valign:"center"},
+          {type:"text",layout:{x1:300.0,y1:64.0,x2:345.0,y2:75.0},font:{name:"mincho"},text:"024-0004",valign:"center"},
+          {type:"field",layout:{x1:13.0,y1:80.0,x2:235.0,y2:91.0},exp:".kokyaku_address",font:{name:"mincho"},valign:"center"},
+          {type:"text",layout:{x1:300.0,y1:80.0,x2:499.0,y2:91.0},font:{name:"mincho"},text:"岩手県北上市村崎野１９地割１１６番地４",valign:"center"},
+          {type:"text",layout:{x1:13.0,y1:96.0,x2:39.0,y2:107.0},font:{name:"mincho"},text:"TEL",valign:"center"},
+          {type:"field",layout:{x1:39.0,y1:96.0,x2:235.0,y2:107.0},exp:".kokyaku_tel",font:{name:"mincho"},valign:"center"},
+          {type:"text",layout:{x1:300.0,y1:96.0,x2:339.0,y2:107.0},font:{name:"mincho"},text:"TEL",valign:"center"},
+          {type:"text",layout:{x1:339.0,y1:96.0,x2:483.0,y2:107.0},font:{name:"mincho"},text:"0197-71-1111",valign:"center"},
+          {type:"text",layout:{x1:300.0,y1:112.0,x2:339.0,y2:123.0},font:{name:"mincho"},text:"担当者",valign:"center"},
+          {type:"field",layout:{x1:339.0,y1:112.0,x2:483.0,y2:123.0},exp:".tanto_nm",font:{name:"mincho"},valign:"center"},
+          {type:"text",layout:{x1:248.0,y1:145.0,x2:482.0,y2:155.0},font:{name:"mincho",size:8},text:"毎度ありがとうございます。下記の通り御請求申し上げます。",valign:"center"},
+          {type:"text",layout:{x1:13.0,y1:161.0,x2:144.0,y2:187.0},font:{name:"mincho"},halign:"center",text:"コード・商品名",valign:"center"},
+          {type:"text",layout:{x1:144.0,y1:161.0,x2:209.0,y2:187.0},font:{name:"mincho"},halign:"center",text:"入数・箱数",valign:"center"},
+          {type:"text",layout:{x1:209.0,y1:161.0,x2:274.0,y2:187.0},font:{name:"mincho"},halign:"center",text:"数量",valign:"center"},
+          {type:"text",layout:{x1:274.0,y1:161.0,x2:313.0,y2:187.0},font:{name:"mincho"},halign:"center",text:"単位",valign:"center"},
+          {type:"text",layout:{x1:326.0,y1:161.0,x2:366.0,y2:187.0},font:{name:"mincho"},halign:"center",text:"単価",valign:"center"},
+          {type:"text",layout:{x1:379.0,y1:161.0,x2:444.0,y2:187.0},font:{name:"mincho"},halign:"center",text:"金額",valign:"center"},
+          {type:"text",layout:{x1:444.0,y1:161.0,x2:522.0,y2:187.0},font:{name:"mincho"},halign:"center",text:"備考",valign:"center"},
+          {type:"image",layout:{x1:431.13149606299214,y1:37.416692913385823,x2:522.01771653543312,y2:64.029527559055111},background:true,image:"iVBORw0KGgoAAAANSUhEUgAAARoAAABLCAMAAAHvz4j4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAERUExURQAA/////9PT/4WF/5CQ//z8/0BA/9DQ/8DA/zg4/w0N/xcX/xMT/wQE/xER/3t7//7+/wIC/+/v/+rq/z8//0FB/xoa/19f/35+/3V1/7m5/0pK/7i4/76+/w4O/6Sk/2Ji/xAQ/5yc//f3/6+v/+Tk/4+P/6io/wkJ/9zc/4GB/y4u/zMz/2Fh/2xs/7S0/yIi/xwc/+zs/wwM/4qK/2ho/y0t/wcH/z4+/8jI/6Ki/8PD/0xM/8HB/6ys/3l5/x0d/9fX/1hY/xYW/+Dg/7Oz/wMD/8zM/+np/1xc/5mZ/319/93d/1RU/5aW/ycn//Ly/729/xQU/+3t/5qa/1FR/5SU/zw8//v7/5OT/wAAAHUsWuQAAABbdFJOU////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wCc+ri8AAAACXBIWXMAACHVAAAh1QEEnLSdAAAGXElEQVRoQ+2bTXLbSgyEpQtkkaos7At4k4UXL2dwVSq5/3UCdDcwmCEpKaL8yPeoLxIH3cCAo5Et6y+nm/l1Pp8VLmMVV4tm+0zMplviPDa3IvzjyMur1YSFyQqpmYPgP3rfW/4yt9Q8CFv3tbPpRl5ktstgNtnsobVJP5sX+oBLHnBNrX9+UOwXdaPP+CK31NyKnX11O/VY24ht1t8473NTF5zuQuVco5l6s14W2yCBNrqyMrSOkWAStkfFIdJ2qDOLcG38QolX/cpED8om7t+C067u8jgedKOI5J2ow4O6PKTNyibcGMWXQeVi6cVkBYv+uzYz5Ze7sM2Qnis3b7kLTuFpXf0C1660PIvLKzSqbHhD4DEdO0jHlcEXH+oFV2YRxZjH8+nDQ1790FIhmIuI0iscX4cj20qQjJqX1iLrdKGLKgc5DgpX4eda38V4xFry1j1ZBHdYIG8jtIjzPxHT3gSc32iK0SZgJUYIjFvBpTgW28uPh6COhoyb0TRDxnrU7K6mmARkrCVa3dfSZxEZC1wtANHner8ZfIZPBArhl7HUtKiG5284Zr3jougWVxuxCMmMCx5lZYEf3iLG0KfDykQbgcUvUfDuL9QZDiWKkD2f37Os1jPIDAyHcct0ohudjKtJBVIhsKdCCsPyx2WFHIoiY4bHGGy0w9dWwYi2dMFTQXPK6AOj0YqQg/Ita7jXdMY/q+3xMioCsrZnD4uJFexjZ7AKIOPJk5vQj80ufnC0EiJvK7SKQO5GaBFYRYybgZXEGlq0DVhKLqGEW4ClnOPlgkUMNoKLyfvpg8FGaDFczsYb06/mUWtRR0fOrWiWIeMBqKEj51Y0y5Cxnmh2T1OfQ2SsJnrd09PnEBlriVb3tfRZRMYS1yucaPTlho4z+CwiY4HrFSDKbiwfiLeEDTkLXC0A6nO93Rw+x2cCaHap2oPvEWR5Cdt73M364qJUNDGxA2lmPPajvwZGcDr5Ww8ey2kJioxtYIzh9fVVyiSPSlnrCE+nH6oRqSxwFIXDAccMu8TXEmvwr0H8bmUCQpb/dWYkgxThIRSPcuRDZ4aDHe31fsYamsgRtNSP0G0GkRUhlYZSzwChBlGLlEirG0HGnQsFmoCfE9LxICM7vtnwEr6TGQ1NTEz36FqYuqAU7nyFMSLwkeF0AJ1lR3tiZMfwZDbhIPJHRemGFzXyjZUy+iHDOgwZOjb8dk/Qy7ow0raxPq9zM0mnBj7occMDG/J0tOzY/Vp5RphqssXV9rjys3dDdOZm+CoCWRuideCwF3a1mH2sJpawk8VgDb6WPdxPWAeQ8eTJk/81+oUfUfawaBvmUc0R0Q4sorLjodsfyHXkHHVrdOuFPp0n8g66M7rxgVwi77kzjlwwdQ4Fb35DtjHIw4H3LzuUaNFO4Oo6lPkkdJIKbWR3hBY3oOSngE9KBpTaFVqa1ibxyUvVOTqU2g9aVy5M8rNXqpN0KLUXtKp/e2f+A3ujNU12RvIz0Zk6lLqTR/RI2GyTnXn83qzvUGCzaBd/NrpXM58EzqnzVSJLqAzpcrt7TSXkGTIMGfkB3dCgEwb1gHJAFvBvVSfylqtlzdMKUFvxz4+bDeFIz86aOKiZtl6wBy5UMWX456s9SkiJlznToT9hyEEWOhPCkKTBT/yU66MUvVyKl4ViZQYZ/5cBMFFnIYSI0dDPFcXcLyUzra8hS/QWlCFJQ2HXxKDJrwJkEYV/XSJECUPgWxv9FMV5DsnUjZJ4L3Gj8zpRoD8m5JLegTIkx3TXqXeoekoC4azg/cl42k5y+lQepmIH2tG90qFUYTYhU3QWhCOdhr4UBGTVnwuDqsf9jxYaS8J/X5z8HoG0SiUK35gwZBijbjBTUaJmhr2nKdHqpLuW/n0fQNmJkHw8r9Cfm6OVIGY4dqtf28lcJwitvhXiC6hsCVX1rR1pGDEOJ+1ESAkjBP3u8XCmgeKYL9UnEY+zMIZbwkhAT+8vg2XzqKT8UZRus1JZcxgGPEMSX95p2XcXeGiELZ9xFE2F4gGkDMnKnA9vploP+DOooEMpIm9mKYOcf4u9V0Km3GVBpbjSHkkM/p9Ho5tV58kAsoi8O1GTyTIhj412YkTZg6Nnur4d+fdLqSeB9uW5M5M9wK440sdl2ARsiiN9YLQRA3qicnS0G8lzW47M6fQH4SsgsGzWJx4AAAAASUVORK5CYII="}
+        ]
+      },
+      {
+        aggregate_src: true,
+        group: {
+          detail: true,
+          contents: [
+            {
+              size: {
+                initial: 22.0
+              },
+              aggregate_src: true,
+              caption: "明細（控）",
+              elements: [
+                {type:"line",layout:{x1:13,y1:22,x2:522,y2:22},background:true},
+                {type:"line",layout:{x1:13,y1:0,x2:13,y2:22},background:true},
+                {type:"line",layout:{x1:144,y1:0,x2:144,y2:22},background:true},
+                {type:"line",layout:{x1:209,y1:0,x2:209,y2:22},background:true},
+                {type:"line",layout:{x1:274,y1:0,x2:274,y2:22},background:true},
+                {type:"line",layout:{x1:313,y1:0,x2:313,y2:22},background:true},
+                {type:"line",layout:{x1:379,y1:0,x2:379,y2:22},background:true},
+                {type:"line",layout:{x1:444,y1:0,x2:444,y2:22},background:true},
+                {type:"line",layout:{x1:522,y1:0,x2:522,y2:22},background:true},
+                {type:"field",layout:{x1:26.0,y1:0.0,x2:144.0,y2:11.0},exp:".seicd",font:{name:"mincho"},valign:"center"},
+                {type:"field",layout:{x1:144.0,y1:0.0,x2:209.0,y2:11.0},exp:".irisu",font:{name:"mincho"},halign:"right",valign:"center"},
+                {type:"field",layout:{x1:209.0,y1:0.0,x2:274.0,y2:22.0},color:"#000000",exp:"(* .irisu .hakosu)",font:{name:"mincho",size:11},formatter:{format:"#,##0",type:"default"},halign:"right",valign:"center"},
+                {type:"field",layout:{x1:274.0,y1:0.0,x2:313.0,y2:22.0},color:"#000000",exp:".tani",font:{name:"mincho",size:11},halign:"center",valign:"center"},
+                {type:"field",layout:{x1:313.0,y1:0.0,x2:379.0,y2:22.0},color:"#000000",exp:".tanka",font:{name:"mincho",size:11},formatter:{format:"#,##0",type:"default"},halign:"right",valign:"center"},
+                {type:"field",layout:{x1:379.0,y1:0.0,x2:444.0,y2:22.0},color:"#000000",exp:".kingaku",font:{name:"mincho",size:11},formatter:{format:"#,##0",type:"default"},halign:"right",valign:"center"},
+                {type:"field",layout:{x1:444.0,y1:0.0,x2:522.0,y2:22.0},color:"#000000",exp:".biko",font:{name:"mincho",size:11},valign:"center"},
+                {type:"field",layout:{x1:26.0,y1:11.0,x2:144.0,y2:22.0},exp:".seinm",font:{name:"mincho"},shrink_to_fit:true,valign:"center"},
+                {type:"field",layout:{x1:144.0,y1:11.0,x2:209.0,y2:22.0},exp:".hakosu",font:{name:"mincho"},halign:"right",valign:"center"}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        size: {
+          initial: 134.0
+        },
+        caption: "フッタ(控)",
+        elements: [
+          {type:"rect",layout:{x1:313.0,y1:0.0,x2:379.0,y2:26.0},background:true,fill_color:"#f0ffff",line_width:0},
+          {type:"line",layout:{x1:313,y1:0,x2:379,y2:0},background:true},
+          {type:"line",layout:{x1:313,y1:26,x2:444,y2:26},background:true},
+          {type:"line",layout:{x1:418,y1:37,x2:522,y2:37},background:true},
+          {type:"line",layout:{x1:418,y1:80,x2:522,y2:80},background:true},
+          {type:"line",layout:{x1:313,y1:0,x2:313,y2:26},background:true},
+          {type:"line",layout:{x1:379,y1:0,x2:379,y2:26},background:true},
+          {type:"line",layout:{x1:418,y1:37,x2:418,y2:80},background:true},
+          {type:"line",layout:{x1:444,y1:0,x2:444,y2:26},background:true},
+          {type:"line",layout:{x1:470,y1:37,x2:470,y2:80},background:true},
+          {type:"line",layout:{x1:522,y1:37,x2:522,y2:80},background:true},
+          {type:"text",layout:{x1:313.0,y1:0.0,x2:379.0,y2:26.0},font:{name:"mincho"},halign:"center",text:"合計",valign:"center"},
+          {type:"field",layout:{x1:379.0,y1:0.0,x2:444.0,y2:26.0},exp:"sum.kingaku",font:{name:"mincho"},formatter:{format:"#,##0",type:"default"},halign:"right",valign:"center"}
+        ]
+      },
+      {
+        size: {
+          initial: 187.0
+        },
+        caption: "ヘッダ",
+        elements: [
+          {type:"rect",layout:{x1:13.0,y1:161.0,x2:522.0,y2:187.0},background:true,fill_color:"#e6e6fa",line_width:0},
+          {type:"line",layout:{x1:13,y1:161,x2:522,y2:161},background:true},
+          {type:"line",layout:{x1:13,y1:187,x2:522,y2:187},background:true},
+          {type:"line",layout:{x1:13,y1:161,x2:13,y2:187},background:true},
+          {type:"line",layout:{x1:144,y1:161,x2:144,y2:187},background:true},
+          {type:"line",layout:{x1:209,y1:161,x2:209,y2:187},background:true},
+          {type:"line",layout:{x1:274,y1:161,x2:274,y2:187},background:true},
+          {type:"line",layout:{x1:313,y1:161,x2:313,y2:187},background:true},
+          {type:"line",layout:{x1:379,y1:161,x2:379,y2:187},background:true},
+          {type:"line",layout:{x1:444,y1:161,x2:444,y2:187},background:true},
+          {type:"line",layout:{x1:522,y1:161,x2:522,y2:187},background:true},
+          {type:"text",layout:{x1:118.0,y1:5.0,x2:353.0,y2:32.0},font:{name:"mincho",size:20},halign:"center",text:"納品書",valign:"center"},
+          {type:"text",layout:{x1:405.0,y1:5.0,x2:457.0,y2:16.0},font:{name:"mincho"},text:"伝票No.",valign:"center"},
+          {type:"field",layout:{x1:457.0,y1:5.0,x2:522.0,y2:16.0},exp:".denpyo_no",font:{name:"mincho"},formatter:{format:"0000000000",type:"default"},halign:"center",valign:"center"},
+          {type:"field",layout:{x1:405.0,y1:16.0,x2:483.0,y2:26.0},exp:"current_time",font:{name:"mincho"},formatter:{format:"yyyy年MM月dd日",type:"default"},halign:"right",valign:"center"},
+          {type:"field",layout:{x1:13.0,y1:37.0,x2:235.0,y2:59.0},exp:".kokyaku_nm",font:{name:"mincho",size:12,underline:1},valign:"center"},
+          {type:"text",layout:{x1:300.0,y1:48.0,x2:417.0,y2:59.0},font:{name:"mincho"},text:"株式会社システムベース",valign:"center"},
+          {type:"field",layout:{x1:13.0,y1:64.0,x2:235.0,y2:75.0},exp:".kokyaku_yubin",font:{name:"mincho"},valign:"center"},
+          {type:"text",layout:{x1:300.0,y1:64.0,x2:345.0,y2:75.0},font:{name:"mincho"},text:"024-0004",valign:"center"},
+          {type:"field",layout:{x1:13.0,y1:80.0,x2:235.0,y2:91.0},exp:".kokyaku_address",font:{name:"mincho"},valign:"center"},
+          {type:"text",layout:{x1:300.0,y1:80.0,x2:499.0,y2:91.0},font:{name:"mincho"},text:"岩手県北上市村崎野１９地割１１６番地４",valign:"center"},
+          {type:"text",layout:{x1:13.0,y1:96.0,x2:39.0,y2:107.0},font:{name:"mincho"},text:"TEL",valign:"center"},
+          {type:"field",layout:{x1:39.0,y1:96.0,x2:235.0,y2:107.0},exp:".kokyaku_tel",font:{name:"mincho"},valign:"center"},
+          {type:"text",layout:{x1:300.0,y1:96.0,x2:339.0,y2:107.0},font:{name:"mincho"},text:"TEL",valign:"center"},
+          {type:"text",layout:{x1:339.0,y1:96.0,x2:483.0,y2:107.0},font:{name:"mincho"},text:"0197-71-1111",valign:"center"},
+          {type:"text",layout:{x1:300.0,y1:112.0,x2:339.0,y2:123.0},font:{name:"mincho"},text:"担当者",valign:"center"},
+          {type:"field",layout:{x1:339.0,y1:112.0,x2:483.0,y2:123.0},exp:".tanto_nm",font:{name:"mincho"},valign:"center"},
+          {type:"text",layout:{x1:248.0,y1:145.0,x2:483.0,y2:155.0},font:{name:"mincho",size:8},text:"毎度ありがとうございます。下記の通り御請求申し上げます。",valign:"center"},
+          {type:"text",layout:{x1:26.0,y1:161.0,x2:131.0,y2:187.0},font:{name:"mincho"},halign:"center",text:"コード・商品名",valign:"center"},
+          {type:"text",layout:{x1:144.0,y1:161.0,x2:209.0,y2:187.0},font:{name:"mincho"},halign:"center",text:"入数・箱数",valign:"center"},
+          {type:"text",layout:{x1:209.0,y1:161.0,x2:274.0,y2:187.0},font:{name:"mincho"},halign:"center",text:"数量",valign:"center"},
+          {type:"text",layout:{x1:274.0,y1:161.0,x2:313.0,y2:187.0},font:{name:"mincho"},halign:"center",text:"単位",valign:"center"},
+          {type:"text",layout:{x1:326.0,y1:161.0,x2:366.0,y2:187.0},font:{name:"mincho"},halign:"center",text:"単価",valign:"center"},
+          {type:"text",layout:{x1:392.0,y1:161.0,x2:431.0,y2:187.0},font:{name:"mincho"},halign:"center",text:"金額",valign:"center"},
+          {type:"text",layout:{x1:457.0,y1:161.0,x2:522.0,y2:187.0},font:{name:"mincho"},halign:"center",text:"備考",valign:"center"},
+          {type:"image",layout:{x1:431.0,y1:37.416771653543307,x2:522.28629921259846,y2:64.1640157480315},background:true,image:"iVBORw0KGgoAAAANSUhEUgAAARoAAABLCAMAAAHvz4j4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAERUExURQAA/////9PT/4WF/5CQ//z8/0BA/9DQ/8DA/zg4/w0N/xcX/xMT/wQE/xER/3t7//7+/wIC/+/v/+rq/z8//0FB/xoa/19f/35+/3V1/7m5/0pK/7i4/76+/w4O/6Sk/2Ji/xAQ/5yc//f3/6+v/+Tk/4+P/6io/wkJ/9zc/4GB/y4u/zMz/2Fh/2xs/7S0/yIi/xwc/+zs/wwM/4qK/2ho/y0t/wcH/z4+/8jI/6Ki/8PD/0xM/8HB/6ys/3l5/x0d/9fX/1hY/xYW/+Dg/7Oz/wMD/8zM/+np/1xc/5mZ/319/93d/1RU/5aW/ycn//Ly/729/xQU/+3t/5qa/1FR/5SU/zw8//v7/5OT/wAAAHUsWuQAAABbdFJOU////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wCc+ri8AAAACXBIWXMAACHVAAAh1QEEnLSdAAAGXElEQVRoQ+2bTXLbSgyEpQtkkaos7At4k4UXL2dwVSq5/3UCdDcwmCEpKaL8yPeoLxIH3cCAo5Et6y+nm/l1Pp8VLmMVV4tm+0zMplviPDa3IvzjyMur1YSFyQqpmYPgP3rfW/4yt9Q8CFv3tbPpRl5ktstgNtnsobVJP5sX+oBLHnBNrX9+UOwXdaPP+CK31NyKnX11O/VY24ht1t8473NTF5zuQuVco5l6s14W2yCBNrqyMrSOkWAStkfFIdJ2qDOLcG38QolX/cpED8om7t+C067u8jgedKOI5J2ow4O6PKTNyibcGMWXQeVi6cVkBYv+uzYz5Ze7sM2Qnis3b7kLTuFpXf0C1660PIvLKzSqbHhD4DEdO0jHlcEXH+oFV2YRxZjH8+nDQ1790FIhmIuI0iscX4cj20qQjJqX1iLrdKGLKgc5DgpX4eda38V4xFry1j1ZBHdYIG8jtIjzPxHT3gSc32iK0SZgJUYIjFvBpTgW28uPh6COhoyb0TRDxnrU7K6mmARkrCVa3dfSZxEZC1wtANHner8ZfIZPBArhl7HUtKiG5284Zr3jougWVxuxCMmMCx5lZYEf3iLG0KfDykQbgcUvUfDuL9QZDiWKkD2f37Os1jPIDAyHcct0ohudjKtJBVIhsKdCCsPyx2WFHIoiY4bHGGy0w9dWwYi2dMFTQXPK6AOj0YqQg/Ita7jXdMY/q+3xMioCsrZnD4uJFexjZ7AKIOPJk5vQj80ufnC0EiJvK7SKQO5GaBFYRYybgZXEGlq0DVhKLqGEW4ClnOPlgkUMNoKLyfvpg8FGaDFczsYb06/mUWtRR0fOrWiWIeMBqKEj51Y0y5Cxnmh2T1OfQ2SsJnrd09PnEBlriVb3tfRZRMYS1yucaPTlho4z+CwiY4HrFSDKbiwfiLeEDTkLXC0A6nO93Rw+x2cCaHap2oPvEWR5Cdt73M364qJUNDGxA2lmPPajvwZGcDr5Ww8ey2kJioxtYIzh9fVVyiSPSlnrCE+nH6oRqSxwFIXDAccMu8TXEmvwr0H8bmUCQpb/dWYkgxThIRSPcuRDZ4aDHe31fsYamsgRtNSP0G0GkRUhlYZSzwChBlGLlEirG0HGnQsFmoCfE9LxICM7vtnwEr6TGQ1NTEz36FqYuqAU7nyFMSLwkeF0AJ1lR3tiZMfwZDbhIPJHRemGFzXyjZUy+iHDOgwZOjb8dk/Qy7ow0raxPq9zM0mnBj7occMDG/J0tOzY/Vp5RphqssXV9rjys3dDdOZm+CoCWRuideCwF3a1mH2sJpawk8VgDb6WPdxPWAeQ8eTJk/81+oUfUfawaBvmUc0R0Q4sorLjodsfyHXkHHVrdOuFPp0n8g66M7rxgVwi77kzjlwwdQ4Fb35DtjHIw4H3LzuUaNFO4Oo6lPkkdJIKbWR3hBY3oOSngE9KBpTaFVqa1ibxyUvVOTqU2g9aVy5M8rNXqpN0KLUXtKp/e2f+A3ujNU12RvIz0Zk6lLqTR/RI2GyTnXn83qzvUGCzaBd/NrpXM58EzqnzVSJLqAzpcrt7TSXkGTIMGfkB3dCgEwb1gHJAFvBvVSfylqtlzdMKUFvxz4+bDeFIz86aOKiZtl6wBy5UMWX456s9SkiJlznToT9hyEEWOhPCkKTBT/yU66MUvVyKl4ViZQYZ/5cBMFFnIYSI0dDPFcXcLyUzra8hS/QWlCFJQ2HXxKDJrwJkEYV/XSJECUPgWxv9FMV5DsnUjZJ4L3Gj8zpRoD8m5JLegTIkx3TXqXeoekoC4azg/cl42k5y+lQepmIH2tG90qFUYTYhU3QWhCOdhr4UBGTVnwuDqsf9jxYaS8J/X5z8HoG0SiUK35gwZBijbjBTUaJmhr2nKdHqpLuW/n0fQNmJkHw8r9Cfm6OVIGY4dqtf28lcJwitvhXiC6hsCVX1rR1pGDEOJ+1ESAkjBP3u8XCmgeKYL9UnEY+zMIZbwkhAT+8vg2XzqKT8UZRus1JZcxgGPEMSX95p2XcXeGiELZ9xFE2F4gGkDMnKnA9vploP+DOooEMpIm9mKYOcf4u9V0Km3GVBpbjSHkkM/p9Ho5tV58kAsoi8O1GTyTIhj412YkTZg6Nnur4d+fdLqSeB9uW5M5M9wK440sdl2ARsiiN9YLQRA3qicnS0G8lzW47M6fQH4SsgsGzWJx4AAAAASUVORK5CYII="}
+        ]
+      },
+      {
+        size: {
+          initial: 21.0
+        },
+        caption: "明細",
+        elements: [
+          {type:"line",layout:{x1:13,y1:21,x2:522,y2:21},background:true},
+          {type:"line",layout:{x1:13,y1:0,x2:13,y2:21},background:true},
+          {type:"line",layout:{x1:144,y1:0,x2:144,y2:21},background:true},
+          {type:"line",layout:{x1:209,y1:0,x2:209,y2:21},background:true},
+          {type:"line",layout:{x1:274,y1:0,x2:274,y2:21},background:true},
+          {type:"line",layout:{x1:313,y1:0,x2:313,y2:21},background:true},
+          {type:"line",layout:{x1:379,y1:0,x2:379,y2:21},background:true},
+          {type:"line",layout:{x1:444,y1:0,x2:444,y2:21},background:true},
+          {type:"line",layout:{x1:522,y1:0,x2:522,y2:21},background:true},
+          {type:"field",layout:{x1:26.0,y1:0.0,x2:144.0,y2:10.0},exp:".seicd",font:{name:"mincho"},valign:"center"},
+          {type:"field",layout:{x1:144.0,y1:0.0,x2:209.0,y2:10.0},exp:".irisu",font:{name:"mincho"},halign:"right",valign:"center"},
+          {type:"field",layout:{x1:209.0,y1:0.0,x2:274.0,y2:21.0},color:"#000000",exp:"(* .irisu .hakosu)",font:{name:"mincho",size:11},formatter:{format:"#,##0",type:"default"},halign:"right",valign:"center"},
+          {type:"field",layout:{x1:274.0,y1:0.0,x2:313.0,y2:21.0},color:"#000000",exp:".tani",font:{name:"mincho",size:11},halign:"center",valign:"center"},
+          {type:"field",layout:{x1:313.0,y1:0.0,x2:379.0,y2:21.0},color:"#000000",exp:".tanka",font:{name:"mincho",size:11},formatter:{format:"#,##0",type:"default"},halign:"right",valign:"center"},
+          {type:"field",layout:{x1:379.0,y1:0.0,x2:444.0,y2:21.0},color:"#000000",exp:".kingaku",font:{name:"mincho",size:11},formatter:{format:"#,##0",type:"default"},halign:"right",valign:"center"},
+          {type:"field",layout:{x1:444.0,y1:0.0,x2:522.0,y2:21.0},color:"#000000",exp:".biko",font:{name:"mincho",size:11},valign:"center"},
+          {type:"field",layout:{x1:26.0,y1:10.0,x2:144.0,y2:21.0},exp:".seinm",font:{name:"mincho"},shrink_to_fit:true,valign:"center"},
+          {type:"field",layout:{x1:144.0,y1:10.0,x2:209.0,y2:21.0},exp:".hakosu",font:{name:"mincho"},halign:"right",valign:"center"}
+        ]
+      },
+      {
+        size: {
+          initial: 87.0
+        },
+        caption: "フッタ",
+        elements: [
+          {type:"rect",layout:{x1:313.0,y1:0.0,x2:379.0,y2:26.0},background:true,fill_color:"#f0ffff",line_width:0},
+          {type:"line",layout:{x1:313,y1:0,x2:379,y2:0},background:true},
+          {type:"line",layout:{x1:313,y1:26,x2:444,y2:26},background:true},
+          {type:"line",layout:{x1:418,y1:37,x2:522,y2:37},background:true},
+          {type:"line",layout:{x1:418,y1:80,x2:522,y2:80},background:true},
+          {type:"line",layout:{x1:313,y1:0,x2:313,y2:26},background:true},
+          {type:"line",layout:{x1:379,y1:0,x2:379,y2:26},background:true},
+          {type:"line",layout:{x1:418,y1:37,x2:418,y2:80},background:true},
+          {type:"line",layout:{x1:444,y1:0,x2:444,y2:26},background:true},
+          {type:"line",layout:{x1:470,y1:37,x2:470,y2:80},background:true},
+          {type:"line",layout:{x1:522,y1:37,x2:522,y2:80},background:true},
+          {type:"text",layout:{x1:313.0,y1:0.0,x2:379.0,y2:26.0},font:{name:"mincho"},halign:"center",text:"合計",valign:"center"},
+          {type:"field",layout:{x1:379.0,y1:0.0,x2:444.0,y2:26.0},exp:"sum.kingaku",font:{name:"mincho"},formatter:{format:"#,##0",type:"default"},halign:"right",valign:"center"}
+        ]
+      }
+    ]
+  }
+}

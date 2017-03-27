@@ -1,0 +1,74 @@
+{
+  version: 0,
+  paper: {
+    landscape: true,
+    margin: {bottom:28.0,left:28.0,right:28.0,top:28.0},
+    scale_unit: "point",
+    type: "a4"
+  },
+  caption: "在庫一覧表",
+  group: {
+    contents: [
+      {
+        size: {
+          initial: 84.0
+        },
+        caption: "ヘッダ",
+        elements: [
+          {type:"line",layout:{x1:13,y1:45,x2:773,y2:45},background:true},
+          {type:"line",layout:{x1:13,y1:84,x2:773,y2:84},background:true},
+          {type:"line",layout:{x1:13,y1:45,x2:13,y2:84},background:true},
+          {type:"line",layout:{x1:773,y1:45,x2:773,y2:84},background:true},
+          {type:"text",layout:{x1:0.0,y1:0.0,x2:121.0,y2:25.0},font:{bold:true,size:16},text:"製品在庫一覧表",valign:"center"},
+          {type:"field",layout:{x1:249.0,y1:0.0,x2:366.0,y2:25.0},exp:"global.date_from",font:{size:12},formatter:{format:"yyyy/MM/dd",type:"default"},halign:"right",valign:"center"},
+          {type:"text",layout:{x1:366.0,y1:0.0,x2:393.0,y2:25.0},font:{size:12},halign:"center",text:"～",valign:"center"},
+          {type:"field",layout:{x1:393.0,y1:0.0,x2:498.0,y2:25.0},exp:"global.date_to",font:{size:12},formatter:{format:"yyyy/MM/dd",type:"default"},valign:"center"},
+          {type:"text",layout:{x1:564.0,y1:0.0,x2:629.0,y2:25.0},font:{size:14},halign:"center",text:"作成日時",valign:"center"},
+          {type:"field",layout:{x1:629.0,y1:0.0,x2:773.0,y2:25.0},exp:"current_time",font:{bold:true,size:14},halign:"right",valign:"center"},
+          {type:"text",layout:{x1:157.0,y1:45.0,x2:192.0,y2:64.0},font:{bold:true},text:"前月末",valign:"center"},
+          {type:"text",layout:{x1:314.0,y1:45.0,x2:349.0,y2:64.0},font:{bold:true},text:"在庫数",valign:"center"},
+          {type:"text",layout:{x1:459.0,y1:45.0,x2:494.0,y2:64.0},font:{bold:true},text:"受注残",valign:"center"},
+          {type:"text",layout:{x1:629.0,y1:45.0,x2:674.0,y2:64.0},font:{bold:true},text:"在庫金額",valign:"center"},
+          {type:"text",layout:{x1:13.0,y1:64.0,x2:58.0,y2:84.0},font:{bold:true},text:"製品分類",valign:"center"},
+          {type:"text",layout:{x1:79.0,y1:64.0,x2:114.0,y2:84.0},font:{bold:true},text:"製品CD",valign:"center"},
+          {type:"text",layout:{x1:157.0,y1:64.0,x2:192.0,y2:84.0},font:{bold:true},text:"在庫数",valign:"center"}
+        ]
+      },
+      {
+        size: {
+          initial: 20.0
+        },
+        caption: "明細",
+        elements: [
+          {type:"line",layout:{x1:13,y1:0,x2:773,y2:0},background:true},
+          {type:"line",layout:{x1:79,y1:20,x2:773,y2:20},background:true,line_style:"dot"},
+          {type:"line",layout:{x1:13,y1:0,x2:13,y2:20},background:true},
+          {type:"line",layout:{x1:773,y1:0,x2:773,y2:20},background:true},
+          {type:"field",layout:{x1:13.0,y1:0.0,x2:79.0,y2:20.0},exp:".seihinbunrui",font:{size:12},valign:"center"},
+          {type:"field",layout:{x1:79.0,y1:0.0,x2:157.0,y2:20.0},exp:".seihin_cd",font:{size:12},formatter:{format:"0000",type:"default"},valign:"center"},
+          {type:"field",layout:{x1:157.0,y1:0.0,x2:262.0,y2:20.0},exp:".zen_zaikosu",font:{size:12},formatter:{format:"#,##0",type:"default"},halign:"right",valign:"center"},
+          {type:"field",layout:{x1:314.0,y1:0.0,x2:393.0,y2:20.0},exp:".zaikosu",font:{size:12},formatter:{format:"#,##0",type:"default"},halign:"right",valign:"center"},
+          {type:"field",layout:{x1:419.0,y1:0.0,x2:511.0,y2:20.0},exp:".jyutyuzan",font:{size:12},formatter:{format:"#,##0",type:"default"},halign:"right",valign:"center"},
+          {type:"field",layout:{x1:564.0,y1:0.0,x2:694.0,y2:20.0},exp:".zaikokingaku",font:{size:12},formatter:{format:"#,##0",type:"default"},halign:"right",valign:"center"}
+        ]
+      },
+      {
+        size: {
+          initial: 20.0
+        },
+        caption: "フッタ",
+        elements: [
+          {type:"line",layout:{x1:79,y1:0,x2:773,y2:0},background:true},
+          {type:"line",layout:{x1:13,y1:20,x2:773,y2:20},background:true},
+          {type:"line",layout:{x1:13,y1:0,x2:13,y2:20},background:true},
+          {type:"line",layout:{x1:773,y1:0,x2:773,y2:20},background:true},
+          {type:"text",layout:{x1:92.0,y1:0.0,x2:131.0,y2:20.0},font:{bold:true,size:16},text:"合計",valign:"center"},
+          {type:"field",layout:{x1:157.0,y1:0.0,x2:262.0,y2:20.0},exp:"sum.zen_zaikosu",font:{size:12},formatter:{format:"#,##0",type:"default"},halign:"right",valign:"center"},
+          {type:"field",layout:{x1:314.0,y1:0.0,x2:393.0,y2:20.0},exp:"sum.zaikosu",font:{size:12},formatter:{format:"#,##0",type:"default"},halign:"right",valign:"center"},
+          {type:"field",layout:{x1:419.0,y1:0.0,x2:511.0,y2:20.0},exp:"sum.jyutyuzan",font:{size:12},formatter:{format:"#,##0",type:"default"},halign:"right",valign:"center"},
+          {type:"field",layout:{x1:564.0,y1:0.0,x2:694.0,y2:20.0},exp:"sum.zaikokingaku",font:{size:12},formatter:{format:"#,##0",type:"default"},halign:"right",valign:"center"}
+        ]
+      }
+    ]
+  }
+}
