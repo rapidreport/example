@@ -1,0 +1,25 @@
+{
+  version: 0,
+  paper: {
+    margin: {bottom:54.0,left:50.0,right:50.0,top:54.0},
+    scale_unit: "point",
+    type: "a4"
+  },
+  caption: "画像とバーコード",
+  group: {
+    contents: [
+      {
+        size: {
+          initial: 318.0
+        },
+        elements: [
+          {type:"text",layout:{x1:55.0,y1:26.0,x2:132.0,y2:40.0},font:{size:11},text:"画像",valign:"center"},
+          {type:"image",layout:{x1:132.0,y1:26.0,x2:296.0,y2:106.0},exp:".ID",font:{size:11},halign:"center",key:"image",valign:"center"},
+          {type:"text",layout:{x1:55.0,y1:132.0,x2:132.0,y2:146.0},font:{size:11},text:"バーコード",valign:"center"},
+          {type:"barcode",layout:{x1:132.0,y1:132.0,x2:296.0,y2:172.0},barcode_type:"ean8",exp:".CD1",font:{size:11},formatter:{format:"00000000",type:"default"},halign:"center",valign:"center"},
+          {type:"barcode",layout:{x1:132.0,y1:185.0,x2:296.0,y2:318.0},barcode_type:"qrcode",exp:".CD2",font:{size:11},halign:"center",valign:"center"}
+        ]
+      }
+    ]
+  }
+}
