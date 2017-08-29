@@ -153,30 +153,38 @@
         ]
       },
       {
-        size: {
-          initial: 21.0
-        },
-        caption: "明細",
-        elements: [
-          {type:"line",layout:{x1:13,y1:21,x2:522,y2:21},background:true},
-          {type:"line",layout:{x1:13,y1:0,x2:13,y2:21},background:true},
-          {type:"line",layout:{x1:144,y1:0,x2:144,y2:21},background:true},
-          {type:"line",layout:{x1:209,y1:0,x2:209,y2:21},background:true},
-          {type:"line",layout:{x1:274,y1:0,x2:274,y2:21},background:true},
-          {type:"line",layout:{x1:313,y1:0,x2:313,y2:21},background:true},
-          {type:"line",layout:{x1:379,y1:0,x2:379,y2:21},background:true},
-          {type:"line",layout:{x1:444,y1:0,x2:444,y2:21},background:true},
-          {type:"line",layout:{x1:522,y1:0,x2:522,y2:21},background:true},
-          {type:"field",layout:{x1:26.0,y1:0.0,x2:144.0,y2:10.0},exp:".seicd",font:{name:"mincho"},valign:"center"},
-          {type:"field",layout:{x1:144.0,y1:0.0,x2:209.0,y2:10.0},exp:".irisu",font:{name:"mincho"},halign:"right",valign:"center"},
-          {type:"field",layout:{x1:209.0,y1:0.0,x2:274.0,y2:21.0},color:"#000000",exp:"(* .irisu .hakosu)",font:{name:"mincho",size:11},formatter:{format:"#,##0",type:"default"},halign:"right",valign:"center"},
-          {type:"field",layout:{x1:274.0,y1:0.0,x2:313.0,y2:21.0},color:"#000000",exp:".tani",font:{name:"mincho",size:11},halign:"center",valign:"center"},
-          {type:"field",layout:{x1:313.0,y1:0.0,x2:379.0,y2:21.0},color:"#000000",exp:".tanka",font:{name:"mincho",size:11},formatter:{format:"#,##0",type:"default"},halign:"right",valign:"center"},
-          {type:"field",layout:{x1:379.0,y1:0.0,x2:444.0,y2:21.0},color:"#000000",exp:".kingaku",font:{name:"mincho",size:11},formatter:{format:"#,##0",type:"default"},halign:"right",valign:"center"},
-          {type:"field",layout:{x1:444.0,y1:0.0,x2:522.0,y2:21.0},color:"#000000",exp:".biko",font:{name:"mincho",size:11},valign:"center"},
-          {type:"field",layout:{x1:26.0,y1:10.0,x2:144.0,y2:21.0},exp:".seinm",font:{name:"mincho"},shrink_to_fit:true,valign:"center"},
-          {type:"field",layout:{x1:144.0,y1:10.0,x2:209.0,y2:21.0},exp:".hakosu",font:{name:"mincho"},halign:"right",valign:"center"}
-        ]
+        group: {
+          detail: true,
+          contents: [
+            {
+              size: {
+                initial: 21.0
+              },
+              aggregate_src: true,
+              caption: "明細",
+              elements: [
+                {type:"line",layout:{x1:13,y1:21,x2:522,y2:21},background:true},
+                {type:"line",layout:{x1:13,y1:0,x2:13,y2:21},background:true},
+                {type:"line",layout:{x1:144,y1:0,x2:144,y2:21},background:true},
+                {type:"line",layout:{x1:209,y1:0,x2:209,y2:21},background:true},
+                {type:"line",layout:{x1:274,y1:0,x2:274,y2:21},background:true},
+                {type:"line",layout:{x1:313,y1:0,x2:313,y2:21},background:true},
+                {type:"line",layout:{x1:379,y1:0,x2:379,y2:21},background:true},
+                {type:"line",layout:{x1:444,y1:0,x2:444,y2:21},background:true},
+                {type:"line",layout:{x1:522,y1:0,x2:522,y2:21},background:true},
+                {type:"field",layout:{x1:26.0,y1:0.0,x2:144.0,y2:10.0},exp:".seicd",font:{name:"mincho"},valign:"center"},
+                {type:"field",layout:{x1:144.0,y1:0.0,x2:209.0,y2:10.0},exp:".irisu",font:{name:"mincho"},halign:"right",valign:"center"},
+                {type:"field",layout:{x1:209.0,y1:0.0,x2:274.0,y2:21.0},color:"#000000",exp:"(* .irisu .hakosu)",font:{name:"mincho",size:11},formatter:{format:"#,##0",type:"default"},halign:"right",valign:"center"},
+                {type:"field",layout:{x1:274.0,y1:0.0,x2:313.0,y2:21.0},color:"#000000",exp:".tani",font:{name:"mincho",size:11},halign:"center",valign:"center"},
+                {type:"field",layout:{x1:313.0,y1:0.0,x2:379.0,y2:21.0},color:"#000000",exp:".tanka",font:{name:"mincho",size:11},formatter:{format:"#,##0",type:"default"},halign:"right",valign:"center"},
+                {type:"field",layout:{x1:379.0,y1:0.0,x2:444.0,y2:21.0},color:"#000000",exp:".kingaku",font:{name:"mincho",size:11},formatter:{format:"#,##0",type:"default"},halign:"right",valign:"center"},
+                {type:"field",layout:{x1:444.0,y1:0.0,x2:522.0,y2:21.0},color:"#000000",exp:".biko",font:{name:"mincho",size:11},valign:"center"},
+                {type:"field",layout:{x1:26.0,y1:10.0,x2:144.0,y2:21.0},exp:".seinm",font:{name:"mincho"},shrink_to_fit:true,valign:"center"},
+                {type:"field",layout:{x1:144.0,y1:10.0,x2:209.0,y2:21.0},exp:".hakosu",font:{name:"mincho"},halign:"right",valign:"center"}
+              ]
+            }
+          ]
+        }
       },
       {
         size: {
