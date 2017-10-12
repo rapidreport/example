@@ -7,8 +7,8 @@
 	<classpathentry kind="lib" path="WEB-INF/lib/jsonic-1.3.0.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/systembase.barcode-1.3.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/systembase.core-1.6.jar"/>
-	<classpathentry kind="lib" path="WEB-INF/lib/systembase.report-4.31.jar"/>
-	<classpathentry kind="lib" path="WEB-INF/lib/systembase.report.pdf-4.31.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/systembase.report-4.32.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/systembase.report.pdf-4.32.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/zxing.core-3.2.1.jar"/>
 	<classpathentry kind="var" path="TOMCAT_HOME/lib/servlet-api.jar"/>
 	<classpathentry kind="var" path="TOMCAT_HOME/lib/jasper.jar"/>
