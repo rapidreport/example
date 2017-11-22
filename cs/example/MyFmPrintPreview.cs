@@ -34,10 +34,11 @@ namespace example
             using (this.PrintPreview.RenderBlock())
             {
                 this.PrintPreviewPage.Init(this.PrintPreview);
+                this.PrintPreviewMultiPage.Init(this.PrintPreview);
                 this.PrintPreviewZoom.Init(this.PrintPreview);
                 this.PrintPreviewSearch.Init(this.PrintPreview, this.PrintPreviewSearchPanel);
                 // 「画面サイズに合わせて拡大/縮小」状態にします
-                this.PrintPreviewZoom.AutoFit = true;
+                this.PrintPreview.AutoZoomFit = true;
             }
             this.MouseWheel += new MouseEventHandler(this.MyFmPrintPreview_MouseWheel);
         }

@@ -22,10 +22,11 @@ Public Class MyFmPrintPreview
     Private Sub FmPrintPreview_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         Using Me.PrintPreview.RenderBlock
             Me.PrintPreviewPage.Init(Me.PrintPreview)
+            Me.PrintPreviewMultiPage.Init(Me.PrintPreview)
             Me.PrintPreviewZoom.Init(Me.PrintPreview)
             Me.PrintPreviewSearch.Init(Me.PrintPreview, Me.PrintPreviewSearchPanel)
             ' 「画面サイズに合わせて拡大/縮小」状態にします
-            Me.PrintPreviewZoom.AutoFit = True
+            Me.PrintPreview.AutoZoomFit = True
         End Using
     End Sub
 

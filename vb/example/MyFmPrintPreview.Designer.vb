@@ -31,6 +31,7 @@ Partial Class MyFmPrintPreview
         Me.PrintPreviewSearch = New jp.co.systembase.report.renderer.gdi.PrintPreviewSearch()
         Me.PrintPreviewSearchPanel = New jp.co.systembase.report.renderer.gdi.PrintPreviewSearchPanel()
         Me.BtnPDF = New System.Windows.Forms.Button()
+        Me.PrintPreviewMultiPage = New jp.co.systembase.report.renderer.gdi.PrintPreviewMultiPage()
         Me.SuspendLayout()
         '
         'BtnPrint
@@ -44,22 +45,20 @@ Partial Class MyFmPrintPreview
         '
         'BtnClose
         '
-        Me.BtnClose.Location = New System.Drawing.Point(699, 5)
+        Me.BtnClose.Location = New System.Drawing.Point(737, 5)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(60, 32)
-        Me.BtnClose.TabIndex = 6
+        Me.BtnClose.TabIndex = 7
         Me.BtnClose.Text = "閉じる"
         Me.BtnClose.UseVisualStyleBackColor = True
         '
         'PrintPreviewZoom
         '
-        Me.PrintPreviewZoom.AutoFit = False
-        Me.PrintPreviewZoom.AutoFitWidth = False
-        Me.PrintPreviewZoom.Location = New System.Drawing.Point(421, 5)
+        Me.PrintPreviewZoom.Location = New System.Drawing.Point(461, 5)
         Me.PrintPreviewZoom.Name = "PrintPreviewZoom"
         Me.PrintPreviewZoom.PrintPreview = Nothing
         Me.PrintPreviewZoom.Size = New System.Drawing.Size(230, 32)
-        Me.PrintPreviewZoom.TabIndex = 3
+        Me.PrintPreviewZoom.TabIndex = 4
         '
         'PrintPreviewPage
         '
@@ -77,23 +76,23 @@ Partial Class MyFmPrintPreview
         Me.PrintPreview.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.PrintPreview.Location = New System.Drawing.Point(10, 43)
         Me.PrintPreview.Name = "PrintPreview"
-        Me.PrintPreview.Size = New System.Drawing.Size(765, 510)
-        Me.PrintPreview.TabIndex = 7
+        Me.PrintPreview.Size = New System.Drawing.Size(805, 510)
+        Me.PrintPreview.TabIndex = 8
         Me.PrintPreview.TabStop = False
         '
         'PrintPreviewSearch
         '
-        Me.PrintPreviewSearch.Location = New System.Drawing.Point(655, 5)
+        Me.PrintPreviewSearch.Location = New System.Drawing.Point(697, 5)
         Me.PrintPreviewSearch.Name = "PrintPreviewSearch"
         Me.PrintPreviewSearch.Size = New System.Drawing.Size(34, 32)
-        Me.PrintPreviewSearch.TabIndex = 4
+        Me.PrintPreviewSearch.TabIndex = 5
         '
         'PrintPreviewSearchPanel
         '
-        Me.PrintPreviewSearchPanel.Location = New System.Drawing.Point(577, 43)
+        Me.PrintPreviewSearchPanel.Location = New System.Drawing.Point(617, 43)
         Me.PrintPreviewSearchPanel.Name = "PrintPreviewSearchPanel"
         Me.PrintPreviewSearchPanel.Size = New System.Drawing.Size(180, 20)
-        Me.PrintPreviewSearchPanel.TabIndex = 5
+        Me.PrintPreviewSearchPanel.TabIndex = 6
         '
         'BtnPDF
         '
@@ -104,11 +103,20 @@ Partial Class MyFmPrintPreview
         Me.BtnPDF.Text = "PDF出力"
         Me.BtnPDF.UseVisualStyleBackColor = True
         '
+        'PrintPreviewMultiPage
+        '
+        Me.PrintPreviewMultiPage.Location = New System.Drawing.Point(421, 5)
+        Me.PrintPreviewMultiPage.Name = "PrintPreviewMultiPage"
+        Me.PrintPreviewMultiPage.PrintPreview = Nothing
+        Me.PrintPreviewMultiPage.Size = New System.Drawing.Size(34, 32)
+        Me.PrintPreviewMultiPage.TabIndex = 3
+        '
         'MyFmPrintPreview
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(784, 562)
+        Me.ClientSize = New System.Drawing.Size(824, 562)
+        Me.Controls.Add(Me.PrintPreviewMultiPage)
         Me.Controls.Add(Me.BtnPDF)
         Me.Controls.Add(Me.PrintPreviewSearchPanel)
         Me.Controls.Add(Me.PrintPreviewSearch)
@@ -119,7 +127,7 @@ Partial Class MyFmPrintPreview
         Me.Controls.Add(Me.BtnPrint)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
-        Me.MinimumSize = New System.Drawing.Size(800, 200)
+        Me.MinimumSize = New System.Drawing.Size(840, 200)
         Me.Name = "MyFmPrintPreview"
         Me.Text = "プレビュー"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -134,5 +142,5 @@ Partial Class MyFmPrintPreview
     Friend WithEvents PrintPreviewSearch As jp.co.systembase.report.renderer.gdi.PrintPreviewSearch
     Friend WithEvents PrintPreviewSearchPanel As jp.co.systembase.report.renderer.gdi.PrintPreviewSearchPanel
     Friend WithEvents BtnPDF As System.Windows.Forms.Button
-
+    Friend WithEvents PrintPreviewMultiPage As jp.co.systembase.report.renderer.gdi.PrintPreviewMultiPage
 End Class
