@@ -148,6 +148,7 @@
   <ItemGroup>
     <Compile Include="CsvDataSource.vb" />
     <Compile Include="Example1Csv.vb" />
+    <Compile Include="ExampleCrosstab.vb" />
     <Compile Include="ExampleCustomize.vb" />
     <Compile Include="ExampleCustomPreview.vb" />
     <Compile Include="ExampleDataProvider.vb" />
@@ -223,6 +224,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="report\example2.rrpt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="report\example_crosstab.rrpt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="report\example_customize.rrpt">

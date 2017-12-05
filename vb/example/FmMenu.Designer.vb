@@ -39,6 +39,7 @@ Partial Class FmMenu
         Me.btnElementCustomize = New System.Windows.Forms.Button()
         Me.BtnCustomPreview = New System.Windows.Forms.Button()
         Me.BtnMergeContent = New System.Windows.Forms.Button()
+        Me.BtnCrosstab = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'BtnExample1
@@ -61,7 +62,7 @@ Partial Class FmMenu
         '
         'BtnExampleLocate
         '
-        Me.BtnExampleLocate.Location = New System.Drawing.Point(12, 204)
+        Me.BtnExampleLocate.Location = New System.Drawing.Point(202, 41)
         Me.BtnExampleLocate.Name = "BtnExampleLocate"
         Me.BtnExampleLocate.Size = New System.Drawing.Size(170, 23)
         Me.BtnExampleLocate.TabIndex = 6
@@ -70,16 +71,16 @@ Partial Class FmMenu
         '
         'BtnOpenOutput
         '
-        Me.BtnOpenOutput.Location = New System.Drawing.Point(12, 517)
+        Me.BtnOpenOutput.Location = New System.Drawing.Point(12, 377)
         Me.BtnOpenOutput.Name = "BtnOpenOutput"
-        Me.BtnOpenOutput.Size = New System.Drawing.Size(170, 23)
-        Me.BtnOpenOutput.TabIndex = 16
+        Me.BtnOpenOutput.Size = New System.Drawing.Size(360, 23)
+        Me.BtnOpenOutput.TabIndex = 17
         Me.BtnOpenOutput.Text = "PDF,XLS出力フォルダを開く"
         Me.BtnOpenOutput.UseVisualStyleBackColor = True
         '
         'BtnExampleDataProvider
         '
-        Me.BtnExampleDataProvider.Location = New System.Drawing.Point(12, 175)
+        Me.BtnExampleDataProvider.Location = New System.Drawing.Point(202, 12)
         Me.BtnExampleDataProvider.Name = "BtnExampleDataProvider"
         Me.BtnExampleDataProvider.Size = New System.Drawing.Size(170, 23)
         Me.BtnExampleDataProvider.TabIndex = 5
@@ -88,7 +89,7 @@ Partial Class FmMenu
         '
         'BtnExampleRegion
         '
-        Me.BtnExampleRegion.Location = New System.Drawing.Point(12, 233)
+        Me.BtnExampleRegion.Location = New System.Drawing.Point(202, 70)
         Me.BtnExampleRegion.Name = "BtnExampleRegion"
         Me.BtnExampleRegion.Size = New System.Drawing.Size(170, 23)
         Me.BtnExampleRegion.TabIndex = 7
@@ -97,7 +98,7 @@ Partial Class FmMenu
         '
         'BtnExamplePage
         '
-        Me.BtnExamplePage.Location = New System.Drawing.Point(12, 262)
+        Me.BtnExamplePage.Location = New System.Drawing.Point(202, 99)
         Me.BtnExamplePage.Name = "BtnExamplePage"
         Me.BtnExamplePage.Size = New System.Drawing.Size(170, 23)
         Me.BtnExamplePage.TabIndex = 8
@@ -106,7 +107,7 @@ Partial Class FmMenu
         '
         'BtnExampleRender
         '
-        Me.BtnExampleRender.Location = New System.Drawing.Point(12, 291)
+        Me.BtnExampleRender.Location = New System.Drawing.Point(202, 128)
         Me.BtnExampleRender.Name = "BtnExampleRender"
         Me.BtnExampleRender.Size = New System.Drawing.Size(170, 23)
         Me.BtnExampleRender.TabIndex = 9
@@ -115,7 +116,7 @@ Partial Class FmMenu
         '
         'BtnExampleSubPage
         '
-        Me.BtnExampleSubPage.Location = New System.Drawing.Point(12, 349)
+        Me.BtnExampleSubPage.Location = New System.Drawing.Point(202, 186)
         Me.BtnExampleSubPage.Name = "BtnExampleSubPage"
         Me.BtnExampleSubPage.Size = New System.Drawing.Size(170, 23)
         Me.BtnExampleSubPage.TabIndex = 11
@@ -151,7 +152,7 @@ Partial Class FmMenu
         '
         'BtnExampleImage
         '
-        Me.BtnExampleImage.Location = New System.Drawing.Point(12, 378)
+        Me.BtnExampleImage.Location = New System.Drawing.Point(202, 215)
         Me.BtnExampleImage.Name = "BtnExampleImage"
         Me.BtnExampleImage.Size = New System.Drawing.Size(170, 23)
         Me.BtnExampleImage.TabIndex = 12
@@ -160,7 +161,7 @@ Partial Class FmMenu
         '
         'BtnExtention
         '
-        Me.BtnExtention.Location = New System.Drawing.Point(12, 407)
+        Me.BtnExtention.Location = New System.Drawing.Point(202, 244)
         Me.BtnExtention.Name = "BtnExtention"
         Me.BtnExtention.Size = New System.Drawing.Size(170, 23)
         Me.BtnExtention.TabIndex = 13
@@ -169,7 +170,7 @@ Partial Class FmMenu
         '
         'btnElementCustomize
         '
-        Me.btnElementCustomize.Location = New System.Drawing.Point(12, 320)
+        Me.btnElementCustomize.Location = New System.Drawing.Point(202, 157)
         Me.btnElementCustomize.Name = "btnElementCustomize"
         Me.btnElementCustomize.Size = New System.Drawing.Size(170, 23)
         Me.btnElementCustomize.TabIndex = 10
@@ -178,7 +179,7 @@ Partial Class FmMenu
         '
         'BtnCustomPreview
         '
-        Me.BtnCustomPreview.Location = New System.Drawing.Point(12, 436)
+        Me.BtnCustomPreview.Location = New System.Drawing.Point(202, 273)
         Me.BtnCustomPreview.Name = "BtnCustomPreview"
         Me.BtnCustomPreview.Size = New System.Drawing.Size(170, 23)
         Me.BtnCustomPreview.TabIndex = 14
@@ -187,18 +188,28 @@ Partial Class FmMenu
         '
         'BtnMergeContent
         '
-        Me.BtnMergeContent.Location = New System.Drawing.Point(12, 465)
+        Me.BtnMergeContent.Location = New System.Drawing.Point(202, 302)
         Me.BtnMergeContent.Name = "BtnMergeContent"
         Me.BtnMergeContent.Size = New System.Drawing.Size(170, 23)
         Me.BtnMergeContent.TabIndex = 15
         Me.BtnMergeContent.Text = "差込コンテント"
         Me.BtnMergeContent.UseVisualStyleBackColor = True
         '
+        'BtnCrosstab
+        '
+        Me.BtnCrosstab.Location = New System.Drawing.Point(202, 331)
+        Me.BtnCrosstab.Name = "BtnCrosstab"
+        Me.BtnCrosstab.Size = New System.Drawing.Size(170, 23)
+        Me.BtnCrosstab.TabIndex = 16
+        Me.BtnCrosstab.Text = "クロス集計表"
+        Me.BtnCrosstab.UseVisualStyleBackColor = True
+        '
         'FmMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(194, 552)
+        Me.ClientSize = New System.Drawing.Size(384, 412)
+        Me.Controls.Add(Me.BtnCrosstab)
         Me.Controls.Add(Me.BtnFeature)
         Me.Controls.Add(Me.BtnMergeContent)
         Me.Controls.Add(Me.BtnCustomPreview)
@@ -240,5 +251,5 @@ Partial Class FmMenu
     Friend WithEvents btnElementCustomize As System.Windows.Forms.Button
     Friend WithEvents BtnCustomPreview As System.Windows.Forms.Button
     Friend WithEvents BtnMergeContent As System.Windows.Forms.Button
-
+    Friend WithEvents BtnCrosstab As Button
 End Class

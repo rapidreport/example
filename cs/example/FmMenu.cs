@@ -96,6 +96,11 @@ namespace example
             Feature.Run();
         }
 
+        private void BtnCrosstab_Click(object sender, EventArgs e)
+        {
+            ExampleCrosstab.Run();
+        }
+
         private void BtnOpenOutput_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("output\\");
