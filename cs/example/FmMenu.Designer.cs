@@ -45,6 +45,7 @@
             this.btnElementRenderer = new System.Windows.Forms.Button();
             this.BtnCustomPreview = new System.Windows.Forms.Button();
             this.BtnMergeContent = new System.Windows.Forms.Button();
+            this.BtnCrosstab = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtnFeature
@@ -59,7 +60,7 @@
             // 
             // BtnExampleSubPage
             // 
-            this.BtnExampleSubPage.Location = new System.Drawing.Point(12, 354);
+            this.BtnExampleSubPage.Location = new System.Drawing.Point(202, 186);
             this.BtnExampleSubPage.Name = "BtnExampleSubPage";
             this.BtnExampleSubPage.Size = new System.Drawing.Size(170, 23);
             this.BtnExampleSubPage.TabIndex = 11;
@@ -69,7 +70,7 @@
             // 
             // BtnExampleRender
             // 
-            this.BtnExampleRender.Location = new System.Drawing.Point(12, 296);
+            this.BtnExampleRender.Location = new System.Drawing.Point(202, 128);
             this.BtnExampleRender.Name = "BtnExampleRender";
             this.BtnExampleRender.Size = new System.Drawing.Size(170, 23);
             this.BtnExampleRender.TabIndex = 9;
@@ -79,7 +80,7 @@
             // 
             // BtnExamplePage
             // 
-            this.BtnExamplePage.Location = new System.Drawing.Point(12, 267);
+            this.BtnExamplePage.Location = new System.Drawing.Point(202, 99);
             this.BtnExamplePage.Name = "BtnExamplePage";
             this.BtnExamplePage.Size = new System.Drawing.Size(170, 23);
             this.BtnExamplePage.TabIndex = 8;
@@ -89,7 +90,7 @@
             // 
             // BtnExampleRegion
             // 
-            this.BtnExampleRegion.Location = new System.Drawing.Point(12, 238);
+            this.BtnExampleRegion.Location = new System.Drawing.Point(202, 70);
             this.BtnExampleRegion.Name = "BtnExampleRegion";
             this.BtnExampleRegion.Size = new System.Drawing.Size(170, 23);
             this.BtnExampleRegion.TabIndex = 7;
@@ -99,7 +100,7 @@
             // 
             // BtnExampleDataProvider
             // 
-            this.BtnExampleDataProvider.Location = new System.Drawing.Point(12, 180);
+            this.BtnExampleDataProvider.Location = new System.Drawing.Point(202, 12);
             this.BtnExampleDataProvider.Name = "BtnExampleDataProvider";
             this.BtnExampleDataProvider.Size = new System.Drawing.Size(170, 23);
             this.BtnExampleDataProvider.TabIndex = 5;
@@ -109,17 +110,17 @@
             // 
             // BtnOpenOutput
             // 
-            this.BtnOpenOutput.Location = new System.Drawing.Point(12, 517);
+            this.BtnOpenOutput.Location = new System.Drawing.Point(12, 377);
             this.BtnOpenOutput.Name = "BtnOpenOutput";
-            this.BtnOpenOutput.Size = new System.Drawing.Size(170, 23);
-            this.BtnOpenOutput.TabIndex = 16;
+            this.BtnOpenOutput.Size = new System.Drawing.Size(360, 23);
+            this.BtnOpenOutput.TabIndex = 17;
             this.BtnOpenOutput.Text = "PDF,XLS出力フォルダを開く";
             this.BtnOpenOutput.UseVisualStyleBackColor = true;
             this.BtnOpenOutput.Click += new System.EventHandler(this.BtnOpenOutput_Click);
             // 
             // BtnExampleLocate
             // 
-            this.BtnExampleLocate.Location = new System.Drawing.Point(12, 209);
+            this.BtnExampleLocate.Location = new System.Drawing.Point(202, 41);
             this.BtnExampleLocate.Name = "BtnExampleLocate";
             this.BtnExampleLocate.Size = new System.Drawing.Size(170, 23);
             this.BtnExampleLocate.TabIndex = 6;
@@ -169,7 +170,7 @@
             // 
             // BtmExampleImage
             // 
-            this.BtmExampleImage.Location = new System.Drawing.Point(12, 383);
+            this.BtmExampleImage.Location = new System.Drawing.Point(202, 215);
             this.BtmExampleImage.Name = "BtmExampleImage";
             this.BtmExampleImage.Size = new System.Drawing.Size(170, 23);
             this.BtmExampleImage.TabIndex = 12;
@@ -179,7 +180,7 @@
             // 
             // BtnExtention
             // 
-            this.BtnExtention.Location = new System.Drawing.Point(12, 412);
+            this.BtnExtention.Location = new System.Drawing.Point(202, 244);
             this.BtnExtention.Name = "BtnExtention";
             this.BtnExtention.Size = new System.Drawing.Size(170, 23);
             this.BtnExtention.TabIndex = 13;
@@ -189,7 +190,7 @@
             // 
             // btnElementRenderer
             // 
-            this.btnElementRenderer.Location = new System.Drawing.Point(12, 325);
+            this.btnElementRenderer.Location = new System.Drawing.Point(202, 157);
             this.btnElementRenderer.Name = "btnElementRenderer";
             this.btnElementRenderer.Size = new System.Drawing.Size(170, 23);
             this.btnElementRenderer.TabIndex = 10;
@@ -199,7 +200,7 @@
             // 
             // BtnCustomPreview
             // 
-            this.BtnCustomPreview.Location = new System.Drawing.Point(12, 441);
+            this.BtnCustomPreview.Location = new System.Drawing.Point(202, 273);
             this.BtnCustomPreview.Name = "BtnCustomPreview";
             this.BtnCustomPreview.Size = new System.Drawing.Size(170, 23);
             this.BtnCustomPreview.TabIndex = 14;
@@ -209,7 +210,7 @@
             // 
             // BtnMergeContent
             // 
-            this.BtnMergeContent.Location = new System.Drawing.Point(12, 470);
+            this.BtnMergeContent.Location = new System.Drawing.Point(202, 302);
             this.BtnMergeContent.Name = "BtnMergeContent";
             this.BtnMergeContent.Size = new System.Drawing.Size(170, 23);
             this.BtnMergeContent.TabIndex = 15;
@@ -217,11 +218,22 @@
             this.BtnMergeContent.UseVisualStyleBackColor = true;
             this.BtnMergeContent.Click += new System.EventHandler(this.BtnMergeContent_Click);
             // 
+            // BtnCrosstab
+            // 
+            this.BtnCrosstab.Location = new System.Drawing.Point(202, 331);
+            this.BtnCrosstab.Name = "BtnCrosstab";
+            this.BtnCrosstab.Size = new System.Drawing.Size(170, 23);
+            this.BtnCrosstab.TabIndex = 16;
+            this.BtnCrosstab.Text = "クロス集計表";
+            this.BtnCrosstab.UseVisualStyleBackColor = true;
+            this.BtnCrosstab.Click += new System.EventHandler(this.BtnCrosstab_Click);
+            // 
             // FmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(194, 552);
+            this.ClientSize = new System.Drawing.Size(384, 412);
+            this.Controls.Add(this.BtnCrosstab);
             this.Controls.Add(this.BtnMergeContent);
             this.Controls.Add(this.BtnCustomPreview);
             this.Controls.Add(this.BtnFeature);
@@ -266,6 +278,7 @@
         internal System.Windows.Forms.Button btnElementRenderer;
         internal System.Windows.Forms.Button BtnCustomPreview;
         internal System.Windows.Forms.Button BtnMergeContent;
+        internal System.Windows.Forms.Button BtnCrosstab;
     }
 }
 

@@ -64,6 +64,10 @@
         Feature.Run()
     End Sub
 
+    Private Sub BtnCrosstab_Click(sender As Object, e As EventArgs) Handles BtnCrosstab.Click
+        ExampleCrosstab.Run()
+    End Sub
+
     Private Sub BtnOpenOutput_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnOpenOutput.Click
         System.Diagnostics.Process.Start("output\")
     End Sub
