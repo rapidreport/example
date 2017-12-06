@@ -2,7 +2,7 @@
 *.user
 bin
 obj
-
+.vs
 /cp.bat
 /cs/example/lib/*.dll
 /cs_asp/example/bin/*.dll
