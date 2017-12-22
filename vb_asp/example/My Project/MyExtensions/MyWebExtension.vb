@@ -99,7 +99,7 @@ Namespace My
         Friend NotInheritable Class MyWebServices
 
             <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Never), Global.System.Diagnostics.DebuggerHidden()> _
-            Public Overrides Function Equals(ByVal o As Object) As Boolean
+            Public Overrides Function Equals(o As Object) As Boolean
                 Return MyBase.Equals(o)
             End Function
             <Global.System.ComponentModel.EditorBrowsable(Global.System.ComponentModel.EditorBrowsableState.Never), Global.System.Diagnostics.DebuggerHidden()> _
@@ -116,7 +116,7 @@ Namespace My
             End Function
 
             <Global.System.Diagnostics.DebuggerHidden()> _
-            Private Shared Function Create__Instance__(Of T As {New})(ByVal instance As T) As T
+            Private Shared Function Create__Instance__(Of T As {New})(instance As T) As T
                 If instance Is Nothing Then
                     Return New T()
                 Else

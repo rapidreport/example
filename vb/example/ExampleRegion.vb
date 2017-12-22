@@ -59,9 +59,9 @@ Module ExampleRegion
     Private Class Customizer
         Inherits DefaultCustomizer
         Public Overrides Function ContentRegion( _
-          ByVal content As Content, _
-          ByVal evaluator As Evaluator, _
-          ByVal region As Region) As Region
+          content As Content, _
+          evaluator As Evaluator, _
+          region As Region) As Region
             ' "content_example"という識別子を持ったコンテントに対して処理を行います
             If "content_example".Equals(content.Design.Id) Then
                 ' regionはコンテントの表示領域を表します

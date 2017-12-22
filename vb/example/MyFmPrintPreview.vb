@@ -13,13 +13,13 @@ Public Class MyFmPrintPreview
     Public Sub New()
         Me.InitializeComponent()
     End Sub
-    Public Sub New(ByVal printer As Printer)
+    Public Sub New(printer As Printer)
         Me.InitializeComponent()
         Me.PrintPreview.Printer = printer
     End Sub
 
     ' フォームロード
-    Private Sub FmPrintPreview_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
+    Private Sub FmPrintPreview_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Using Me.PrintPreview.RenderBlock
             Me.PrintPreviewPage.Init(Me.PrintPreview)
             Me.PrintPreviewMultiPage.Init(Me.PrintPreview)
@@ -31,7 +31,7 @@ Public Class MyFmPrintPreview
     End Sub
 
     ' マウスホイール操作
-    Private Sub FmPrintPreview_MouseWheel(ByVal sender As Object, ByVal e As MouseEventArgs) Handles Me.MouseWheel
+    Private Sub FmPrintPreview_MouseWheel(sender As Object, e As MouseEventArgs) Handles Me.MouseWheel
         Dim handled As Boolean = False
         If Me.ActiveControl Is Me.PrintPreviewPage Then
             handled = Me.PrintPreviewPage.HandleMouseWheelEvent(e)
@@ -44,7 +44,7 @@ Public Class MyFmPrintPreview
     End Sub
 
     ' キー押下
-    Private Sub FmPrintPreview_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles Me.KeyDown
+    Private Sub FmPrintPreview_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         Select Case e.KeyCode
             Case Keys.P
                 If e.Modifiers = Keys.Control Then
@@ -62,7 +62,7 @@ Public Class MyFmPrintPreview
     End Sub
 
     ' 印刷ボタン押下
-    Private Sub BtnPrint_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnPrint.Click
+    Private Sub BtnPrint_Click(sender As Object, e As EventArgs) Handles BtnPrint.Click
         Me.Print()
     End Sub
 
@@ -72,7 +72,7 @@ Public Class MyFmPrintPreview
     End Sub
 
     ' 閉じるボタン押下
-    Private Sub BtnClose_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnClose.Click
+    Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click
         Me.Close()
     End Sub
 

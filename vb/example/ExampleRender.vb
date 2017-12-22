@@ -58,11 +58,8 @@ Module ExampleRender
     ' 要素に動的な修正を加えるカスタマイザ
     Private Class Customizer
         Inherits DefaultCustomizer
-        Public Overrides Sub RenderContent( _
-          ByVal content As Content, _
-          ByVal evaluator As Evaluator, _
-          ByVal region As Region, _
-          ByVal elementDesigns As ElementDesigns)
+        Public Overrides Sub RenderContent(
+          content As Content, evaluator As Evaluator, region As Region, elementDesigns As ElementDesigns)
             ' このメソッドはコンテントの描画が行われる直前に呼ばれます
             ' "content_example"という識別子を持ったコンテントに対して処理を行います
             If "content_example".Equals(content.Design.Id) Then

@@ -202,12 +202,11 @@ Module ExampleExtention
         Public Class CheckBoxShapeRenderer
             Implements xls.elementrenderer.IShapeRenderer
             Public data As Object
-            Public Sub New(ByVal data As Object)
+            Public Sub New(data As Object)
                 Me.data = data
             End Sub
-            Public Sub Render( _
-              ByVal page As xls.component.Page, _
-              ByVal shape As xls.component.Shape) Implements xls.elementrenderer.IShapeRenderer.Render
+            Public Sub Render(page As xls.component.Page, shape As xls.component.Shape) _
+              Implements xls.elementrenderer.IShapeRenderer.Render
                 createImage()
                 Dim index As Integer
                 If Me.data Then
@@ -264,12 +263,11 @@ Module ExampleExtention
         Public Class CheckBoxShapeRenderer
             Implements xlsx.elementrenderer.IShapeRenderer
             Public data As Object
-            Public Sub New(ByVal data As Object)
+            Public Sub New(data As Object)
                 Me.data = data
             End Sub
-            Public Sub Render( _
-              ByVal page As xlsx.component.Page, _
-              ByVal shape As xlsx.component.Shape) Implements xlsx.elementrenderer.IShapeRenderer.Render
+            Public Sub Render(page As xlsx.component.Page, shape As xlsx.component.Shape) _
+              Implements xlsx.elementrenderer.IShapeRenderer.Render
                 createImage()
                 Dim index As Integer
                 If Me.data Then

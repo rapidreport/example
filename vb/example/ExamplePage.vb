@@ -80,10 +80,7 @@ Module ExamplePage
             Me.reportDesign = New ReportDesign(Json.Read("report\example_page2.rrpt"))
         End Sub
 
-        Public Overrides Sub PageAdded( _
-          ByVal report As Report, _
-          ByVal pages As ReportPages, _
-          ByVal page As ReportPage)
+        Public Overrides Sub PageAdded(report As Report, pages As ReportPages, page As ReportPage)
             ' このメソッドはページが追加されるたびに呼ばれます
             ' 直前のページで"group_example"という識別子を持ったグループが終了しているかを調べます()
             Dim g As Group = page.FindFinishedGroup("group_example")
