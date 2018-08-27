@@ -114,6 +114,7 @@
     <Compile Include="ExampleCustomize.cs" />
     <Compile Include="ExampleCustomPreview.cs" />
     <Compile Include="ExampleDataProvider.cs" />
+    <Compile Include="ExampleDto.cs" />
     <Compile Include="ExampleExtention.cs" />
     <Compile Include="ExampleImage.cs" />
     <Compile Include="ExampleLocate.cs" />

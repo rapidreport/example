@@ -15,6 +15,7 @@ using jp.co.systembase.report.renderer.gdi;
 using jp.co.systembase.report.renderer.pdf;
 using jp.co.systembase.report.renderer.xls;
 using jp.co.systembase.report.renderer.xlsx;
+using System.Collections;
 
 // 基本サンプル1 見積書
 namespace example
@@ -87,6 +88,7 @@ namespace example
 
         }
 
+        // DataTableを用いたサンプル
         private static DataTable getDataTable()
         {
             DataTable ret = new DataTable();
@@ -113,6 +115,52 @@ namespace example
                 "トナーカートリッジ", 2, 2, "本", 5000);
             return ret;
         }
+
+        //// DTOを用いたサンプル
+        //private static IList getDataTable()
+        //{
+        //    IList ret = new List<ExampleDto>();
+        //    {
+        //        ExampleDto r = new ExampleDto();
+        //        r.Tokuisaki1 = "株式会社 岩手商事";
+        //        r.Tokuisaki2 = "北上支店";
+        //        r.MitsumoriNo = 101;
+        //        r.MitsumoriDate = DateTime.ParseExact("2013/03/01", "yyyy/MM/dd", null);
+        //        r.Hinmei = "プリンタ";
+        //        r.Irisu = 1;
+        //        r.Hakosu = 2;
+        //        r.Tani = "台";
+        //        r.Tanka = 25000;
+        //        ret.Add(r);
+        //    }
+        //    {
+        //        ExampleDto r = new ExampleDto();
+        //        r.Tokuisaki1 = "株式会社 岩手商事";
+        //        r.Tokuisaki2 = "北上支店";
+        //        r.MitsumoriNo = 101;
+        //        r.MitsumoriDate = DateTime.ParseExact("2013/03/01", "yyyy/MM/dd", null);
+        //        r.Hinmei = "トナーカートリッジ";
+        //        r.Irisu = 2;
+        //        r.Hakosu = 2;
+        //        r.Tani = "本";
+        //        r.Tanka = 5000;
+        //        ret.Add(r);
+        //    }
+        //    {
+        //        ExampleDto r = new ExampleDto();
+        //        r.Tokuisaki1 = "株式会社 岩手商事";
+        //        r.Tokuisaki2 = "北上支店";
+        //        r.MitsumoriNo = 101;
+        //        r.MitsumoriDate = DateTime.ParseExact("2013/03/01", "yyyy/MM/dd", null);
+        //        r.Hinmei = "モニター";
+        //        r.Irisu = 1;
+        //        r.Hakosu = 2;
+        //        r.Tani = "台";
+        //        r.Tanka = 20000;
+        //        ret.Add(r);
+        //    }
+        //    return ret;
+        //}
 
     }
 }

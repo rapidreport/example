@@ -152,6 +152,7 @@
     <Compile Include="ExampleCustomize.vb" />
     <Compile Include="ExampleCustomPreview.vb" />
     <Compile Include="ExampleDataProvider.vb" />
+    <Compile Include="ExampleDto.vb" />
     <Compile Include="ExampleExtention.vb" />
     <Compile Include="ExampleImage.vb" />
     <Compile Include="ExampleMergeContent.vb" />

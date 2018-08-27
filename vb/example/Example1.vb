@@ -73,6 +73,7 @@ Module Example1
         End With
     End Sub
 
+    ' DataTableを利用したサンプル
     Private Function getDataTable() As DataTable
         Dim ret As New DataTable
         ret.Columns.Add("mitsumoriNo", GetType(Decimal))
@@ -84,19 +85,77 @@ Module Example1
         ret.Columns.Add("hakosu", GetType(Decimal))
         ret.Columns.Add("tani", GetType(String))
         ret.Columns.Add("tanka", GetType(Decimal))
-        ret.Rows.Add(101, DateTime.ParseExact("2013/03/01", "yyyy/MM/dd", Nothing), _
-            "株式会社 岩手商事", "北上支社", _
+        ret.Rows.Add(101, DateTime.ParseExact("2013/03/01", "yyyy/MM/dd", Nothing),
+            "株式会社 岩手商事", "北上支社",
             "ノートパソコン", 1, 10, "台", 70000)
-        ret.Rows.Add(101, DateTime.ParseExact("2013/03/01", "yyyy/MM/dd", Nothing), _
-            "株式会社 岩手商事", "北上支社", _
+        ret.Rows.Add(101, DateTime.ParseExact("2013/03/01", "yyyy/MM/dd", Nothing),
+            "株式会社 岩手商事", "北上支社",
             "モニター", 1, 10, "台", 20000)
-        ret.Rows.Add(101, DateTime.ParseExact("2013/03/01", "yyyy/MM/dd", Nothing), _
-            "株式会社 岩手商事", "北上支社", _
+        ret.Rows.Add(101, DateTime.ParseExact("2013/03/01", "yyyy/MM/dd", Nothing),
+            "株式会社 岩手商事", "北上支社",
             "プリンタ", 1, 2, "台", 25000)
-        ret.Rows.Add(101, DateTime.ParseExact("2013/03/01", "yyyy/MM/dd", Nothing), _
-            "株式会社 岩手商事", "北上支社", _
+        ret.Rows.Add(101, DateTime.ParseExact("2013/03/01", "yyyy/MM/dd", Nothing),
+            "株式会社 岩手商事", "北上支社",
             "トナーカートリッジ", 2, 2, "本", 5000)
         Return ret
     End Function
+
+    '' DTOを利用したサンプル
+    'Private Function getDataTable() As IList
+    '    Dim ret As New List(Of ExampleDto)
+    '    With Nothing
+    '        Dim r As New ExampleDto
+    '        r.Tokuisaki1 = "株式会社 岩手商事"
+    '        r.Tokuisaki2 = "北上支社"
+    '        r.MitsumoriNo = 101
+    '        r.MitsumoriDate = DateTime.ParseExact("2013/03/01", "yyyy/MM/dd", Nothing)
+    '        r.Hinmei = "ノートパソコン"
+    '        r.Irisu = 1
+    '        r.Hakosu = 10
+    '        r.Tani = "台"
+    '        r.Tanka = 70000
+    '        ret.Add(r)
+    '    End With
+    '    With Nothing
+    '        Dim r As New ExampleDto
+    '        r.Tokuisaki1 = "株式会社 岩手商事"
+    '        r.Tokuisaki2 = "北上支社"
+    '        r.MitsumoriNo = 101
+    '        r.MitsumoriDate = DateTime.ParseExact("2013/03/01", "yyyy/MM/dd", Nothing)
+    '        r.Hinmei = "モニター"
+    '        r.Irisu = 1
+    '        r.Hakosu = 10
+    '        r.Tani = "台"
+    '        r.Tanka = 20000
+    '        ret.Add(r)
+    '    End With
+    '    With Nothing
+    '        Dim r As New ExampleDto
+    '        r.Tokuisaki1 = "株式会社 岩手商事"
+    '        r.Tokuisaki2 = "北上支社"
+    '        r.MitsumoriNo = 101
+    '        r.MitsumoriDate = DateTime.ParseExact("2013/03/01", "yyyy/MM/dd", Nothing)
+    '        r.Hinmei = "プリンタ"
+    '        r.Irisu = 1
+    '        r.Hakosu = 2
+    '        r.Tani = "台"
+    '        r.Tanka = 25000
+    '        ret.Add(r)
+    '    End With
+    '    With Nothing
+    '        Dim r As New ExampleDto
+    '        r.Tokuisaki1 = "株式会社 岩手商事"
+    '        r.Tokuisaki2 = "北上支社"
+    '        r.MitsumoriNo = 101
+    '        r.MitsumoriDate = DateTime.ParseExact("2013/03/01", "yyyy/MM/dd", Nothing)
+    '        r.Hinmei = "トナーカートリッジ"
+    '        r.Irisu = 2
+    '        r.Hakosu = 2
+    '        r.Tani = "本"
+    '        r.Tanka = 5000
+    '        ret.Add(r)
+    '    End With
+    '    Return ret
+    'End Function
 
 End Module
