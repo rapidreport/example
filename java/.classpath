@@ -15,9 +15,9 @@
 	<classpathentry kind="lib" path="lib/xmlbeans-2.6.0.jar"/>
 	<classpathentry kind="lib" path="lib/commons-codec-1.10.jar"/>
 	<classpathentry kind="lib" path="lib/commons-collections4-4.1.jar"/>
-	<classpathentry kind="lib" path="lib/systembase.report-4.36.jar"/>
-	<classpathentry kind="lib" path="lib/systembase.report.pdf-4.36.jar"/>
-	<classpathentry kind="lib" path="lib/systembase.report.xls-4.36.jar"/>
-	<classpathentry kind="lib" path="lib/systembase.report.xlsx-4.36.jar"/>
+	<classpathentry kind="lib" path="lib/systembase.report-5.0.jar"/>
+	<classpathentry kind="lib" path="lib/systembase.report.pdf-5.0.jar"/>
+	<classpathentry kind="lib" path="lib/systembase.report.xls-5.0.jar"/>
+	<classpathentry kind="lib" path="lib/systembase.report.xlsx-5.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -1,5 +1,11 @@
 {
   version: 0,
+  monospaced_fonts: [
+    {bold:{full_width:1.033,half_width:0.536,row_height:1.0},regular:{full_width:1.03,half_width:0.516,row_height:1.0}},
+    {name:"gothic",bold:{full_width:1.033,half_width:0.536,row_height:1.0},regular:{full_width:1.03,half_width:0.516,row_height:1.0}},
+    {name:"mincho",bold:{full_width:1.033,half_width:0.536,row_height:1.0},regular:{full_width:1.03,half_width:0.516,row_height:1.0}},
+    {name:"vl",bold:{full_width:1.04,half_width:0.536,row_height:1.27},regular:{full_width:1.03,half_width:0.515,row_height:1.27}}
+  ],
   paper: {
     margin: {bottom:30,left:30,right:30,top:30},
     scale_unit: "point",
@@ -37,8 +43,8 @@
         group: {
           id: "group_shonin",
           layout: {
-            x: 350,
-            y: 100
+            y: 100,
+            x: 350
           },
           contents: [
             {
@@ -100,8 +106,8 @@
         group: {
           detail: true,
           layout: {
-            max_count: 20,
-            blank: true
+            blank: true,
+            max_count: 20
           },
           contents: [
             {
