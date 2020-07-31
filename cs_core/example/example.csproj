@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="output\" />
+    <Folder Include="report\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="systembase.barcode">
+      <HintPath>lib\systembase.barcode.dll</HintPath>
+    </Reference>
+    <Reference Include="systembase.iTextSharp">
+      <HintPath>lib\systembase.iTextSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="systembase.json">
+      <HintPath>lib\systembase.json.dll</HintPath>
+    </Reference>
+    <Reference Include="systembase.report">
+      <HintPath>lib\systembase.report.dll</HintPath>
+    </Reference>
+    <Reference Include="systembase.report.renderer.pdf">
+      <HintPath>lib\systembase.report.renderer.pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing">
+      <HintPath>lib\zxing.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="output\output.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="report\example1.rrpt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

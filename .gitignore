@@ -5,6 +5,7 @@ obj
 .vs
 /cp.bat
 /cs/example/lib/*.dll
+/cs_core/example/lib/*.dll
 /cs_asp/example/bin/*.dll
 /cs_pdf2/example/lib/*.dll
 /java/lib/*.jar
