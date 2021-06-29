@@ -3,8 +3,7 @@
   monospaced_fonts: [
     {bold:{full_width:1.033,half_width:0.536,row_height:1.0},regular:{full_width:1.03,half_width:0.516,row_height:1.0}},
     {name:"gothic",bold:{full_width:1.033,half_width:0.536,row_height:1.0},regular:{full_width:1.03,half_width:0.516,row_height:1.0}},
-    {name:"mincho",bold:{full_width:1.033,half_width:0.536,row_height:1.0},regular:{full_width:1.03,half_width:0.516,row_height:1.0}},
-    {name:"vl",bold:{full_width:1.04,half_width:0.536,row_height:1.27},regular:{full_width:1.03,half_width:0.515,row_height:1.27}}
+    {name:"mincho",bold:{full_width:1.033,half_width:0.536,row_height:1.0},regular:{full_width:1.03,half_width:0.516,row_height:1.0}}
   ],
   paper: {
     margin: {bottom:20.0,left:20.0,right:20.0,top:20.0},
@@ -58,8 +57,8 @@
           caption: "明細グループ",
           detail: true,
           layout: {
-            blank: true,
-            max_count: 20.0
+            max_count: 20.0,
+            blank: true
           },
           contents: [
             {
