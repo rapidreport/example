@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,7 +12,8 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
+    <PackageReference Include="SharpZipLib" Version="1.3.3" />
+    <PackageReference Include="System.Drawing.Common" Version="5.0.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,11 +26,26 @@
     <Reference Include="systembase.json">
       <HintPath>lib\systembase.json.dll</HintPath>
     </Reference>
+    <Reference Include="systembase.NPOI">
+      <HintPath>lib\systembase.NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="systembase.NPOI.OOXML">
+      <HintPath>lib\systembase.NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="systembase.NPOI.OpenXml4Net">
+      <HintPath>lib\systembase.NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="systembase.NPOI.OpenXmlFormats">
+      <HintPath>lib\systembase.NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
     <Reference Include="systembase.report">
       <HintPath>lib\systembase.report.dll</HintPath>
     </Reference>
     <Reference Include="systembase.report.renderer.pdf">
       <HintPath>lib\systembase.report.renderer.pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="systembase.report.renderer.xlsx">
+      <HintPath>lib\systembase.report.renderer.xlsx.dll</HintPath>
     </Reference>
     <Reference Include="zxing">
       <HintPath>lib\zxing.dll</HintPath>

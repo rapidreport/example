@@ -1,13 +1,10 @@
 ﻿using System;
-using System.IO;
 using System.Data;
 
 using jp.co.systembase.json;
 using jp.co.systembase.report;
 using jp.co.systembase.report.data;
-using jp.co.systembase.report.renderer.pdf;
-using jp.co.systembase.report.renderer.xlsx;
-using NPOI.XSSF.UserModel;
+using jp.co.systembase.report.renderer.gdi;
 
 // 基本サンプル1 見積書
 namespace example
@@ -26,23 +23,11 @@ namespace example
             // ページ分割を行います
             ReportPages pages = report.GetPages();
 
-            // PDF出力
-            using (FileStream fs = new FileStream("output/example1.pdf", FileMode.Create))
+            // プレビュー
             {
-                PdfRenderer renderer = new PdfRenderer(fs);
-                // バックスラッシュ文字を円マーク文字に変換します
-                renderer.Setting.ReplaceBackslashToYen = true;
-                pages.Render(renderer);
-            }
-
-            // Excel(XLSX)出力
-            using (FileStream fs = new FileStream(Path.Combine("output/example1.xlsx"), FileMode.Create))
-            {
-                XSSFWorkbook workbook = new XSSFWorkbook();
-                XlsxRenderer renderer = new XlsxRenderer(workbook);
-                renderer.NewSheet("sheet_name");
-                pages.Render(renderer);
-                workbook.Write(fs);
+                FmPrintPreview preview = new FmPrintPreview(new Printer(pages));
+                preview.StartUpZoomFit = true;
+                preview.ShowDialog();
             }
         }
 
