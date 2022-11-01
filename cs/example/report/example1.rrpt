@@ -3,7 +3,8 @@
   monospaced_fonts: [
     {bold:{full_width:1.033,half_width:0.536,row_height:1.0},regular:{full_width:1.03,half_width:0.516,row_height:1.0}},
     {name:"gothic",bold:{full_width:1.033,half_width:0.536,row_height:1.0},regular:{full_width:1.03,half_width:0.516,row_height:1.0}},
-    {name:"mincho",bold:{full_width:1.033,half_width:0.536,row_height:1.0},regular:{full_width:1.03,half_width:0.516,row_height:1.0}}
+    {name:"mincho",bold:{full_width:1.033,half_width:0.536,row_height:1.0},regular:{full_width:1.03,half_width:0.516,row_height:1.0}},
+    {name:"vl",bold:{full_width:1.04,half_width:0.536,row_height:1.27},regular:{full_width:1.03,half_width:0.515,row_height:1.27}}
   ],
   paper: {
     margin: {bottom:20.0,left:20.0,right:20.0,top:20.0},
@@ -47,8 +48,7 @@
           {type:"text",layout:{x1:440.0,y1:240.0,x2:540.0,y2:260.0},halign:"center",text:"金額",valign:"center"},
           {type:"text",layout:{x1:30.0,y1:210.0,x2:110.0,y2:230.0},halign:"left",text:"御見積合計金額",valign:"center"},
           {type:"line",layout:{x1:30.0,y1:230.0,x2:240.0,y2:230.0}},
-          {type:"field",layout:{x1:110.0,y1:210.0,x2:240.0,y2:230.0},exp:"(+ sum.kingaku sum.zei)",font:{name:"mincho",bold:true,size:14.0},formatter:{format:"\\#,##0",type:"default"},halign:"right",mock:"d8",valign:"center",xls_format:"\\\\#,##0"},
-          {type:"barcode",layout:{x1:445.0,y1:155.0,x2:515.0,y2:225.0},barcode_type:"qrcode",exp:".mitsumoriNo"}
+          {type:"field",layout:{x1:110.0,y1:210.0,x2:240.0,y2:230.0},exp:"(+ sum.kingaku sum.zei)",font:{name:"mincho",bold:true,size:14.0},formatter:{format:"\\#,##0",type:"default"},halign:"right",mock:"d8",valign:"center",xls_format:"\\\\#,##0"}
         ]
       },
       {
@@ -58,8 +58,8 @@
           caption: "明細グループ",
           detail: true,
           layout: {
-            max_count: 20.0,
-            blank: true
+            blank: true,
+            max_count: 20.0
           },
           contents: [
             {
