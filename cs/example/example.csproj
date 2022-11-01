@@ -53,21 +53,8 @@
     <Reference Include="itextsharp">
       <HintPath>lib\itextsharp.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>lib\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="NPOI">
-      <HintPath>lib\NPOI.dll</HintPath>
-    </Reference>
-    <Reference Include="NPOI.OOXML">
-      <HintPath>lib\NPOI.OOXML.dll</HintPath>
-    </Reference>
-    <Reference Include="NPOI.OpenXml4Net">
-      <HintPath>lib\NPOI.OpenXml4Net.dll</HintPath>
-    </Reference>
-    <Reference Include="NPOI.OpenXmlFormats">
-      <HintPath>lib\NPOI.OpenXmlFormats.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -85,6 +72,18 @@
     <Reference Include="systembase.json">
       <HintPath>lib\systembase.json.dll</HintPath>
     </Reference>
+    <Reference Include="systembase.NPOI">
+      <HintPath>lib\systembase.NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="systembase.NPOI.OOXML">
+      <HintPath>lib\systembase.NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="systembase.NPOI.OpenXml4Net">
+      <HintPath>lib\systembase.NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="systembase.NPOI.OpenXmlFormats">
+      <HintPath>lib\systembase.NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
     <Reference Include="systembase.report">
       <HintPath>lib\systembase.report.dll</HintPath>
     </Reference>
@@ -100,8 +99,11 @@
     <Reference Include="systembase.report.renderer.xlsx">
       <HintPath>lib\systembase.report.renderer.xlsx.dll</HintPath>
     </Reference>
-    <Reference Include="zxing">
-      <HintPath>lib\zxing.dll</HintPath>
+    <Reference Include="zxing, Version=0.16.8.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.8\lib\net40\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.8.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.8\lib\net40\zxing.presentation.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +156,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

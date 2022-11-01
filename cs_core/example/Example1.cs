@@ -7,7 +7,7 @@ using jp.co.systembase.report;
 using jp.co.systembase.report.data;
 using jp.co.systembase.report.renderer.pdf;
 using jp.co.systembase.report.renderer.xlsx;
-using NPOI.XSSF.UserModel;
+using jp.co.systembase.NPOI.XSSF.UserModel;
 
 // 基本サンプル1 見積書
 namespace example
