@@ -3,6 +3,9 @@ package example;
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
 import jp.co.systembase.core.DataTable;
 import jp.co.systembase.report.Report;
 import jp.co.systembase.report.ReportDesign;
@@ -12,23 +15,20 @@ import jp.co.systembase.report.renderer.pdf.PdfRenderer;
 import jp.co.systembase.report.renderer.xls.XlsRenderer;
 import jp.co.systembase.report.renderer.xlsx.XlsxRenderer;
 
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
-// 機能サンプル 差込コンテント
+// 機能サンプル コンテントの差し込み
 public class ExampleMergeContent {
 
 	public static void main(String[] args) throws Throwable {
-		
+
 		// 差込みを行うコンテントを、あらかじめ共有コンテントへ登録しておきます
 		ReportDesign sharedReport = new ReportDesign(ReadUtil.readJson("report/example_shared.rrpt"));
 		Report.addSharedContent("company_info", sharedReport);
-		
+
 		Report report = new Report(ReadUtil.readJson("report/example_mergecontent.rrpt"));
 		report.globalScope.put("company_name", "株式会社ラピッドレポート");
 		report.globalScope.put("tel", "0000-11-2222");
 		report.fill(new ReportDataSource(getDataTable()));
-		
+
 		// PDF出力
 		ReportPages pages = report.getPages();
 		{
@@ -41,7 +41,7 @@ public class ExampleMergeContent {
 				fos.close();
 			}
 		}
-		
+
 		// XLS出力
 		{
 			FileOutputStream fos = new FileOutputStream("output/example_mergecontent.xls");
@@ -55,7 +55,7 @@ public class ExampleMergeContent {
 				fos.close();
 			}
 		}
-		
+
 		// XLSX出力
 		{
 			FileOutputStream fos = new FileOutputStream("output/example_mergecontent.xlsx");
@@ -70,7 +70,7 @@ public class ExampleMergeContent {
 			}
 		}
 	}
-	
+
 	private static DataTable getDataTable() throws Exception {
 		DataTable ret = new DataTable();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");

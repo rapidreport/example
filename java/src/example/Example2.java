@@ -4,6 +4,9 @@ import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
 import jp.co.systembase.core.DataTable;
 import jp.co.systembase.report.Report;
 import jp.co.systembase.report.ReportPages;
@@ -12,10 +15,7 @@ import jp.co.systembase.report.renderer.pdf.PdfRenderer;
 import jp.co.systembase.report.renderer.xls.XlsRenderer;
 import jp.co.systembase.report.renderer.xlsx.XlsxRenderer;
 
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
-// 基本サンプル2 売上明細表
+// チュートリアル2 売上明細表
 public class Example2 {
 
 	public static void main(String[] args) throws Exception {

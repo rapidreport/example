@@ -10,7 +10,7 @@ import jp.co.systembase.report.ReportPages;
 import jp.co.systembase.report.data.ReportDataSource;
 import jp.co.systembase.report.renderer.pdf.PdfRenderer;
 
-// 基本サンプル2 売上明細表（PDF1000ページ）
+// チュートリアル2 売上明細表（PDF1000ページ）
 public class Example2Huge {
 
 	public static void main(String[] args) throws Exception {

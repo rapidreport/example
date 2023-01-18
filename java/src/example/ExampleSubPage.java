@@ -14,7 +14,7 @@ import jp.co.systembase.report.renderer.pdf.PdfRenderer;
 import jp.co.systembase.report.renderer.xls.XlsRenderer;
 import jp.co.systembase.report.renderer.xlsx.XlsxRenderer;
 
-// 機能サンプル サブページ
+// 機能サンプル 段組帳票(サブページ)
 public class ExampleSubPage {
 
 	public static void main(String[] args) throws Throwable {
