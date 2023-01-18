@@ -1,9 +1,9 @@
 ﻿Imports System.IO
 
 Imports iTextSharp.text.pdf
-Imports NPOI.SS.UserModel
-Imports NPOI.HSSF.UserModel
-Imports NPOI.XSSF.UserModel
+Imports jp.co.systembase.NPOI.SS.UserModel
+Imports jp.co.systembase.NPOI.HSSF.UserModel
+Imports jp.co.systembase.NPOI.XSSF.UserModel
 
 Imports jp.co.systembase.report
 Imports jp.co.systembase.report.textformatter

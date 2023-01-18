@@ -5,8 +5,8 @@ using System.Text;
 using System.IO;
 using System.Data;
 
-using NPOI.HSSF.UserModel;
-using NPOI.XSSF.UserModel;
+using jp.co.systembase.NPOI.HSSF.UserModel;
+using jp.co.systembase.NPOI.XSSF.UserModel;
 
 using jp.co.systembase.json;
 using jp.co.systembase.report;

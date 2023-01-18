@@ -3,6 +3,8 @@
 bin
 obj
 .vs
+packages
+
 /cp.bat
 /cs/example/lib/*.dll
 /cs_core/example/lib/*.dll

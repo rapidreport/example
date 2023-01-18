@@ -47,7 +47,8 @@
           {type:"text",layout:{x1:440.0,y1:240.0,x2:540.0,y2:260.0},halign:"center",text:"金額",valign:"center"},
           {type:"text",layout:{x1:30.0,y1:210.0,x2:110.0,y2:230.0},halign:"left",text:"御見積合計金額",valign:"center"},
           {type:"line",layout:{x1:30.0,y1:230.0,x2:240.0,y2:230.0}},
-          {type:"field",layout:{x1:110.0,y1:210.0,x2:240.0,y2:230.0},exp:"(+ sum.kingaku sum.zei)",font:{name:"mincho",bold:true,size:14.0},formatter:{format:"\\#,##0",type:"default"},halign:"right",mock:"d8",valign:"center",xls_format:"\\\\#,##0"}
+          {type:"field",layout:{x1:110.0,y1:210.0,x2:240.0,y2:230.0},exp:"(+ sum.kingaku sum.zei)",font:{name:"mincho",bold:true,size:14.0},formatter:{format:"\\#,##0",type:"default"},halign:"right",mock:"d8",valign:"center",xls_format:"\\\\#,##0"},
+          {type:"barcode",layout:{x1:445.0,y1:155.0,x2:515.0,y2:225.0},barcode_type:"qrcode",exp:".mitsumoriNo"}
         ]
       },
       {

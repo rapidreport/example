@@ -7,8 +7,8 @@ using System.Data;
 using System.Drawing;
 using System.Windows.Forms.DataVisualization.Charting;
 
-using NPOI.HSSF.UserModel;
-using NPOI.XSSF.UserModel;
+using jp.co.systembase.NPOI.HSSF.UserModel;
+using jp.co.systembase.NPOI.XSSF.UserModel;
 
 using jp.co.systembase.json;
 using jp.co.systembase.report;
