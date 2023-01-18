@@ -1,10 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 using jp.co.systembase.report.renderer.gdi;
@@ -20,41 +15,41 @@ namespace example
         // コンストラクタ
         public MyFmPrintPreview()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
         public MyFmPrintPreview(Printer printer)
         {
-            this.InitializeComponent();
-            this.PrintPreview.Printer = printer;
+            InitializeComponent();
+            PrintPreview.Printer = printer;
         }
 
         // フォームロード
         private void MyFmPrintPreview_Load(object sender, EventArgs e)
         {
-            using (this.PrintPreview.RenderBlock())
+            using (PrintPreview.RenderBlock())
             {
-                this.PrintPreviewPage.Init(this.PrintPreview);
-                this.PrintPreviewMultiPage.Init(this.PrintPreview);
-                this.PrintPreviewZoom.Init(this.PrintPreview);
-                this.PrintPreviewSearch.Init(this.PrintPreview, this.PrintPreviewSearchPanel);
+                PrintPreviewPage.Init(PrintPreview);
+                PrintPreviewMultiPage.Init(PrintPreview);
+                PrintPreviewZoom.Init(PrintPreview);
+                PrintPreviewSearch.Init(PrintPreview, PrintPreviewSearchPanel);
                 // 「画面サイズに合わせて拡大/縮小」状態にします
-                this.PrintPreview.AutoZoomFit = true;
+                PrintPreview.AutoZoomFit = true;
             }
-            this.MouseWheel += new MouseEventHandler(this.MyFmPrintPreview_MouseWheel);
+            MouseWheel += new MouseEventHandler(MyFmPrintPreview_MouseWheel);
         }
 
         // マウスホイール操作
         private void MyFmPrintPreview_MouseWheel(object sender, MouseEventArgs e)
         {
             Boolean handled = false;
-            if (System.Object.ReferenceEquals(this.ActiveControl, this.PrintPreviewPage)){
-                handled = this.PrintPreviewPage.HandleMouseWheelEvent(e);
-            }else if (System.Object.ReferenceEquals(this.ActiveControl , this.PrintPreviewZoom)){
-                handled = this.PrintPreviewZoom.HandleMouseWheelEvent(e);
+            if (System.Object.ReferenceEquals(ActiveControl, PrintPreviewPage)){
+                handled = PrintPreviewPage.HandleMouseWheelEvent(e);
+            }else if (System.Object.ReferenceEquals(ActiveControl , PrintPreviewZoom)){
+                handled = PrintPreviewZoom.HandleMouseWheelEvent(e);
             }
             if (!handled)
             {
-                this.PrintPreview.HandleMouseWheelEvent(e);
+                PrintPreview.HandleMouseWheelEvent(e);
             }
         }
 
@@ -66,21 +61,21 @@ namespace example
                 case Keys.P:
                     if (e.Modifiers == Keys.Control)
                     {
-                        this.Print();
+                        Print();
                     }
                     break;
                 case Keys.Escape:
-                    if (this.PrintPreviewSearchPanel.Visible)
+                    if (PrintPreviewSearchPanel.Visible)
                     {
-                        this.PrintPreviewSearch.PanelHide();
+                        PrintPreviewSearch.PanelHide();
                     }
                     else
                     {
-                        this.Close();
+                        Close();
                     }
                     break;
                 default:
-                    this.PrintPreview.HandleKeyDownEvent(e);
+                    PrintPreview.HandleKeyDownEvent(e);
                     break;
             }
         }
@@ -88,28 +83,28 @@ namespace example
         // 印刷ボタン押下
         private void BtnPrint_Click(object sender, EventArgs e)
         {
-            this.Print();
+            Print();
         }
         
         // PDF出力ボタン押下
         private void BtnPDF_Click(object sender, EventArgs e)
         {
-            this.ExportPDF();
+            ExportPDF();
         }
 
         // 閉じるボタン押下
         private void BtnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         // 印刷実行
         public void Print()
         {
-            if (this.PrintPreview.Printer.PrintDialog.ShowDialog() == DialogResult.OK)
+            if (PrintPreview.Printer.PrintDialog.ShowDialog() == DialogResult.OK)
             {
-                this.PrintPreview.Printer.PrintDocument.Print();
-                this.PrintExecuted = true;
+                PrintPreview.Printer.PrintDocument.Print();
+                PrintExecuted = true;
             }
         }
 
@@ -127,7 +122,7 @@ namespace example
                     {
                         PdfRenderer renderer = new PdfRenderer(fs);
                         renderer.Setting.ReplaceBackslashToYen = true;
-                        this.PrintPreview.Printer.Pages.Render(renderer);
+                        PrintPreview.Printer.Pages.Render(renderer);
                     }
                     MessageBox.Show(fd.FileName + "を保存しました", "確認");
                 }

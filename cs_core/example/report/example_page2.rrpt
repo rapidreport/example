@@ -1,0 +1,29 @@
+{
+  version: 0,
+  monospaced_fonts: [
+    {bold:{full_width:1.033,half_width:0.536,row_height:1.0},regular:{full_width:1.03,half_width:0.516,row_height:1.0}},
+    {name:"gothic",bold:{full_width:1.033,half_width:0.536,row_height:1.0},regular:{full_width:1.03,half_width:0.516,row_height:1.0}},
+    {name:"mincho",bold:{full_width:1.033,half_width:0.536,row_height:1.0},regular:{full_width:1.03,half_width:0.516,row_height:1.0}}
+  ],
+  paper: {
+    landscape: true,
+    margin: {bottom:10,left:10,right:10,top:10},
+    scale_unit: "mm",
+    type: "a4"
+  },
+  font: {size:30},
+  group: {
+    contents: [
+      {
+        size: {
+          initial: 0,
+          rev_initial: true
+        },
+        elements: [
+          {type:"rect",round:10},
+          {type:"text",halign:"center",text:"グループ #{.GROUP_CD} には #{count} 件のレコードがあります",valign:"center"}
+        ]
+      }
+    ]
+  }
+}

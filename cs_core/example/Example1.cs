@@ -9,7 +9,7 @@ using jp.co.systembase.report.renderer.pdf;
 using jp.co.systembase.report.renderer.xlsx;
 using jp.co.systembase.NPOI.XSSF.UserModel;
 
-// 基本サンプル1 見積書
+// チュートリアル1 見積書
 namespace example
 {
     class Example1

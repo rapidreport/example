@@ -15,7 +15,7 @@ Imports jp.co.systembase.report.renderer.xlsx
 Module Feature
 
     Public Sub Run()
-        Dim report As New Report(Json.Read("report\feature.rrpt"))
+        Dim report As New Report(Json.Read("report/feature.rrpt"))
 
         ' "feature1-4"にgetDataTable1-4のデータをそれぞれ割り当てます
         Dim dataProvider As New GroupDataProvider
@@ -30,12 +30,12 @@ Module Feature
         Dim pages As ReportPages = report.GetPages()
 
         ' PDF出力
-        Using fs As New FileStream("output\feature.pdf", IO.FileMode.Create)
+        Using fs As New FileStream("output/feature.pdf", IO.FileMode.Create)
             pages.Render(New PdfRenderer(fs))
         End Using
 
         ' XLS出力
-        Using fs As New FileStream("output\feature.xls", IO.FileMode.Create)
+        Using fs As New FileStream("output/feature.xls", IO.FileMode.Create)
             Dim workbook As New HSSFWorkbook
             Dim renderer As New XlsRenderer(workbook)
             renderer.NewSheet("feature")
@@ -44,7 +44,7 @@ Module Feature
         End Using
 
         ' XLSX出力
-        Using fs As New FileStream("output\feature.xlsx", IO.FileMode.Create)
+        Using fs As New FileStream("output/feature.xlsx", IO.FileMode.Create)
             Dim workbook As New XSSFWorkbook
             Dim renderer As New XlsxRenderer(workbook)
             renderer.NewSheet("feature")

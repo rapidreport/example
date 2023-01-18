@@ -27,26 +27,26 @@ namespace example
             ReportPages pages;
             {
                 // 第2引数にCustomizerオブジェクトを渡します
-                Report report = new Report(Json.Read("report\\example_page1.rrpt"), new Customizer());
+                Report report = new Report(Json.Read("report/example_page1.rrpt"), new Customizer());
                 report.Fill(new ReportDataSource(getDataTable()));
                 pages = report.GetPages();
             }
 
             {
-                Report report = new Report(Json.Read("report\\example_page3.rrpt"));
+                Report report = new Report(Json.Read("report/example_page3.rrpt"));
                 report.Fill(DummyDataSource.GetInstance());
                 // 最後のページを追加します
                 pages.AddRange(report.GetPages());
             }
 
             // PDF出力
-            using (FileStream fs = new FileStream("output\\example_page.pdf", FileMode.Create))
+            using (FileStream fs = new FileStream("output/example_page.pdf", FileMode.Create))
             {
                 pages.Render(new PdfRenderer(fs));
             }
 
             // XLS出力
-            using (FileStream fs = new FileStream("output\\example_page.xls", FileMode.Create))
+            using (FileStream fs = new FileStream("output/example_page.xls", FileMode.Create))
             {
                 HSSFWorkbook workbook = new HSSFWorkbook();
                 XlsRenderer renderer = new XlsRenderer(workbook);
@@ -56,7 +56,7 @@ namespace example
             }
 
             // XLSX出力
-            using (FileStream fs = new FileStream("output\\example_page.xlsx", FileMode.Create))
+            using (FileStream fs = new FileStream("output/example_page.xlsx", FileMode.Create))
             {
                 XSSFWorkbook workbook = new XSSFWorkbook();
                 XlsxRenderer renderer = new XlsxRenderer(workbook);
@@ -85,7 +85,7 @@ namespace example
 
             public Customizer()
             {
-                this.reportDesign = new ReportDesign(Json.Read("report\\example_page2.rrpt"));
+                this.reportDesign = new ReportDesign(Json.Read("report/example_page2.rrpt"));
             }
 
             public override void PageAdded(Report report, ReportPages pages, ReportPage page)

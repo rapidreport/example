@@ -18,7 +18,7 @@ namespace example
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Example1.Run();
+            Application.Run(new FmMenu());
         }
     }
 }

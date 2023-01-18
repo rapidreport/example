@@ -22,7 +22,7 @@ namespace example
         public static void Run()
         {
 
-            Report report = new Report(Json.Read("report\\feature.rrpt"));
+            Report report = new Report(Json.Read("report/feature.rrpt"));
 
             // "feature-4"にgetDataTable1-4をそれぞれ割り当てます
             GroupDataProvider dataProvider = new GroupDataProvider();
@@ -36,7 +36,7 @@ namespace example
             ReportPages pages = report.GetPages();
 
             // PDF出力
-            using (FileStream fs = new FileStream("output\\feature.pdf", FileMode.Create))
+            using (FileStream fs = new FileStream("output/feature.pdf", FileMode.Create))
             {
                 PdfRenderer renderer = new PdfRenderer(fs);
                 renderer.Setting.ReplaceBackslashToYen = true;
@@ -44,7 +44,7 @@ namespace example
             }
 
             // XLS出力
-            using (FileStream fs = new FileStream("output\\feature.xls", FileMode.Create))
+            using (FileStream fs = new FileStream("output/feature.xls", FileMode.Create))
             {
                 HSSFWorkbook workbook = new HSSFWorkbook();
                 XlsRenderer renderer = new XlsRenderer(workbook);
@@ -54,7 +54,7 @@ namespace example
             }
 
             // XLSX出力
-            using (FileStream fs = new FileStream("output\\feature.xlsx", FileMode.Create))
+            using (FileStream fs = new FileStream("output/feature.xlsx", FileMode.Create))
             {
                 XSSFWorkbook workbook = new XSSFWorkbook();
                 XlsxRenderer renderer = new XlsxRenderer(workbook);

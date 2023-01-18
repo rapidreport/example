@@ -21,12 +21,12 @@ namespace example
 
         public static void Run()
         {
-            Report report = new Report(Json.Read("report\\example_locate.rrpt"));
+            Report report = new Report(Json.Read("report/example_locate.rrpt"));
             report.Fill(new ReportDataSource(getDataTable()));
             ReportPages pages = report.GetPages();
 
             // PDF出力
-            using (FileStream fs = new FileStream("output\\example_locate.pdf", FileMode.Create))
+            using (FileStream fs = new FileStream("output/example_locate.pdf", FileMode.Create))
             {
                 PdfRenderer renderer = new PdfRenderer(fs);
                 renderer.Setting.ReplaceBackslashToYen = true;
@@ -34,7 +34,7 @@ namespace example
             }
 
             // XLS出力
-            using (FileStream fs = new FileStream("output\\example_locate.xls", FileMode.Create))
+            using (FileStream fs = new FileStream("output/example_locate.xls", FileMode.Create))
             {
                 HSSFWorkbook workbook = new HSSFWorkbook();
                 XlsRenderer renderer = new XlsRenderer(workbook);
@@ -44,7 +44,7 @@ namespace example
             }
 
             // XLSX出力
-            using (FileStream fs = new FileStream("output\\example_locate.xlsx", FileMode.Create))
+            using (FileStream fs = new FileStream("output/example_locate.xlsx", FileMode.Create))
             {
                 XSSFWorkbook workbook = new XSSFWorkbook();
                 XlsxRenderer renderer = new XlsxRenderer(workbook);

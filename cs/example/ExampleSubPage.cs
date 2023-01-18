@@ -13,7 +13,7 @@ using jp.co.systembase.report.renderer.pdf;
 using jp.co.systembase.report.renderer.xls;
 using jp.co.systembase.report.renderer.xlsx;
 
-// 機能サンプル サブページ
+// 機能サンプル 段組帳票(サブページ)
 namespace example
 {
     class ExampleSubPage
@@ -23,11 +23,11 @@ namespace example
         {
 
             // サブページを先に生成します
-            Report subReport = new Report(Json.Read("report\\example_subpage2.rrpt"));
+            Report subReport = new Report(Json.Read("report/example_subpage2.rrpt"));
             subReport.Fill(new ReportDataSource(getDataTable()));
             ReportPages subPages = subReport.GetPages();
 
-            Report report = new Report(Json.Read("report\\example_subpage1.rrpt"));
+            Report report = new Report(Json.Read("report/example_subpage1.rrpt"));
             // 外枠帳票にサブページを登録します
             report.AddSubPages("subpage", subPages);
             // 外枠帳票の中でサブページが正しく割り当てられるようにSubPageDataSourceを渡します
@@ -35,7 +35,7 @@ namespace example
             ReportPages pages = report.GetPages();
 
             // PDF出力
-            using (FileStream fs = new FileStream("output\\example_subpage.pdf", FileMode.Create))
+            using (FileStream fs = new FileStream("output/example_subpage.pdf", FileMode.Create))
             {
                 PdfRenderer renderer = new PdfRenderer(fs);
                 renderer.Setting.ReplaceBackslashToYen = true;
@@ -43,7 +43,7 @@ namespace example
             }
 
             // XLS出力
-            using (FileStream fs = new FileStream("output\\example_subpage.xls", FileMode.Create))
+            using (FileStream fs = new FileStream("output/example_subpage.xls", FileMode.Create))
             {
                 HSSFWorkbook workbook = new HSSFWorkbook();
                 XlsRenderer renderer = new XlsRenderer(workbook);
@@ -53,7 +53,7 @@ namespace example
             }
 
             // XLSX出力
-            using (FileStream fs = new FileStream("output\\example_subpage.xlsx", FileMode.Create))
+            using (FileStream fs = new FileStream("output/example_subpage.xlsx", FileMode.Create))
             {
                 XSSFWorkbook workbook = new XSSFWorkbook();
                 XlsxRenderer renderer = new XlsxRenderer(workbook);

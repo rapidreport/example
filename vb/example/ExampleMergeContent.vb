@@ -11,7 +11,7 @@ Imports jp.co.systembase.report.renderer.pdf
 Imports jp.co.systembase.report.renderer.xls
 Imports jp.co.systembase.report.renderer.xlsx
 
-' 機能サンプル 絶対座標による配置
+' 機能サンプル コンテントの差し込み
 Module ExampleMergeContent
 
     Public Sub Run()
@@ -20,21 +20,21 @@ Module ExampleMergeContent
         Dim sharedReport As New ReportDesign(Json.Read("report/example_shared.rrpt"))
         jp.co.systembase.report.Report.AddSharedContent("company_info", sharedReport)
 
-        Dim report As New Report(Json.Read("report\example_mergecontent.rrpt"))
+        Dim report As New Report(Json.Read("report/example_mergecontent.rrpt"))
         report.GlobalScope.Add("company_name", "株式会社ラピッドレポート")
         report.GlobalScope.Add("tel", "0000-11-2222")
         report.Fill(New ReportDataSource(getDataTable))
         Dim pages As ReportPages = report.GetPages()
 
         ' PDF出力
-        Using fs As New FileStream("output\example_mergecontent.pdf", IO.FileMode.Create)
+        Using fs As New FileStream("output/example_mergecontent.pdf", IO.FileMode.Create)
             Dim renderer As New PdfRenderer(fs)
             renderer.Setting.ReplaceBackslashToYen = True
             pages.Render(renderer)
         End Using
 
         ' XLS出力
-        Using fs As New FileStream("output\example_mergecontent.xls", IO.FileMode.Create)
+        Using fs As New FileStream("output/example_mergecontent.xls", IO.FileMode.Create)
             Dim workbook As New HSSFWorkbook
             Dim renderer As New XlsRenderer(workbook)
             renderer.NewSheet("example_mergecontent")
@@ -43,7 +43,7 @@ Module ExampleMergeContent
         End Using
 
         ' XLSX出力
-        Using fs As New FileStream("output\example_locate.xlsx", IO.FileMode.Create)
+        Using fs As New FileStream("output/example_locate.xlsx", IO.FileMode.Create)
             Dim workbook As New XSSFWorkbook
             Dim renderer As New XlsxRenderer(workbook)
             renderer.NewSheet("example_mergecontent")

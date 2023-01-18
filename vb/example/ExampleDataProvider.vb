@@ -15,7 +15,7 @@ Imports jp.co.systembase.report.renderer.xlsx
 Module ExampleDataProvider
 
     Public Sub Run()
-        Dim report As New Report(Json.Read("report\example_dataprovider.rrpt"))
+        Dim report As New Report(Json.Read("report/example_dataprovider.rrpt"))
 
         ' "group_shohin"という識別子を持ったグループには、
         ' getShoninDataTableから得られるデータを割り当てます
@@ -28,12 +28,12 @@ Module ExampleDataProvider
         Dim pages As ReportPages = report.GetPages()
 
         ' PDF出力
-        Using fs As New FileStream("output\example_dataprovider.pdf", IO.FileMode.Create)
+        Using fs As New FileStream("output/example_dataprovider.pdf", IO.FileMode.Create)
             pages.Render(New PdfRenderer(fs))
         End Using
 
         ' XLS出力
-        Using fs As New FileStream("output\example_dataprovider.xls", IO.FileMode.Create)
+        Using fs As New FileStream("output/example_dataprovider.xls", IO.FileMode.Create)
             Dim workbook As New HSSFWorkbook
             Dim renderer As New XlsRenderer(workbook)
             renderer.NewSheet("example_dataprovider")
@@ -42,7 +42,7 @@ Module ExampleDataProvider
         End Using
 
         ' XLSX出力
-        Using fs As New FileStream("output\example_dataprovider.xlsx", IO.FileMode.Create)
+        Using fs As New FileStream("output/example_dataprovider.xlsx", IO.FileMode.Create)
             Dim workbook As New XSSFWorkbook
             Dim renderer As New XlsxRenderer(workbook)
             renderer.NewSheet("example_dataprovider")

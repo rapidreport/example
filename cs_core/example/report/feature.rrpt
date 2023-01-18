@@ -1,0 +1,291 @@
+{
+  version: 0,
+  monospaced_fonts: [
+    {bold:{full_width:1.033,half_width:0.536,row_height:1.0},regular:{full_width:1.03,half_width:0.516,row_height:1.0}},
+    {name:"gothic",bold:{full_width:1.033,half_width:0.536,row_height:1.0},regular:{full_width:1.03,half_width:0.516,row_height:1.0}},
+    {name:"mincho",bold:{full_width:1.033,half_width:0.536,row_height:1.0},regular:{full_width:1.03,half_width:0.516,row_height:1.0}}
+  ],
+  paper: {
+    margin: {bottom:20.0,left:20.0,right:20.0,top:20.0},
+    scale_unit: "point",
+    type: "a4"
+  },
+  group: {
+    contents: [
+      {
+        size: {
+          initial: 20.0
+        },
+        elements: [
+          {type:"text",layout:{x1:0.0,y1:0.0,x2:555.0,y2:20.0},text:"ドキュメントの「特徴と機能一覧」ページに掲載したサンプルです"}
+        ]
+      },
+      {
+        size: {
+          initial: 220.0,
+          not_extendable: true
+        },
+        group: {
+          id: "feature1",
+          custom_fields: [
+            {key:"kingaku",exp:"(* .TANKA .SURYO)"},
+            {key:"zei",exp:"(rounddown (* .kingaku 0.08))"},
+            {key:"kei",exp:"(+ .zei .kingaku)"}
+          ],
+          contents: [
+            {
+              size: {
+                initial: 20.0
+              },
+              elements: [
+                {type:"rect",layout:{x1:0.0,y1:0.0,x2:555.0,y2:20.0},fill_color:"silver",hide_bottom:true,round:10.0},
+                {type:"line",layout:{x1:0.0,y1:20.0,x2:555.0,y2:20.0}},
+                {type:"text",layout:{x1:10.0,y1:0.0,x2:80.0,y2:20.0},halign:"left",text:"施工区分",valign:"center"},
+                {type:"text",layout:{x1:80.0,y1:0.0,x2:150.0,y2:20.0},halign:"left",text:"施工箇所",valign:"center"},
+                {type:"text",layout:{x1:150.0,y1:0.0,x2:220.0,y2:20.0},halign:"left",text:"材質",valign:"center"},
+                {type:"text",layout:{x1:220.0,y1:0.0,x2:255.0,y2:20.0},halign:"center",text:"単位",valign:"center"},
+                {type:"text",layout:{x1:255.0,y1:0.0,x2:295.0,y2:20.0},halign:"right",text:"単価",valign:"center"},
+                {type:"text",layout:{x1:295.0,y1:0.0,x2:335.0,y2:20.0},halign:"right",text:"数量",valign:"center"},
+                {type:"text",layout:{x1:335.0,y1:0.0,x2:400.0,y2:20.0},halign:"right",text:"消費税",valign:"center"},
+                {type:"text",layout:{x1:400.0,y1:0.0,x2:465.0,y2:20.0},halign:"right",text:"金額",valign:"center"},
+                {type:"text",layout:{x1:465.0,y1:0.0,x2:530.0,y2:20.0},halign:"right",text:"計",valign:"center"}
+              ]
+            },
+            {
+              aggregate_src: true,
+              elements: [
+                {type:"rect",layout:{x1:0.0,y1:0.0,x2:555.0,y2:0.0,rev_y2:true}}
+              ],
+              group: {
+                keys: ["KUBUN1"],
+                contents: [
+                  {
+                    aggregate_src: true,
+                    elements: [
+                      {type:"field",layout:{x1:10.0,y1:0.0,x2:80.0,y2:0.0,rev_y2:true},exp:".KUBUN1",halign:"left",valign:"center"},
+                      {type:"line",layout:{x1:10.0,y1:0.0,x2:80.0,y2:0.0,rev_y1:true,rev_y2:true}}
+                    ],
+                    group: {
+                      keys: ["KUBUN2"],
+                      contents: [
+                        {
+                          aggregate_src: true,
+                          elements: [
+                            {type:"field",layout:{x1:80.0,y1:0.0,x2:150.0,y2:0.0,rev_y2:true},exp:".KUBUN2",halign:"left",valign:"center"},
+                            {type:"line",layout:{x1:80.0,y1:0.0,x2:150.0,y2:0.0,rev_y1:true,rev_y2:true}}
+                          ],
+                          group: {
+                            detail: true,
+                            contents: [
+                              {
+                                size: {
+                                  initial: 20.0
+                                },
+                                aggregate_src: true,
+                                elements: [
+                                  {type:"field",layout:{x1:150.0,y1:0.0,x2:220.0,y2:20.0},exp:".ZAISHITSU",halign:"left",valign:"center"},
+                                  {type:"line",layout:{x1:150.0,y1:20.0,x2:545.0,y2:20.0},line_style:"solid"},
+                                  {type:"field",layout:{x1:220.0,y1:0.0,x2:255.0,y2:20.0},exp:".TANI",halign:"center",valign:"center"},
+                                  {type:"field",layout:{x1:255.0,y1:0.0,x2:295.0,y2:20.0},exp:".TANKA",formatter:{format:"\\#,##0",type:"default"},halign:"right",valign:"center"},
+                                  {type:"field",layout:{x1:295.0,y1:0.0,x2:335.0,y2:20.0},exp:".SURYO",formatter:{format:"#,##0",type:"default"},halign:"right",valign:"center"},
+                                  {type:"field",layout:{x1:335.0,y1:0.0,x2:400.0,y2:20.0},exp:".zei",formatter:{format:"\\#,##0",type:"default"},halign:"right",valign:"center"},
+                                  {type:"field",layout:{x1:400.0,y1:0.0,x2:465.0,y2:20.0},exp:".kingaku",formatter:{format:"\\#,##0",type:"default"},halign:"right",valign:"center"},
+                                  {type:"field",layout:{x1:465.0,y1:0.0,x2:530.0,y2:20.0},exp:".kei",formatter:{format:"\\#,##0",type:"default"},halign:"right",valign:"center"}
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    size: {
+                      initial: 20.0
+                    },
+                    visibility_cond: "state.intrinsic",
+                    elements: [
+                      {type:"field",layout:{x1:335.0,y1:0.0,x2:400.0,y2:20.0},exp:"sum.zei",formatter:{format:"\\#,##0",type:"default"},halign:"right",valign:"center"},
+                      {type:"field",layout:{x1:400.0,y1:0.0,x2:465.0,y2:20.0},exp:"sum.kingaku",formatter:{format:"\\#,##0",type:"default"},halign:"right",valign:"center"},
+                      {type:"line",layout:{x1:10.0,y1:20.0,x2:545.0,y2:20.0}},
+                      {type:"text",layout:{x1:295.0,y1:0.0,x2:335.0,y2:20.0},halign:"right",text:"小計",valign:"center"},
+                      {type:"field",layout:{x1:465.0,y1:0.0,x2:530.0,y2:20.0},exp:"sum.kei",formatter:{format:"\\#,##0",type:"default"},halign:"right",valign:"center"}
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              size: {
+                initial: 20.0
+              },
+              elements: [
+                {type:"rect",layout:{x1:0.0,y1:0.0,x2:555.0,y2:20.0},hide_top:true,round:10.0},
+                {type:"line",layout:{x1:0.0,y1:0.0,x2:555.0,y2:0.0}},
+                {type:"field",layout:{x1:335.0,y1:0.0,x2:400.0,y2:20.0},exp:"sum.zei",formatter:{format:"\\#,##0",type:"default"},halign:"right",valign:"center"},
+                {type:"field",layout:{x1:400.0,y1:0.0,x2:465.0,y2:20.0},exp:"sum.kingaku",formatter:{format:"\\#,##0",type:"default"},halign:"right",valign:"center"},
+                {type:"text",layout:{x1:295.0,y1:0.0,x2:335.0,y2:20.0},halign:"right",text:"合計",valign:"center"},
+                {type:"field",layout:{x1:465.0,y1:0.0,x2:530.0,y2:20.0},exp:"sum.kei",formatter:{format:"\\#,##0",type:"default"},halign:"right",valign:"center"}
+              ]
+            }
+          ]
+        }
+      },
+      {
+        size: {
+          initial: 180.0,
+          not_extendable: true
+        },
+        aggregate_src: true,
+        group: {
+          id: "feature2",
+          keys: ["REGION"],
+          contents: [
+            {
+              size: {
+                initial: 20.0
+              },
+              elements: [
+                {type:"rect",layout:{x1:0.0,y1:0.0,x2:240.0,y2:20.0},fill_color:"silver",line_width:0.0},
+                {type:"field",layout:{x1:0.0,y1:0.0,x2:240.0,y2:20.0},exp:".REGION",halign:"left",valign:"center"}
+              ]
+            },
+            {
+              aggregate_src: true,
+              group: {
+                max_count: 4.0,
+                contents: [
+                  {
+                    aggregate_src: true,
+                    group: {
+                      detail: true,
+                      layout: {
+                        size: 20.0,
+                        direction: "horizontal"
+                      },
+                      contents: [
+                        {
+                          size: {
+                            initial: 60.0
+                          },
+                          aggregate_src: true,
+                          elements: [
+                            {type:"field",layout:{x1:0.0,y1:0.0,x2:60.0,y2:20.0},exp:".PREF",halign:"left",valign:"center"}
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        size: {
+          initial: 180.0,
+          not_extendable: true
+        },
+        group: {
+          id: "feature3",
+          contents: [
+            {
+              size: {
+                initial: 25.0
+              },
+              elements: [
+                {type:"line",layout:{x1:0.0,y1:25.0,x2:260.0,y2:25.0}},
+                {type:"text",layout:{x1:0.0,y1:0.0,x2:90.0,y2:25.0},halign:"left",text:"改行して\r\n全体を表示",valign:"center"},
+                {type:"text",layout:{x1:90.0,y1:0.0,x2:180.0,y2:25.0},halign:"left",text:"縮小して\r\n全体を表示",valign:"center"},
+                {type:"text",layout:{x1:180.0,y1:0.0,x2:260.0,y2:25.0},halign:"left",text:"小数点位置固定",valign:"center"}
+              ]
+            },
+            {
+              aggregate_src: true,
+              group: {
+                detail: true,
+                contents: [
+                  {
+                    size: {
+                      initial: 25.0
+                    },
+                    aggregate_src: true,
+                    elements: [
+                      {type:"line",layout:{x1:0.0,y1:25.0,x2:260.0,y2:25.0},line_style:"dot"},
+                      {type:"field",layout:{x1:0.0,y1:0.0,x2:90.0,y2:25.0},exp:".WRAP",halign:"left",valign:"center",wrap:true},
+                      {type:"field",layout:{x1:90.0,y1:0.0,x2:180.0,y2:25.0},exp:".SHRINK",halign:"left",shrink_to_fit:true,valign:"center"},
+                      {type:"field",layout:{x1:180.0,y1:0.0,x2:260.0,y2:25.0},decimal_place:3.0,exp:".FIXDEC",formatter:{format:"#,##0.###",type:"default"},halign:"right",valign:"center"}
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        size: {
+          initial: 200.0
+        },
+        group: {
+          id: "feature4",
+          contents: [
+            {
+              size: {
+                initial: 25.0
+              },
+              elements: [
+                {type:"rect",layout:{x1:0.0,y1:0.0,x2:355.0,y2:25.0},fill_color:"dimgray",hide_bottom:true},
+                {type:"line",layout:{x1:130.0,y1:0.0,x2:130.0,y2:25.0}},
+                {type:"line",layout:{x1:190.0,y1:0.0,x2:190.0,y2:25.0}},
+                {type:"line",layout:{x1:230.0,y1:0.0,x2:230.0,y2:25.0}},
+                {type:"line",layout:{x1:285.0,y1:0.0,x2:285.0,y2:25.0}},
+                {type:"text",layout:{x1:0.0,y1:0.0,x2:130.0,y2:25.0},color:"white",halign:"center",text:"コード・商品名",valign:"center"},
+                {type:"text",layout:{x1:130.0,y1:0.0,x2:190.0,y2:25.0},color:"white",halign:"center",text:"数量",valign:"center"},
+                {type:"text",layout:{x1:190.0,y1:0.0,x2:230.0,y2:25.0},color:"white",halign:"center",text:"単位",valign:"center"},
+                {type:"text",layout:{x1:230.0,y1:0.0,x2:285.0,y2:25.0},color:"white",halign:"center",text:"単価",valign:"center"},
+                {type:"text",layout:{x1:285.0,y1:0.0,x2:355.0,y2:25.0},color:"white",halign:"center",text:"金額",valign:"center"}
+              ]
+            },
+            {
+              aggregate_src: true,
+              elements: [
+                {type:"rect",layout:{x1:0.0,y1:0.0,x2:355.0,y2:0.0,rev_y2:true}}
+              ],
+              group: {
+                detail: true,
+                layout: {
+                  max_count: 5.0,
+                  blank: true
+                },
+                contents: [
+                  {
+                    size: {
+                      initial: 25.0
+                    },
+                    aggregate_src: true,
+                    elements: [
+                      {type:"rect",layout:{x1:0.0,y1:0.0,x2:355.0,y2:25.0},background:true,fill_color:"lightgray",line_width:0.0,visibility_cond:"(% state.index 2)"},
+                      {type:"line",layout:{x1:130.0,y1:0.0,x2:130.0,y2:25.0}},
+                      {type:"line",layout:{x1:190.0,y1:0.0,x2:190.0,y2:25.0}},
+                      {type:"line",layout:{x1:230.0,y1:0.0,x2:230.0,y2:25.0}},
+                      {type:"line",layout:{x1:285.0,y1:0.0,x2:285.0,y2:25.0}},
+                      {type:"field",layout:{x1:5.0,y1:5.0,x2:130.0,y2:15.0},exp:".SHOHIN_CD",valign:"center"},
+                      {type:"field",layout:{x1:5.0,y1:15.0,x2:130.0,y2:25.0},exp:".SHOHIN_NM",shrink_to_fit:true,valign:"center"},
+                      {type:"field",layout:{x1:130.0,y1:0.0,x2:185.0,y2:25.0},exp:".SURYO",formatter:{format:"#,##0",type:"default"},halign:"right",valign:"center",xls_format:"#,##0"},
+                      {type:"field",layout:{x1:190.0,y1:0.0,x2:230.0,y2:25.0},exp:".TANI",halign:"center",valign:"center"},
+                      {type:"field",layout:{x1:225.0,y1:0.0,x2:280.0,y2:25.0},exp:".TANKA",formatter:{format:"#,##0",type:"default"},halign:"right",valign:"center",xls_format:"#,##0"},
+                      {type:"field",layout:{x1:285.0,y1:0.0,x2:350.0,y2:25.0},exp:"(* .SURYO .TANKA)",formatter:{format:"#,##0",type:"default"},halign:"right",valign:"center",xls_format:"#,##0"},
+                      {type:"text",layout:{x1:5.0,y1:0.0,x2:80.0,y2:25.0},text:"（以下余白）",valign:"center",visibility_cond:"state.blank_first"}
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -23,7 +23,7 @@ Module ExampleImage
     Public Sub Run()
 
         ' 帳票定義ファイルを読込みます
-        Dim report As New Report(Json.Read("report\example_image.rrpt"))
+        Dim report As New Report(Json.Read("report/example_image.rrpt"))
 
         ' 帳票にデータを渡します
         report.Fill(New ReportDataSource(getDataTable))
@@ -101,10 +101,10 @@ Module ExampleImage
     ' イメージマップを生成します
     Private Function getImageMap() As ImageMap
         Dim ret As New ImageMap
-        ret.Add(1, New Bitmap("report\image1.jpg"))
-        ret.Add(2, New Bitmap("report\image2.jpg"))
-        ret.Add(3, New Bitmap("report\image3.jpg"))
-        ret.Add(4, New Bitmap("report\image4.jpg"))
+        ret.Add(1, New Bitmap("report/image1.jpg"))
+        ret.Add(2, New Bitmap("report/image2.jpg"))
+        ret.Add(3, New Bitmap("report/image3.jpg"))
+        ret.Add(4, New Bitmap("report/image4.jpg"))
         Return ret
     End Function
 

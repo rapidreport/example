@@ -1,0 +1,50 @@
+{
+  version: 0,
+  monospaced_fonts: [
+    {bold:{full_width:1.033,half_width:0.536,row_height:1.0},regular:{full_width:1.03,half_width:0.516,row_height:1.0}},
+    {name:"gothic",bold:{full_width:1.033,half_width:0.536,row_height:1.0},regular:{full_width:1.03,half_width:0.516,row_height:1.0}},
+    {name:"mincho",bold:{full_width:1.033,half_width:0.536,row_height:1.0},regular:{full_width:1.03,half_width:0.516,row_height:1.0}}
+  ],
+  paper: {
+    margin: {bottom:20.0,left:20.0,right:20.0,top:20.0},
+    scale_unit: "point",
+    type: "a4"
+  },
+  font: {name:"mincho"},
+  group: {
+    detail: true,
+    layout: {
+      size: 200.0,
+      locates: [
+        {x:35.0,y:0.0},
+        {x:35.0,y:140.0},
+        {x:35.0,y:280.0},
+        {x:35.0,y:420.0},
+        {x:35.0,y:560.0},
+        {x:35.0,y:700.0},
+        {x:330.0,y:0.0},
+        {x:330.0,y:140.0},
+        {x:330.0,y:280.0},
+        {x:330.0,y:420.0},
+        {x:330.0,y:560.0},
+        {x:330.0,y:700.0}
+      ]
+    },
+    contents: [
+      {
+        size: {
+          initial: 80.0
+        },
+        caption: "宛名",
+        elements: [
+          {type:"field",layout:{x1:5.0,y1:5.0,x2:195.0,y2:15.0},exp:".yubin",mock:"s8"},
+          {type:"field",layout:{x1:5.0,y1:15.0,x2:195.0,y2:25.0},exp:".jusho",mock:"w18"},
+          {type:"field",layout:{x1:5.0,y1:45.0,x2:195.0,y2:55.0},exp:".tokuisaki1",mock:"w18"},
+          {type:"field",layout:{x1:5.0,y1:55.0,x2:195.0,y2:65.0},exp:".tokuisaki2",mock:"w18"},
+          {type:"field",layout:{x1:5.0,y1:65.0,x2:195.0,y2:75.0},exp:".tanto",mock:"w18"},
+          {type:"rect",layout:{x1:0.0,y1:0.0,x2:200.0,y2:80.0},round:10.0}
+        ]
+      }
+    ]
+  }
+}

@@ -40,31 +40,31 @@
             this.BtnExample2 = new System.Windows.Forms.Button();
             this.BtnExample1 = new System.Windows.Forms.Button();
             this.BtnExample1Csv = new System.Windows.Forms.Button();
-            this.BtmExampleImage = new System.Windows.Forms.Button();
-            this.BtnExtention = new System.Windows.Forms.Button();
-            this.btnElementRenderer = new System.Windows.Forms.Button();
-            this.BtnCustomPreview = new System.Windows.Forms.Button();
-            this.BtnMergeContent = new System.Windows.Forms.Button();
-            this.BtnCrosstab = new System.Windows.Forms.Button();
+            this.BtnExampleImage = new System.Windows.Forms.Button();
+            this.BtnExampleExtention = new System.Windows.Forms.Button();
+            this.BtnElementRenderer = new System.Windows.Forms.Button();
+            this.BtnExampleCustomPreview = new System.Windows.Forms.Button();
+            this.BtnExampleMergeContent = new System.Windows.Forms.Button();
+            this.BtnExampleCrosstab = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtnFeature
             // 
-            this.BtnFeature.Location = new System.Drawing.Point(12, 128);
+            this.BtnFeature.Location = new System.Drawing.Point(12, 99);
             this.BtnFeature.Name = "BtnFeature";
             this.BtnFeature.Size = new System.Drawing.Size(170, 23);
-            this.BtnFeature.TabIndex = 4;
+            this.BtnFeature.TabIndex = 3;
             this.BtnFeature.Text = "特徴と機能一覧";
             this.BtnFeature.UseVisualStyleBackColor = true;
             this.BtnFeature.Click += new System.EventHandler(this.BtnFeature_Click);
             // 
             // BtnExampleSubPage
             // 
-            this.BtnExampleSubPage.Location = new System.Drawing.Point(202, 186);
+            this.BtnExampleSubPage.Location = new System.Drawing.Point(202, 331);
             this.BtnExampleSubPage.Name = "BtnExampleSubPage";
             this.BtnExampleSubPage.Size = new System.Drawing.Size(170, 23);
-            this.BtnExampleSubPage.TabIndex = 11;
-            this.BtnExampleSubPage.Text = "サブページ";
+            this.BtnExampleSubPage.TabIndex = 15;
+            this.BtnExampleSubPage.Text = "段組帳票(サブページ)";
             this.BtnExampleSubPage.UseVisualStyleBackColor = true;
             this.BtnExampleSubPage.Click += new System.EventHandler(this.BtnExampleSubPage_Click);
             // 
@@ -73,7 +73,7 @@
             this.BtnExampleRender.Location = new System.Drawing.Point(202, 128);
             this.BtnExampleRender.Name = "BtnExampleRender";
             this.BtnExampleRender.Size = new System.Drawing.Size(170, 23);
-            this.BtnExampleRender.TabIndex = 9;
+            this.BtnExampleRender.TabIndex = 8;
             this.BtnExampleRender.Text = "動的要素";
             this.BtnExampleRender.UseVisualStyleBackColor = true;
             this.BtnExampleRender.Click += new System.EventHandler(this.BtnExampleRender_Click);
@@ -83,7 +83,7 @@
             this.BtnExamplePage.Location = new System.Drawing.Point(202, 99);
             this.BtnExamplePage.Name = "BtnExamplePage";
             this.BtnExamplePage.Size = new System.Drawing.Size(170, 23);
-            this.BtnExamplePage.TabIndex = 8;
+            this.BtnExamplePage.TabIndex = 7;
             this.BtnExamplePage.Text = "ページ挿入";
             this.BtnExamplePage.UseVisualStyleBackColor = true;
             this.BtnExamplePage.Click += new System.EventHandler(this.BtnExamplePage_Click);
@@ -93,8 +93,8 @@
             this.BtnExampleRegion.Location = new System.Drawing.Point(202, 70);
             this.BtnExampleRegion.Name = "BtnExampleRegion";
             this.BtnExampleRegion.Size = new System.Drawing.Size(170, 23);
-            this.BtnExampleRegion.TabIndex = 7;
-            this.BtnExampleRegion.Text = "サイズ変更";
+            this.BtnExampleRegion.TabIndex = 6;
+            this.BtnExampleRegion.Text = "コンテントのサイズ変更";
             this.BtnExampleRegion.UseVisualStyleBackColor = true;
             this.BtnExampleRegion.Click += new System.EventHandler(this.BtnExampleRegion_Click);
             // 
@@ -103,14 +103,14 @@
             this.BtnExampleDataProvider.Location = new System.Drawing.Point(202, 12);
             this.BtnExampleDataProvider.Name = "BtnExampleDataProvider";
             this.BtnExampleDataProvider.Size = new System.Drawing.Size(170, 23);
-            this.BtnExampleDataProvider.TabIndex = 5;
-            this.BtnExampleDataProvider.Text = "データ割り当て";
+            this.BtnExampleDataProvider.TabIndex = 4;
+            this.BtnExampleDataProvider.Text = "データの部分割り当て";
             this.BtnExampleDataProvider.UseVisualStyleBackColor = true;
             this.BtnExampleDataProvider.Click += new System.EventHandler(this.BtnExampleDataProvider_Click);
             // 
             // BtnOpenOutput
             // 
-            this.BtnOpenOutput.Location = new System.Drawing.Point(12, 377);
+            this.BtnOpenOutput.Location = new System.Drawing.Point(12, 406);
             this.BtnOpenOutput.Name = "BtnOpenOutput";
             this.BtnOpenOutput.Size = new System.Drawing.Size(360, 23);
             this.BtnOpenOutput.TabIndex = 17;
@@ -123,28 +123,28 @@
             this.BtnExampleLocate.Location = new System.Drawing.Point(202, 41);
             this.BtnExampleLocate.Name = "BtnExampleLocate";
             this.BtnExampleLocate.Size = new System.Drawing.Size(170, 23);
-            this.BtnExampleLocate.TabIndex = 6;
+            this.BtnExampleLocate.TabIndex = 5;
             this.BtnExampleLocate.Text = "絶対座標による配置";
             this.BtnExampleLocate.UseVisualStyleBackColor = true;
             this.BtnExampleLocate.Click += new System.EventHandler(this.BtnExampleLocate_Click);
             // 
             // BtnExample2Huge
             // 
-            this.BtnExample2Huge.Location = new System.Drawing.Point(12, 99);
+            this.BtnExample2Huge.Location = new System.Drawing.Point(12, 70);
             this.BtnExample2Huge.Name = "BtnExample2Huge";
             this.BtnExample2Huge.Size = new System.Drawing.Size(170, 23);
-            this.BtnExample2Huge.TabIndex = 3;
+            this.BtnExample2Huge.TabIndex = 2;
             this.BtnExample2Huge.Text = "売上明細表（PDF1000ページ）";
             this.BtnExample2Huge.UseVisualStyleBackColor = true;
             this.BtnExample2Huge.Click += new System.EventHandler(this.BtnExample2Huge_Click);
             // 
             // BtnExample2
             // 
-            this.BtnExample2.Location = new System.Drawing.Point(12, 70);
+            this.BtnExample2.Location = new System.Drawing.Point(12, 41);
             this.BtnExample2.Name = "BtnExample2";
             this.BtnExample2.Size = new System.Drawing.Size(170, 23);
-            this.BtnExample2.TabIndex = 2;
-            this.BtnExample2.Text = "売上明細表";
+            this.BtnExample2.TabIndex = 1;
+            this.BtnExample2.Text = "チュートリアル2 売上明細表";
             this.BtnExample2.UseVisualStyleBackColor = true;
             this.BtnExample2.Click += new System.EventHandler(this.BtnExample2_Click);
             // 
@@ -154,93 +154,93 @@
             this.BtnExample1.Name = "BtnExample1";
             this.BtnExample1.Size = new System.Drawing.Size(170, 23);
             this.BtnExample1.TabIndex = 0;
-            this.BtnExample1.Text = "見積書";
+            this.BtnExample1.Text = "チュートリアル１ 見積書";
             this.BtnExample1.UseVisualStyleBackColor = true;
             this.BtnExample1.Click += new System.EventHandler(this.BtnExample1_Click);
             // 
             // BtnExample1Csv
             // 
-            this.BtnExample1Csv.Location = new System.Drawing.Point(12, 41);
+            this.BtnExample1Csv.Location = new System.Drawing.Point(202, 215);
             this.BtnExample1Csv.Name = "BtnExample1Csv";
             this.BtnExample1Csv.Size = new System.Drawing.Size(170, 23);
-            this.BtnExample1Csv.TabIndex = 1;
-            this.BtnExample1Csv.Text = "見積書(CSVデータソース)";
+            this.BtnExample1Csv.TabIndex = 11;
+            this.BtnExample1Csv.Text = "CSVデータの読み込み";
             this.BtnExample1Csv.UseVisualStyleBackColor = true;
             this.BtnExample1Csv.Click += new System.EventHandler(this.BtnExample1Csv_Click);
             // 
-            // BtmExampleImage
+            // BtnExampleImage
             // 
-            this.BtmExampleImage.Location = new System.Drawing.Point(202, 215);
-            this.BtmExampleImage.Name = "BtmExampleImage";
-            this.BtmExampleImage.Size = new System.Drawing.Size(170, 23);
-            this.BtmExampleImage.TabIndex = 12;
-            this.BtmExampleImage.Text = "動的画像(グラフ)表示";
-            this.BtmExampleImage.UseVisualStyleBackColor = true;
-            this.BtmExampleImage.Click += new System.EventHandler(this.BtmExampleImage_Click);
+            this.BtnExampleImage.Location = new System.Drawing.Point(202, 186);
+            this.BtnExampleImage.Name = "BtnExampleImage";
+            this.BtnExampleImage.Size = new System.Drawing.Size(170, 23);
+            this.BtnExampleImage.TabIndex = 10;
+            this.BtnExampleImage.Text = "動的画像(グラフ)の表示";
+            this.BtnExampleImage.UseVisualStyleBackColor = true;
+            this.BtnExampleImage.Click += new System.EventHandler(this.BtnExampleImage_Click);
             // 
-            // BtnExtention
+            // BtnExampleExtention
             // 
-            this.BtnExtention.Location = new System.Drawing.Point(202, 244);
-            this.BtnExtention.Name = "BtnExtention";
-            this.BtnExtention.Size = new System.Drawing.Size(170, 23);
-            this.BtnExtention.TabIndex = 13;
-            this.BtnExtention.Text = "カスタム書式/要素";
-            this.BtnExtention.UseVisualStyleBackColor = true;
-            this.BtnExtention.Click += new System.EventHandler(this.BtnExtention_Click);
+            this.BtnExampleExtention.Location = new System.Drawing.Point(202, 244);
+            this.BtnExampleExtention.Name = "BtnExampleExtention";
+            this.BtnExampleExtention.Size = new System.Drawing.Size(170, 23);
+            this.BtnExampleExtention.TabIndex = 12;
+            this.BtnExampleExtention.Text = "カスタム書式/要素";
+            this.BtnExampleExtention.UseVisualStyleBackColor = true;
+            this.BtnExampleExtention.Click += new System.EventHandler(this.BtnExampleExtention_Click);
             // 
-            // btnElementRenderer
+            // BtnElementRenderer
             // 
-            this.btnElementRenderer.Location = new System.Drawing.Point(202, 157);
-            this.btnElementRenderer.Name = "btnElementRenderer";
-            this.btnElementRenderer.Size = new System.Drawing.Size(170, 23);
-            this.btnElementRenderer.TabIndex = 10;
-            this.btnElementRenderer.Text = "動的要素(デザイナのみ)";
-            this.btnElementRenderer.UseVisualStyleBackColor = true;
-            this.btnElementRenderer.Click += new System.EventHandler(this.BtnExampleCustomize_Click);
+            this.BtnElementRenderer.Location = new System.Drawing.Point(202, 157);
+            this.BtnElementRenderer.Name = "BtnElementRenderer";
+            this.BtnElementRenderer.Size = new System.Drawing.Size(170, 23);
+            this.BtnElementRenderer.TabIndex = 9;
+            this.BtnElementRenderer.Text = "動的要素(デザイナのみ)";
+            this.BtnElementRenderer.UseVisualStyleBackColor = true;
+            this.BtnElementRenderer.Click += new System.EventHandler(this.BtnExampleCustomize_Click);
             // 
-            // BtnCustomPreview
+            // BtnExampleCustomPreview
             // 
-            this.BtnCustomPreview.Location = new System.Drawing.Point(202, 273);
-            this.BtnCustomPreview.Name = "BtnCustomPreview";
-            this.BtnCustomPreview.Size = new System.Drawing.Size(170, 23);
-            this.BtnCustomPreview.TabIndex = 14;
-            this.BtnCustomPreview.Text = "プレビュー画面のカスタマイズ";
-            this.BtnCustomPreview.UseVisualStyleBackColor = true;
-            this.BtnCustomPreview.Click += new System.EventHandler(this.BtnCustomPreview_Click);
+            this.BtnExampleCustomPreview.Location = new System.Drawing.Point(202, 273);
+            this.BtnExampleCustomPreview.Name = "BtnExampleCustomPreview";
+            this.BtnExampleCustomPreview.Size = new System.Drawing.Size(170, 23);
+            this.BtnExampleCustomPreview.TabIndex = 13;
+            this.BtnExampleCustomPreview.Text = "プレビュー画面のカスタマイズ";
+            this.BtnExampleCustomPreview.UseVisualStyleBackColor = true;
+            this.BtnExampleCustomPreview.Click += new System.EventHandler(this.BtnExampleCustomPreview_Click);
             // 
-            // BtnMergeContent
+            // BtnExampleMergeContent
             // 
-            this.BtnMergeContent.Location = new System.Drawing.Point(202, 302);
-            this.BtnMergeContent.Name = "BtnMergeContent";
-            this.BtnMergeContent.Size = new System.Drawing.Size(170, 23);
-            this.BtnMergeContent.TabIndex = 15;
-            this.BtnMergeContent.Text = "差込コンテント";
-            this.BtnMergeContent.UseVisualStyleBackColor = true;
-            this.BtnMergeContent.Click += new System.EventHandler(this.BtnMergeContent_Click);
+            this.BtnExampleMergeContent.Location = new System.Drawing.Point(202, 302);
+            this.BtnExampleMergeContent.Name = "BtnExampleMergeContent";
+            this.BtnExampleMergeContent.Size = new System.Drawing.Size(170, 23);
+            this.BtnExampleMergeContent.TabIndex = 14;
+            this.BtnExampleMergeContent.Text = "コンテントの差し込み";
+            this.BtnExampleMergeContent.UseVisualStyleBackColor = true;
+            this.BtnExampleMergeContent.Click += new System.EventHandler(this.BtnExampleMergeContent_Click);
             // 
-            // BtnCrosstab
+            // BtnExampleCrosstab
             // 
-            this.BtnCrosstab.Location = new System.Drawing.Point(202, 331);
-            this.BtnCrosstab.Name = "BtnCrosstab";
-            this.BtnCrosstab.Size = new System.Drawing.Size(170, 23);
-            this.BtnCrosstab.TabIndex = 16;
-            this.BtnCrosstab.Text = "クロス集計表";
-            this.BtnCrosstab.UseVisualStyleBackColor = true;
-            this.BtnCrosstab.Click += new System.EventHandler(this.BtnCrosstab_Click);
+            this.BtnExampleCrosstab.Location = new System.Drawing.Point(202, 360);
+            this.BtnExampleCrosstab.Name = "BtnExampleCrosstab";
+            this.BtnExampleCrosstab.Size = new System.Drawing.Size(170, 23);
+            this.BtnExampleCrosstab.TabIndex = 16;
+            this.BtnExampleCrosstab.Text = "クロス集計表";
+            this.BtnExampleCrosstab.UseVisualStyleBackColor = true;
+            this.BtnExampleCrosstab.Click += new System.EventHandler(this.BtnExampleCrosstab_Click);
             // 
             // FmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 412);
-            this.Controls.Add(this.BtnCrosstab);
-            this.Controls.Add(this.BtnMergeContent);
-            this.Controls.Add(this.BtnCustomPreview);
+            this.ClientSize = new System.Drawing.Size(384, 441);
+            this.Controls.Add(this.BtnExampleCrosstab);
+            this.Controls.Add(this.BtnExampleMergeContent);
+            this.Controls.Add(this.BtnExampleCustomPreview);
             this.Controls.Add(this.BtnFeature);
-            this.Controls.Add(this.BtnExtention);
-            this.Controls.Add(this.BtmExampleImage);
+            this.Controls.Add(this.BtnExampleExtention);
+            this.Controls.Add(this.BtnExampleImage);
             this.Controls.Add(this.BtnExampleSubPage);
-            this.Controls.Add(this.btnElementRenderer);
+            this.Controls.Add(this.BtnElementRenderer);
             this.Controls.Add(this.BtnExampleRender);
             this.Controls.Add(this.BtnExamplePage);
             this.Controls.Add(this.BtnExampleRegion);
@@ -273,12 +273,12 @@
         internal System.Windows.Forms.Button BtnExample2;
         internal System.Windows.Forms.Button BtnExample1;
         internal System.Windows.Forms.Button BtnExample1Csv;
-        internal System.Windows.Forms.Button BtmExampleImage;
-        internal System.Windows.Forms.Button BtnExtention;
-        internal System.Windows.Forms.Button btnElementRenderer;
-        internal System.Windows.Forms.Button BtnCustomPreview;
-        internal System.Windows.Forms.Button BtnMergeContent;
-        internal System.Windows.Forms.Button BtnCrosstab;
+        internal System.Windows.Forms.Button BtnExampleImage;
+        internal System.Windows.Forms.Button BtnExampleExtention;
+        internal System.Windows.Forms.Button BtnElementRenderer;
+        internal System.Windows.Forms.Button BtnExampleCustomPreview;
+        internal System.Windows.Forms.Button BtnExampleMergeContent;
+        internal System.Windows.Forms.Button BtnExampleCrosstab;
     }
 }
 

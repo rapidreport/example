@@ -5,7 +5,7 @@ Imports jp.co.systembase.report
 Imports jp.co.systembase.report.data
 Imports jp.co.systembase.report.renderer.pdf
 
-' 基本サンプル1 見積書
+' PDFをASP.NETのレスポンスとして出力するサンプル
 Module Example1
 
     Public Sub Run(server As HttpServerUtility, response As HttpResponse)

@@ -14,7 +14,7 @@ using jp.co.systembase.report.renderer.pdf;
 using jp.co.systembase.report.renderer.xls;
 using jp.co.systembase.report.renderer.xlsx;
 
-// 機能サンプル サイズ変更
+// 機能サンプル コンテントのサイズ変更
 namespace example
 {
     class ExampleRegion
@@ -24,12 +24,12 @@ namespace example
         {
 
             // 第2引数にCustomizerオブジェクトを渡します
-            Report report = new Report(Json.Read("report\\example_region.rrpt"), new Customizer());
+            Report report = new Report(Json.Read("report/example_region.rrpt"), new Customizer());
             report.Fill(new ReportDataSource(getDataTable()));
             ReportPages pages = report.GetPages();
 
             // PDF出力
-            using (FileStream fs = new FileStream("output\\example_region.pdf", FileMode.Create))
+            using (FileStream fs = new FileStream("output/example_region.pdf", FileMode.Create))
             {
                 PdfRenderer renderer = new PdfRenderer(fs);
                 renderer.Setting.ReplaceBackslashToYen = true;
@@ -37,7 +37,7 @@ namespace example
             }
 
             // XLS出力
-            using (FileStream fs = new FileStream("output\\example_region.xls", FileMode.Create))
+            using (FileStream fs = new FileStream("output/example_region.xls", FileMode.Create))
             {
                 HSSFWorkbook workbook = new HSSFWorkbook();
                 XlsRenderer renderer = new XlsRenderer(workbook);
@@ -47,7 +47,7 @@ namespace example
             }
 
             // XLSX出力
-            using (FileStream fs = new FileStream("output\\example_region.xlsx", FileMode.Create))
+            using (FileStream fs = new FileStream("output/example_region.xlsx", FileMode.Create))
             {
                 XSSFWorkbook workbook = new XSSFWorkbook();
                 XlsxRenderer renderer = new XlsxRenderer(workbook);

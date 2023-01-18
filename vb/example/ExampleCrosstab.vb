@@ -16,7 +16,7 @@ Module ExampleCrosstab
 
     Public Sub Run()
 
-        Dim report As New Report(Json.Read("report\example_crosstab.rrpt"))
+        Dim report As New Report(Json.Read("report/example_crosstab.rrpt"))
 
         ' 横方向の列データを設定します。
         report.AddCrosstabCaptionDataSource("crosstab_example", New ReportDataSource(getCaptionDataTable()))
@@ -25,13 +25,13 @@ Module ExampleCrosstab
         Dim pages As ReportPages = report.GetPages()
 
         ' PDF出力
-        Using fs As New FileStream("output\example_crosstab.pdf", IO.FileMode.Create)
+        Using fs As New FileStream("output/example_crosstab.pdf", IO.FileMode.Create)
             Dim renderer As New PdfRenderer(fs)
             pages.Render(renderer)
         End Using
 
         ' XLS出力
-        Using fs As New FileStream("output\example_crosstab.xls", IO.FileMode.Create)
+        Using fs As New FileStream("output/example_crosstab.xls", IO.FileMode.Create)
             Dim workbook As New HSSFWorkbook
             Dim renderer As New XlsRenderer(workbook)
             renderer.NewSheet("example_crosstab")
@@ -40,7 +40,7 @@ Module ExampleCrosstab
         End Using
 
         ' XLSX出力
-        Using fs As New FileStream("output\example_crosstab.xlsx", IO.FileMode.Create)
+        Using fs As New FileStream("output/example_crosstab.xlsx", IO.FileMode.Create)
             Dim workbook As New XSSFWorkbook
             Dim renderer As New XlsxRenderer(workbook)
             renderer.NewSheet("example_locate")

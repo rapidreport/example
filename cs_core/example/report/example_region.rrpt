@@ -1,0 +1,28 @@
+{
+  version: 0,
+  monospaced_fonts: [
+    {bold:{full_width:1.033,half_width:0.536,row_height:1.0},regular:{full_width:1.03,half_width:0.516,row_height:1.0}},
+    {name:"gothic",bold:{full_width:1.033,half_width:0.536,row_height:1.0},regular:{full_width:1.03,half_width:0.516,row_height:1.0}},
+    {name:"mincho",bold:{full_width:1.033,half_width:0.536,row_height:1.0},regular:{full_width:1.03,half_width:0.516,row_height:1.0}}
+  ],
+  paper: {
+    margin: {bottom:10,left:10,right:10,top:10},
+    scale_unit: "mm",
+    type: "a4"
+  },
+  group: {
+    detail: true,
+    contents: [
+      {
+        id: "content_example",
+        size: {
+          initial: 20
+        },
+        elements: [
+          {type:"rect",round:5},
+          {type:"field",exp:".HEIGHT",font:{size:20.0},halign:"center",valign:"center"}
+        ]
+      }
+    ]
+  }
+}

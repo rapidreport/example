@@ -13,23 +13,23 @@ Imports jp.co.systembase.report.renderer.xls
 Imports jp.co.systembase.report.renderer.xlsx
 Imports jp.co.systembase.report.customizer
 
-' 機能サンプル サイズ変更
+' 機能サンプル コンテントのサイズ変更
 Module ExampleRegion
 
     Public Sub Run()
 
         ' 第2引数にCustomizerオブジェクトを渡します
-        Dim report As New Report(Json.Read("report\example_region.rrpt"), New Customizer)
+        Dim report As New Report(Json.Read("report/example_region.rrpt"), New Customizer)
         report.Fill(New ReportDataSource(getDataTable))
         Dim pages As ReportPages = report.GetPages()
 
         ' PDF出力
-        Using fs As New FileStream("output\example_region.pdf", IO.FileMode.Create)
+        Using fs As New FileStream("output/example_region.pdf", IO.FileMode.Create)
             pages.Render(New PdfRenderer(fs))
         End Using
 
         ' XLS出力
-        Using fs As New FileStream("output\example_region.xls", IO.FileMode.Create)
+        Using fs As New FileStream("output/example_region.xls", IO.FileMode.Create)
             Dim workbook As New HSSFWorkbook
             Dim renderer As New XlsRenderer(workbook)
             renderer.NewSheet("example_region")
@@ -38,7 +38,7 @@ Module ExampleRegion
         End Using
 
         ' XLSX出力
-        Using fs As New FileStream("output\example_region.xlsx", IO.FileMode.Create)
+        Using fs As New FileStream("output/example_region.xlsx", IO.FileMode.Create)
             Dim workbook As New XSSFWorkbook
             Dim renderer As New XlsxRenderer(workbook)
             renderer.NewSheet("example_region")

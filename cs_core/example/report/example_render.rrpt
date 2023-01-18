@@ -1,0 +1,36 @@
+{
+  version: 0,
+  monospaced_fonts: [
+    {bold:{full_width:1.033,half_width:0.536,row_height:1.0},regular:{full_width:1.03,half_width:0.516,row_height:1.0}},
+    {name:"gothic",bold:{full_width:1.033,half_width:0.536,row_height:1.0},regular:{full_width:1.03,half_width:0.516,row_height:1.0}},
+    {name:"mincho",bold:{full_width:1.033,half_width:0.536,row_height:1.0},regular:{full_width:1.03,half_width:0.516,row_height:1.0}}
+  ],
+  paper: {
+    margin: {bottom:10,left:10,right:10,top:10},
+    scale_unit: "mm",
+    type: "a4"
+  },
+  group: {
+    contents: [
+      {
+        group: {
+          detail: true,
+          contents: [
+            {
+              id: "content_example",
+              size: {
+                initial: 20.0
+              },
+              elements: [
+                {type:"line",layout:{x1:0.0,y1:20.0,x2:190.0,y2:20.0}},
+                {type:"field",layout:{x1:0,x2:30},exp:".NUM",font:{size:20.0},halign:"right",valign:"center",visibility_cond:"(>= .NUM 0)"},
+                {type:"field",layout:{x1:0,x2:30},color:"red",exp:".NUM",font:{size:20.0},halign:"right",valign:"center",visibility_cond:"(< .NUM 0)"},
+                {id:"graph",type:"rect",layout:{x1:100.0,y1:5.0,x2:150.0,y2:15.0},fill_color:"lightblue",line_width:0}
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

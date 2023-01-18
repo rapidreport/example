@@ -48,16 +48,16 @@ Partial Class FmMenu
         Me.BtnExample1.Name = "BtnExample1"
         Me.BtnExample1.Size = New System.Drawing.Size(170, 23)
         Me.BtnExample1.TabIndex = 0
-        Me.BtnExample1.Text = "見積書"
+        Me.BtnExample1.Text = "チュートリアル１ 見積書"
         Me.BtnExample1.UseVisualStyleBackColor = True
         '
         'BtnExample2
         '
-        Me.BtnExample2.Location = New System.Drawing.Point(12, 70)
+        Me.BtnExample2.Location = New System.Drawing.Point(12, 41)
         Me.BtnExample2.Name = "BtnExample2"
         Me.BtnExample2.Size = New System.Drawing.Size(170, 23)
-        Me.BtnExample2.TabIndex = 2
-        Me.BtnExample2.Text = "売上明細表"
+        Me.BtnExample2.TabIndex = 1
+        Me.BtnExample2.Text = "チュートリアル2 売上明細表"
         Me.BtnExample2.UseVisualStyleBackColor = True
         '
         'BtnExampleLocate
@@ -65,13 +65,13 @@ Partial Class FmMenu
         Me.BtnExampleLocate.Location = New System.Drawing.Point(202, 41)
         Me.BtnExampleLocate.Name = "BtnExampleLocate"
         Me.BtnExampleLocate.Size = New System.Drawing.Size(170, 23)
-        Me.BtnExampleLocate.TabIndex = 6
+        Me.BtnExampleLocate.TabIndex = 5
         Me.BtnExampleLocate.Text = "絶対座標による配置"
         Me.BtnExampleLocate.UseVisualStyleBackColor = True
         '
         'BtnOpenOutput
         '
-        Me.BtnOpenOutput.Location = New System.Drawing.Point(12, 377)
+        Me.BtnOpenOutput.Location = New System.Drawing.Point(12, 406)
         Me.BtnOpenOutput.Name = "BtnOpenOutput"
         Me.BtnOpenOutput.Size = New System.Drawing.Size(360, 23)
         Me.BtnOpenOutput.TabIndex = 17
@@ -83,8 +83,8 @@ Partial Class FmMenu
         Me.BtnExampleDataProvider.Location = New System.Drawing.Point(202, 12)
         Me.BtnExampleDataProvider.Name = "BtnExampleDataProvider"
         Me.BtnExampleDataProvider.Size = New System.Drawing.Size(170, 23)
-        Me.BtnExampleDataProvider.TabIndex = 5
-        Me.BtnExampleDataProvider.Text = "データ割り当て"
+        Me.BtnExampleDataProvider.TabIndex = 4
+        Me.BtnExampleDataProvider.Text = "データの部分割り当て"
         Me.BtnExampleDataProvider.UseVisualStyleBackColor = True
         '
         'BtnExampleRegion
@@ -92,8 +92,8 @@ Partial Class FmMenu
         Me.BtnExampleRegion.Location = New System.Drawing.Point(202, 70)
         Me.BtnExampleRegion.Name = "BtnExampleRegion"
         Me.BtnExampleRegion.Size = New System.Drawing.Size(170, 23)
-        Me.BtnExampleRegion.TabIndex = 7
-        Me.BtnExampleRegion.Text = "サイズ変更"
+        Me.BtnExampleRegion.TabIndex = 6
+        Me.BtnExampleRegion.Text = "コンテントのサイズ変更"
         Me.BtnExampleRegion.UseVisualStyleBackColor = True
         '
         'BtnExamplePage
@@ -101,7 +101,7 @@ Partial Class FmMenu
         Me.BtnExamplePage.Location = New System.Drawing.Point(202, 99)
         Me.BtnExamplePage.Name = "BtnExamplePage"
         Me.BtnExamplePage.Size = New System.Drawing.Size(170, 23)
-        Me.BtnExamplePage.TabIndex = 8
+        Me.BtnExamplePage.TabIndex = 7
         Me.BtnExamplePage.Text = "ページ挿入"
         Me.BtnExamplePage.UseVisualStyleBackColor = True
         '
@@ -110,52 +110,52 @@ Partial Class FmMenu
         Me.BtnExampleRender.Location = New System.Drawing.Point(202, 128)
         Me.BtnExampleRender.Name = "BtnExampleRender"
         Me.BtnExampleRender.Size = New System.Drawing.Size(170, 23)
-        Me.BtnExampleRender.TabIndex = 9
+        Me.BtnExampleRender.TabIndex = 8
         Me.BtnExampleRender.Text = "動的要素"
         Me.BtnExampleRender.UseVisualStyleBackColor = True
         '
         'BtnExampleSubPage
         '
-        Me.BtnExampleSubPage.Location = New System.Drawing.Point(202, 186)
+        Me.BtnExampleSubPage.Location = New System.Drawing.Point(202, 331)
         Me.BtnExampleSubPage.Name = "BtnExampleSubPage"
         Me.BtnExampleSubPage.Size = New System.Drawing.Size(170, 23)
-        Me.BtnExampleSubPage.TabIndex = 11
-        Me.BtnExampleSubPage.Text = "サブページ"
+        Me.BtnExampleSubPage.TabIndex = 15
+        Me.BtnExampleSubPage.Text = "段組帳票(サブページ)"
         Me.BtnExampleSubPage.UseVisualStyleBackColor = True
         '
         'BtnExample2Huge
         '
-        Me.BtnExample2Huge.Location = New System.Drawing.Point(12, 99)
+        Me.BtnExample2Huge.Location = New System.Drawing.Point(12, 70)
         Me.BtnExample2Huge.Name = "BtnExample2Huge"
         Me.BtnExample2Huge.Size = New System.Drawing.Size(170, 23)
-        Me.BtnExample2Huge.TabIndex = 3
+        Me.BtnExample2Huge.TabIndex = 2
         Me.BtnExample2Huge.Text = "売上明細表（PDF1000ページ）"
         Me.BtnExample2Huge.UseVisualStyleBackColor = True
         '
         'BtnFeature
         '
-        Me.BtnFeature.Location = New System.Drawing.Point(12, 128)
+        Me.BtnFeature.Location = New System.Drawing.Point(12, 99)
         Me.BtnFeature.Name = "BtnFeature"
         Me.BtnFeature.Size = New System.Drawing.Size(170, 23)
-        Me.BtnFeature.TabIndex = 4
+        Me.BtnFeature.TabIndex = 3
         Me.BtnFeature.Text = "特徴と機能一覧"
         Me.BtnFeature.UseVisualStyleBackColor = True
         '
         'BtnExample1Csv
         '
-        Me.BtnExample1Csv.Location = New System.Drawing.Point(12, 41)
+        Me.BtnExample1Csv.Location = New System.Drawing.Point(202, 215)
         Me.BtnExample1Csv.Name = "BtnExample1Csv"
         Me.BtnExample1Csv.Size = New System.Drawing.Size(170, 23)
-        Me.BtnExample1Csv.TabIndex = 1
-        Me.BtnExample1Csv.Text = "見積書(CSVデータソース)"
+        Me.BtnExample1Csv.TabIndex = 11
+        Me.BtnExample1Csv.Text = "CSVデータ読み込み"
         Me.BtnExample1Csv.UseVisualStyleBackColor = True
         '
         'BtnExampleImage
         '
-        Me.BtnExampleImage.Location = New System.Drawing.Point(202, 215)
+        Me.BtnExampleImage.Location = New System.Drawing.Point(202, 186)
         Me.BtnExampleImage.Name = "BtnExampleImage"
         Me.BtnExampleImage.Size = New System.Drawing.Size(170, 23)
-        Me.BtnExampleImage.TabIndex = 12
+        Me.BtnExampleImage.TabIndex = 10
         Me.BtnExampleImage.Text = "動的画像(グラフ)表示"
         Me.BtnExampleImage.UseVisualStyleBackColor = True
         '
@@ -164,7 +164,7 @@ Partial Class FmMenu
         Me.BtnExtention.Location = New System.Drawing.Point(202, 244)
         Me.BtnExtention.Name = "BtnExtention"
         Me.BtnExtention.Size = New System.Drawing.Size(170, 23)
-        Me.BtnExtention.TabIndex = 13
+        Me.BtnExtention.TabIndex = 12
         Me.BtnExtention.Text = "カスタム書式/要素"
         Me.BtnExtention.UseVisualStyleBackColor = True
         '
@@ -173,7 +173,7 @@ Partial Class FmMenu
         Me.btnElementCustomize.Location = New System.Drawing.Point(202, 157)
         Me.btnElementCustomize.Name = "btnElementCustomize"
         Me.btnElementCustomize.Size = New System.Drawing.Size(170, 23)
-        Me.btnElementCustomize.TabIndex = 10
+        Me.btnElementCustomize.TabIndex = 9
         Me.btnElementCustomize.Text = "動的要素(デザイナのみ)"
         Me.btnElementCustomize.UseVisualStyleBackColor = True
         '
@@ -182,7 +182,7 @@ Partial Class FmMenu
         Me.BtnCustomPreview.Location = New System.Drawing.Point(202, 273)
         Me.BtnCustomPreview.Name = "BtnCustomPreview"
         Me.BtnCustomPreview.Size = New System.Drawing.Size(170, 23)
-        Me.BtnCustomPreview.TabIndex = 14
+        Me.BtnCustomPreview.TabIndex = 13
         Me.BtnCustomPreview.Text = "プレビュー画面のカスタマイズ"
         Me.BtnCustomPreview.UseVisualStyleBackColor = True
         '
@@ -191,13 +191,13 @@ Partial Class FmMenu
         Me.BtnMergeContent.Location = New System.Drawing.Point(202, 302)
         Me.BtnMergeContent.Name = "BtnMergeContent"
         Me.BtnMergeContent.Size = New System.Drawing.Size(170, 23)
-        Me.BtnMergeContent.TabIndex = 15
+        Me.BtnMergeContent.TabIndex = 14
         Me.BtnMergeContent.Text = "差込コンテント"
         Me.BtnMergeContent.UseVisualStyleBackColor = True
         '
         'BtnCrosstab
         '
-        Me.BtnCrosstab.Location = New System.Drawing.Point(202, 331)
+        Me.BtnCrosstab.Location = New System.Drawing.Point(202, 360)
         Me.BtnCrosstab.Name = "BtnCrosstab"
         Me.BtnCrosstab.Size = New System.Drawing.Size(170, 23)
         Me.BtnCrosstab.TabIndex = 16
@@ -208,7 +208,7 @@ Partial Class FmMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(384, 412)
+        Me.ClientSize = New System.Drawing.Size(384, 441)
         Me.Controls.Add(Me.BtnCrosstab)
         Me.Controls.Add(Me.BtnFeature)
         Me.Controls.Add(Me.BtnMergeContent)

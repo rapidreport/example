@@ -6,7 +6,7 @@ using jp.co.systembase.report;
 using jp.co.systembase.report.data;
 using jp.co.systembase.report.renderer.gdi;
 
-// 基本サンプル1 見積書
+// チュートリアル1 見積書
 namespace example
 {
     class Example1

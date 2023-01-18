@@ -31,12 +31,12 @@ namespace example
             ReportSetting setting = new ReportSetting();
             setting.TextFormatterMap.Add("yubin", new YubinTextFormatter());
 
-            Report report = new Report(Json.Read("report\\example_extention.rrpt"), setting);
+            Report report = new Report(Json.Read("report/example_extention.rrpt"), setting);
             report.Fill(new ReportDataSource(getDataTable()));
             ReportPages pages = report.GetPages();
 
             // PDF出力
-            using (FileStream fs = new FileStream("output\\example_extention.pdf", FileMode.Create))
+            using (FileStream fs = new FileStream("output/example_extention.pdf", FileMode.Create))
             {
                 // チェックボックスレンダラが設定されたSettingオブジェクトを用意します
                 PdfRendererSetting pdfSetting = new PdfRendererSetting();
@@ -48,7 +48,7 @@ namespace example
             }
 
             // XLS出力
-            using (FileStream fs = new FileStream("output\\example_extention.xls", FileMode.Create))
+            using (FileStream fs = new FileStream("output/example_extention.xls", FileMode.Create))
             {
                 // チェックボックスレンダラが設定されたSettingオブジェクトを用意します
                 XlsRendererSetting xlsSetting = new XlsRendererSetting();
@@ -62,7 +62,7 @@ namespace example
             }
 
             // XLSX出力
-            using (FileStream fs = new FileStream("output\\example_extention.xlsx", FileMode.Create))
+            using (FileStream fs = new FileStream("output/example_extention.xlsx", FileMode.Create))
             {
                 // チェックボックスレンダラが設定されたSettingオブジェクトを用意します
                 XlsxRendererSetting xlsxSetting = new XlsxRendererSetting();

@@ -69,7 +69,7 @@
     End Sub
 
     Private Sub BtnOpenOutput_Click(sender As System.Object, e As System.EventArgs) Handles BtnOpenOutput.Click
-        System.Diagnostics.Process.Start("output\")
+        System.Diagnostics.Process.Start("output")
     End Sub
 
 End Class

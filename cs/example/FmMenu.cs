@@ -71,24 +71,29 @@ namespace example
             ExampleSubPage.Run();
         }
 
-        private void BtmExampleImage_Click(object sender, EventArgs e)
+        private void BtnExampleImage_Click(object sender, EventArgs e)
         {
             ExampleImage.Run();
         }
 
-        private void BtnExtention_Click(object sender, EventArgs e)
+        private void BtnExampleExtention_Click(object sender, EventArgs e)
         {
             ExampleExtention.Run();
         }
 
-        private void BtnCustomPreview_Click(object sender, EventArgs e)
+        private void BtnExampleCustomPreview_Click(object sender, EventArgs e)
         {
             ExampleCustomPreview.Run();
         }
 
-        private void BtnMergeContent_Click(object sender, EventArgs e)
+        private void BtnExampleMergeContent_Click(object sender, EventArgs e)
         {
             ExampleMergeContent.Run();
+        }
+
+        private void BtnExampleCrosstab_Click(object sender, EventArgs e)
+        {
+            ExampleCrosstab.Run();
         }
 
         private void BtnFeature_Click(object sender, EventArgs e)
@@ -96,14 +101,9 @@ namespace example
             Feature.Run();
         }
 
-        private void BtnCrosstab_Click(object sender, EventArgs e)
-        {
-            ExampleCrosstab.Run();
-        }
-
         private void BtnOpenOutput_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("output\\");
+            System.Diagnostics.Process.Start("output");
         }
 
     }

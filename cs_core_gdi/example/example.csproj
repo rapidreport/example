@@ -8,13 +8,15 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="System.Drawing.Common" Version="5.0.3" />
     <PackageReference Include="ZXing.Net" Version="0.16.8" />
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="systembase.barcode">
       <HintPath>lib\systembase.barcode.dll</HintPath>
+    </Reference>
+    <Reference Include="systembase.iTextSharp">
+      <HintPath>lib\systembase.iTextSharp.dll</HintPath>
     </Reference>
     <Reference Include="systembase.json">
       <HintPath>lib\systembase.json.dll</HintPath>
@@ -25,10 +27,31 @@
     <Reference Include="systembase.report.renderer.gdi">
       <HintPath>lib\systembase.report.renderer.gdi.dll</HintPath>
     </Reference>
+    <Reference Include="systembase.report.renderer.pdf">
+      <HintPath>lib\systembase.report.renderer.pdf.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>
     <None Update="report\example1.rrpt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="report\example_extention.rrpt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="report\example_image.rrpt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="report\image1.JPG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="report\image2.JPG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="report\image3.JPG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="report\image4.JPG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

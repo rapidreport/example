@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.IO;
 using System.Data;
 using System.Drawing;
@@ -32,7 +30,7 @@ namespace example
         public static void Run()
         {
             // 帳票定義ファイルを読み込みます
-            Report report = new Report(Json.Read("report\\example_image.rrpt"));
+            Report report = new Report(Json.Read("report/example_image.rrpt"));
 
             // 帳票にデータを渡します
             report.Fill(new ReportDataSource(getDataTable()));
@@ -44,7 +42,7 @@ namespace example
             ImageMap imageMap = getImageMap();
 
             // PDF出力
-            using (FileStream fs = new FileStream("output\\example_image.pdf", FileMode.Create))
+            using (FileStream fs = new FileStream("output/example_image.pdf", FileMode.Create))
             {
                 PdfRenderer renderer = new PdfRenderer(fs);
                 
@@ -56,7 +54,7 @@ namespace example
             }
 
             // XLS出力
-            using (FileStream fs = new FileStream("output\\example_image.xls", FileMode.Create))
+            using (FileStream fs = new FileStream("output/example_image.xls", FileMode.Create))
             {
                 HSSFWorkbook workbook = new HSSFWorkbook();
                 XlsRenderer renderer = new XlsRenderer(workbook);
@@ -71,7 +69,7 @@ namespace example
             }
 
             // XLSX出力
-            using (FileStream fs = new FileStream("output\\example_image.xlsx", FileMode.Create))
+            using (FileStream fs = new FileStream("output/example_image.xlsx", FileMode.Create))
             {
                 XSSFWorkbook workbook = new XSSFWorkbook();
                 XlsxRenderer renderer = new XlsxRenderer(workbook);
@@ -116,10 +114,10 @@ namespace example
         private static ImageMap getImageMap()
         {
             ImageMap ret = new ImageMap();
-            ret.Add(1, new Bitmap("report\\image1.jpg"));
-            ret.Add(2, new Bitmap("report\\image2.jpg"));
-            ret.Add(3, new Bitmap("report\\image3.jpg"));
-            ret.Add(4, new Bitmap("report\\image4.jpg"));
+            ret.Add(1, new Bitmap("report/image1.jpg"));
+            ret.Add(2, new Bitmap("report/image2.jpg"));
+            ret.Add(3, new Bitmap("report/image3.jpg"));
+            ret.Add(4, new Bitmap("report/image4.jpg"));
             return ret;
         }
 

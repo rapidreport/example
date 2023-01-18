@@ -26,12 +26,12 @@ Module ExampleExtention
         Dim setting As New ReportSetting
         setting.TextFormatterMap.Add("yubin", New YubinTextFormatter)
 
-        Dim report As New Report(Json.Read("report\example_extention.rrpt"), setting)
+        Dim report As New Report(Json.Read("report/example_extention.rrpt"), setting)
         report.Fill(New ReportDataSource(getDataTable))
         Dim pages As ReportPages = report.GetPages()
 
         ' PDF出力
-        Using fs As New FileStream("output\example_extention.pdf", IO.FileMode.Create)
+        Using fs As New FileStream("output/example_extention.pdf", IO.FileMode.Create)
             ' チェックボックスレンダラが設定されたSettingオブジェクトを用意します
             Dim pdfSetting As New PdfRendererSetting
             pdfSetting.ElementRendererMap.Add("checkbox", New PdfCheckBoxRenderer)
@@ -41,7 +41,7 @@ Module ExampleExtention
         End Using
 
         ' XLS出力
-        Using fs As New FileStream("output\example_extention.xls", IO.FileMode.Create)
+        Using fs As New FileStream("output/example_extention.xls", IO.FileMode.Create)
             ' チェックボックスレンダラが設定されたSettingオブジェクトを用意します
             Dim xlsSetting As New XlsRendererSetting
             xlsSetting.ElementRendererMap.Add("checkbox", New XlsCheckBoxRenderer)
@@ -54,7 +54,7 @@ Module ExampleExtention
         End Using
 
         ' XLSX出力
-        Using fs As New FileStream("output\example_extention.xlsx", IO.FileMode.Create)
+        Using fs As New FileStream("output/example_extention.xlsx", IO.FileMode.Create)
             ' チェックボックスレンダラが設定されたSettingオブジェクトを用意します
             Dim xlsxSetting As New XlsxRendererSetting
             xlsxSetting.ElementRendererMap.Add("checkbox", New XlsxCheckBoxRenderer)

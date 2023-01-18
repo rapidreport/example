@@ -19,17 +19,17 @@ Module ExampleCustomize
     Public Sub Run()
 
         ' カスタマイザを指定せずに、Reportオブジェクトを生成します
-        Dim report As New Report(Json.Read("report\example_customize.rrpt"))
+        Dim report As New Report(Json.Read("report/example_customize.rrpt"))
         report.Fill(New ReportDataSource(getDataTable))
         Dim pages As ReportPages = report.GetPages()
 
         ' PDF出力
-        Using fs As New FileStream("output\example_customize.pdf", IO.FileMode.Create)
+        Using fs As New FileStream("output/example_customize.pdf", IO.FileMode.Create)
             pages.Render(New PdfRenderer(fs))
         End Using
 
         ' XLS出力
-        Using fs As New FileStream("output\example_customize.xls", IO.FileMode.Create)
+        Using fs As New FileStream("output/example_customize.xls", IO.FileMode.Create)
             Dim workbook As New HSSFWorkbook
             Dim renderer As New XlsRenderer(workbook)
             renderer.NewSheet("example_customize")
@@ -38,7 +38,7 @@ Module ExampleCustomize
         End Using
 
         ' XLSX出力
-        Using fs As New FileStream("output\example_customize.xlsx", IO.FileMode.Create)
+        Using fs As New FileStream("output/example_customize.xlsx", IO.FileMode.Create)
             Dim workbook As New XSSFWorkbook
             Dim renderer As New XlsxRenderer(workbook)
             renderer.NewSheet("example_customize")

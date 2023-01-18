@@ -50,15 +50,6 @@
             }
           ]
         }
-      },
-      {
-        size: {
-          initial: 447.0
-        },
-        elements: [
-          {type:"rect",layout:{x1:0.0,y1:0.0,x2:555.0,y2:447.0}},
-          {type:"text",layout:{x1:10.0,y1:10.0,x2:545.0,y2:435.0},text:"※この帳票定義ファイルをレポートデザイナで正しく編集するには、\r\n  setting.jsonに以下のように書く必要があります。\r\n\r\n{\r\n\r\n  formatter: [\r\n    {type:\"yubin\"}\r\n  ],\r\n\r\n  element: [\r\n    {\r\n      type:\"checkbox\", \r\n      properties: [\r\n        {key:\"exp\", type:\"expression\", ja:\"式\"}\r\n      ]\r\n    }\r\n  ]\r\n\r\n}",wrap:true}
-        ]
       }
     ]
   }

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.IO;
 using System.Data;
 
@@ -24,7 +21,7 @@ namespace example
 
         public static void Run()
         {
-            Report report = new Report(Json.Read("report\\example_crosstab.rrpt"));
+            Report report = new Report(Json.Read("report/example_crosstab.rrpt"));
 
             // 横方向の列データを設定します。
             report.AddCrosstabCaptionDataSource("crosstab_example", new ReportDataSource(getCaptionDataTable()));
@@ -33,7 +30,7 @@ namespace example
             ReportPages pages = report.GetPages();
 
             // PDF出力
-            using (FileStream fs = new FileStream("output\\example_crosstab.pdf", FileMode.Create))
+            using (FileStream fs = new FileStream("output/example_crosstab.pdf", FileMode.Create))
             {
                 PdfRenderer renderer = new PdfRenderer(fs);
                 renderer.Setting.ReplaceBackslashToYen = true;
@@ -41,7 +38,7 @@ namespace example
             }
 
             // XLS出力
-            using (FileStream fs = new FileStream("output\\example_crosstab.xls", FileMode.Create))
+            using (FileStream fs = new FileStream("output/example_crosstab.xls", FileMode.Create))
             {
                 HSSFWorkbook workbook = new HSSFWorkbook();
                 XlsRenderer renderer = new XlsRenderer(workbook);
@@ -51,7 +48,7 @@ namespace example
             }
 
             // XLSX出力
-            using (FileStream fs = new FileStream("output\\example_crosstab.xlsx", FileMode.Create))
+            using (FileStream fs = new FileStream("output/example_crosstab.xlsx", FileMode.Create))
             {
                 XSSFWorkbook workbook = new XSSFWorkbook();
                 XlsxRenderer renderer = new XlsxRenderer(workbook);

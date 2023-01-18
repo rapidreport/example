@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.IO;
+﻿using System.IO;
 using System.Text;
 
 using jp.co.systembase.NPOI.HSSF.UserModel;
@@ -14,7 +11,7 @@ using jp.co.systembase.report.renderer.pdf;
 using jp.co.systembase.report.renderer.xls;
 using jp.co.systembase.report.renderer.xlsx;
 
-// 基本サンプル1 見積書 (CSVデータソース)
+// 機能サンプル CSVデータソース
 namespace example
 {
     class Example1Csv
@@ -23,10 +20,10 @@ namespace example
         public static void Run()
         {
             // 帳票定義ファイルを読み込みます
-            Report report = new Report(Json.Read("report\\example1.rrpt"));
+            Report report = new Report(Json.Read("report/example1.rrpt"));
 
             // CSVファイルから帳票にデータを渡します
-            using (StreamReader r = new StreamReader("report\\data.csv", Encoding.GetEncoding("shift-jis")))
+            using (StreamReader r = new StreamReader("report/data.csv", Encoding.GetEncoding("shift-jis")))
             {
                 report.Fill(new CsvDataSource(r));
             }
@@ -36,7 +33,7 @@ namespace example
             ReportPages pages = report.GetPages();
 
             // PDF出力
-            using (FileStream fs = new FileStream("output\\example1csv.pdf", FileMode.Create))
+            using (FileStream fs = new FileStream("output/example1csv.pdf", FileMode.Create))
             {
                 PdfRenderer renderer = new PdfRenderer(fs);
                 // バックスラッシュ文字を円マーク文字に変換します
@@ -45,7 +42,7 @@ namespace example
             }
 
             // XLS出力
-            using (FileStream fs = new FileStream("output\\example1csv.xls", FileMode.Create))
+            using (FileStream fs = new FileStream("output/example1csv.xls", FileMode.Create))
             {
                 HSSFWorkbook workbook = new HSSFWorkbook();
                 XlsRenderer renderer = new XlsRenderer(workbook);
@@ -56,7 +53,7 @@ namespace example
             }
 
             // XLSX出力
-            using (FileStream fs = new FileStream("output\\example1csv.xlsx", FileMode.Create))
+            using (FileStream fs = new FileStream("output/example1csv.xlsx", FileMode.Create))
             {
                 XSSFWorkbook workbook = new XSSFWorkbook();
                 XlsxRenderer renderer = new XlsxRenderer(workbook);

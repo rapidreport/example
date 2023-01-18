@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.IO;
 using System.Data;
 
@@ -16,13 +13,14 @@ using jp.co.systembase.report.renderer.pdf;
 using jp.co.systembase.report.renderer.xls;
 using jp.co.systembase.report.renderer.xlsx;
 
+// 機能サンプル データの部分割り当て
 namespace example
 {
     class ExampleDataProvider
     {
         public static void Run()
         {
-            Report report = new Report(Json.Read("report\\example_dataprovider.rrpt"));
+            Report report = new Report(Json.Read("report/example_dataprovider.rrpt"));
 
             // "group_shohin"という識別子を持ったグループには、
             // getShoninDataTableから得られるデータを割り当てます
@@ -35,7 +33,7 @@ namespace example
             ReportPages pages = report.GetPages();
 
             // PDF出力
-            using (FileStream fs = new FileStream("output\\example_dataprovider.pdf", FileMode.Create))
+            using (FileStream fs = new FileStream("output/example_dataprovider.pdf", FileMode.Create))
             {
                 PdfRenderer renderer = new PdfRenderer(fs);
                 renderer.Setting.ReplaceBackslashToYen = true;
@@ -43,7 +41,7 @@ namespace example
             }
 
             // XLS出力
-            using (FileStream fs = new FileStream("output\\example_dataprovider.xls", FileMode.Create))
+            using (FileStream fs = new FileStream("output/example_dataprovider.xls", FileMode.Create))
             {
                 HSSFWorkbook workbook = new HSSFWorkbook();
                 XlsRenderer renderer = new XlsRenderer(workbook);
@@ -53,7 +51,7 @@ namespace example
             }
 
             // XLSX出力
-            using (FileStream fs = new FileStream("output\\example_dataprovider.xlsx", FileMode.Create))
+            using (FileStream fs = new FileStream("output/example_dataprovider.xlsx", FileMode.Create))
             {
                 XSSFWorkbook workbook = new XSSFWorkbook();
                 XlsxRenderer renderer = new XlsxRenderer(workbook);

@@ -21,25 +21,25 @@ Module ExamplePage
         Dim pages As ReportPages
         With Nothing
             ' 第2引数にCustomizerオブジェクトを渡します
-            Dim report As New Report(Json.Read("report\example_page1.rrpt"), New Customizer)
+            Dim report As New Report(Json.Read("report/example_page1.rrpt"), New Customizer)
             report.Fill(New ReportDataSource(getDataTable))
             pages = report.GetPages()
         End With
 
         With Nothing
-            Dim report As New Report(Json.Read("report\example_page3.rrpt"))
+            Dim report As New Report(Json.Read("report/example_page3.rrpt"))
             report.Fill(DummyDataSource.GetInstance)
             ' 最後のページを追加します
             pages.AddRange(report.GetPages)
         End With
 
         ' PDF出力
-        Using fs As New FileStream("output\example_page.pdf", IO.FileMode.Create)
+        Using fs As New FileStream("output/example_page.pdf", IO.FileMode.Create)
             pages.Render(New PdfRenderer(fs))
         End Using
 
         ' XLS出力
-        Using fs As New FileStream("output\example_page.xls", IO.FileMode.Create)
+        Using fs As New FileStream("output/example_page.xls", IO.FileMode.Create)
             Dim workbook As New HSSFWorkbook
             Dim renderer As New XlsRenderer(workbook)
             renderer.NewSheet("example_page")
@@ -48,7 +48,7 @@ Module ExamplePage
         End Using
 
         ' XLSX出力
-        Using fs As New FileStream("output\example_page.xlsx", IO.FileMode.Create)
+        Using fs As New FileStream("output/example_page.xlsx", IO.FileMode.Create)
             Dim workbook As New XSSFWorkbook
             Dim renderer As New XlsxRenderer(workbook)
             renderer.NewSheet("example_page")
@@ -77,7 +77,7 @@ Module ExamplePage
 
         Public Sub New()
             ' あらかじめ集計ページの帳票定義ファイルを読み込んでおきます
-            Me.reportDesign = New ReportDesign(Json.Read("report\example_page2.rrpt"))
+            Me.reportDesign = New ReportDesign(Json.Read("report/example_page2.rrpt"))
         End Sub
 
         Public Overrides Sub PageAdded(report As Report, pages As ReportPages, page As ReportPage)

@@ -9,7 +9,7 @@ using jp.co.systembase.report.renderer.pdf;
 
 using System.Web;
 
-// 基本サンプル1 見積書
+// PDFをASP.NETのレスポンスとして出力するサンプル
 namespace example
 {
     class Example1
@@ -18,7 +18,7 @@ namespace example
         public static void Run(HttpServerUtility server, HttpResponse response)
         {
             // 帳票定義ファイルを読み込みます
-            Report report = new Report(Json.Read(server.MapPath("report\\example1.rrpt")));
+            Report report = new Report(Json.Read(server.MapPath("report/example1.rrpt")));
 
             // 帳票にデータを渡します
             report.Fill(new ReportDataSource(getDataTable()));

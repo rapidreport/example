@@ -11,17 +11,17 @@ Imports jp.co.systembase.report.renderer.pdf
 Imports jp.co.systembase.report.renderer.xls
 Imports jp.co.systembase.report.renderer.xlsx
 
-' 機能サンプル サブページ
+' 機能サンプル 段組帳票(サブページ)
 Module ExampleSubPage
 
     Public Sub Run()
 
         ' サブページを先に生成します
-        Dim subReport As New Report(Json.Read("report\example_subpage2.rrpt"))
+        Dim subReport As New Report(Json.Read("report/example_subpage2.rrpt"))
         subReport.Fill(New ReportDataSource(getDataTable))
         Dim subPages As ReportPages = subReport.GetPages()
 
-        Dim report As New Report(Json.Read("report\example_subpage1.rrpt"))
+        Dim report As New Report(Json.Read("report/example_subpage1.rrpt"))
         ' 外枠帳票にサブページを登録します
         report.AddSubPages("subpage", subPages)
         ' 外枠帳票の中でサブページが正しく割り当てられるようにSubPageDataSourceを渡します
@@ -29,13 +29,13 @@ Module ExampleSubPage
         Dim pages As ReportPages = report.GetPages()
 
         ' PDF出力
-        Using fs As New FileStream("output\example_subpage.pdf", IO.FileMode.Create)
+        Using fs As New FileStream("output/example_subpage.pdf", IO.FileMode.Create)
             Dim renderer As New PdfRenderer(fs)
             pages.Render(renderer)
         End Using
 
         ' XLS出力
-        Using fs As New FileStream("output\example_subpage.xls", IO.FileMode.Create)
+        Using fs As New FileStream("output/example_subpage.xls", IO.FileMode.Create)
             Dim workbook As New HSSFWorkbook
             Dim renderer As New XlsRenderer(workbook)
             renderer.NewSheet("example_subpage")
@@ -44,7 +44,7 @@ Module ExampleSubPage
         End Using
 
         ' XLSX出力
-        Using fs As New FileStream("output\example_subpage.xlsx", IO.FileMode.Create)
+        Using fs As New FileStream("output/example_subpage.xlsx", IO.FileMode.Create)
             Dim workbook As New XSSFWorkbook
             Dim renderer As New XlsxRenderer(workbook)
             renderer.NewSheet("example_subpage")

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.IO;
 using System.Data;
 
@@ -11,8 +8,6 @@ using jp.co.systembase.NPOI.XSSF.UserModel;
 using jp.co.systembase.json;
 using jp.co.systembase.report;
 using jp.co.systembase.report.data;
-using jp.co.systembase.report.component;
-using jp.co.systembase.report.customizer;
 using jp.co.systembase.report.renderer.gdi;
 using jp.co.systembase.report.renderer.pdf;
 using jp.co.systembase.report.renderer.xls;
@@ -27,12 +22,12 @@ namespace example
         public static void Run()
         {
             // カスタマイザを指定せずに、Reportオブジェクトを生成します
-            Report report = new Report(Json.Read("report\\example_customize.rrpt"));
+            Report report = new Report(Json.Read("report/example_customize.rrpt"));
             report.Fill(new ReportDataSource(getDataTable()));
             ReportPages pages = report.GetPages();
 
             // PDF出力
-            using (FileStream fs = new FileStream("output\\example_customize.pdf", FileMode.Create))
+            using (FileStream fs = new FileStream("output/example_customize.pdf", FileMode.Create))
             {
                 PdfRenderer renderer = new PdfRenderer(fs);
                 renderer.Setting.ReplaceBackslashToYen = true;
@@ -40,7 +35,7 @@ namespace example
             }
 
             // XLS出力
-            using (FileStream fs = new FileStream("output\\example_customize.xls", FileMode.Create))
+            using (FileStream fs = new FileStream("output/example_customize.xls", FileMode.Create))
             {
                 HSSFWorkbook workbook = new HSSFWorkbook();
                 XlsRenderer renderer = new XlsRenderer(workbook);
@@ -50,7 +45,7 @@ namespace example
             }
 
             // XLSX出力
-            using (FileStream fs = new FileStream("output\\example_customize.xlsx", FileMode.Create))
+            using (FileStream fs = new FileStream("output/example_customize.xlsx", FileMode.Create))
             {
                 XSSFWorkbook workbook = new XSSFWorkbook();
                 XlsxRenderer renderer = new XlsxRenderer(workbook);

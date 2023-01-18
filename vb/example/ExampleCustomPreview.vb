@@ -9,7 +9,7 @@ Imports jp.co.systembase.report.renderer.gdi
 Public Module ExampleCustomPreview
 
     Public Sub Run()
-        Dim report As New Report(Json.Read("report\example1.rrpt"))
+        Dim report As New Report(Json.Read("report/example1.rrpt"))
         report.Fill(New ReportDataSource(getDataTable))
         Dim pages As ReportPages = report.GetPages()
 

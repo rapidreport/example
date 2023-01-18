@@ -11,13 +11,13 @@ Imports jp.co.systembase.report.renderer.pdf
 Imports jp.co.systembase.report.renderer.xls
 Imports jp.co.systembase.report.renderer.xlsx
 
-' 基本サンプル1 見積書
+' チュートリアル1 見積書
 Module Example1
 
     Public Sub Run()
 
         ' 帳票定義ファイルを読込みます
-        Dim report As New Report(Json.Read("report\example1.rrpt"))
+        Dim report As New Report(Json.Read("report/example1.rrpt"))
 
         ' 帳票にデータを渡します
         report.Fill(New ReportDataSource(getDataTable))
@@ -26,7 +26,7 @@ Module Example1
         Dim pages As ReportPages = report.GetPages()
 
         ' PDF出力
-        Using fs As New FileStream("output\example1.pdf", IO.FileMode.Create)
+        Using fs As New FileStream("output/example1.pdf", IO.FileMode.Create)
             Dim renderer As New PdfRenderer(fs)
             ' バックスラッシュ文字を円マーク文字に変換します
             renderer.Setting.ReplaceBackslashToYen = True
@@ -34,7 +34,7 @@ Module Example1
         End Using
 
         ' XLS出力
-        Using fs As New FileStream("output\example1.xls", IO.FileMode.Create)
+        Using fs As New FileStream("output/example1.xls", IO.FileMode.Create)
             Dim workbook As New HSSFWorkbook
             Dim renderer As New XlsRenderer(workbook)
             ' Renderメソッドを呼ぶ前に必ずNewSheetメソッドを呼んでワークシートを作成します
@@ -44,7 +44,7 @@ Module Example1
         End Using
 
         ' XLSX出力
-        Using fs As New FileStream("output\example1.xlsx", IO.FileMode.Create)
+        Using fs As New FileStream("output/example1.xlsx", IO.FileMode.Create)
             Dim workbook As New XSSFWorkbook
             Dim renderer As New XlsxRenderer(workbook)
             ' Renderメソッドを呼ぶ前に必ずNewSheetメソッドを呼んでワークシートを作成します

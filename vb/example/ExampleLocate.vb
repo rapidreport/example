@@ -16,18 +16,18 @@ Module ExampleLocate
 
     Public Sub Run()
 
-        Dim report As New Report(Json.Read("report\example_locate.rrpt"))
+        Dim report As New Report(Json.Read("report/example_locate.rrpt"))
         report.Fill(New ReportDataSource(getDataTable))
         Dim pages As ReportPages = report.GetPages()
 
         ' PDF出力
-        Using fs As New FileStream("output\example_locate.pdf", IO.FileMode.Create)
+        Using fs As New FileStream("output/example_locate.pdf", IO.FileMode.Create)
             Dim renderer As New PdfRenderer(fs)
             pages.Render(renderer)
         End Using
 
         ' XLS出力
-        Using fs As New FileStream("output\example_locate.xls", IO.FileMode.Create)
+        Using fs As New FileStream("output/example_locate.xls", IO.FileMode.Create)
             Dim workbook As New HSSFWorkbook
             Dim renderer As New XlsRenderer(workbook)
             renderer.NewSheet("example_locate")
@@ -36,7 +36,7 @@ Module ExampleLocate
         End Using
 
         ' XLSX出力
-        Using fs As New FileStream("output\example_locate.xlsx", IO.FileMode.Create)
+        Using fs As New FileStream("output/example_locate.xlsx", IO.FileMode.Create)
             Dim workbook As New XSSFWorkbook
             Dim renderer As New XlsxRenderer(workbook)
             renderer.NewSheet("example_locate")

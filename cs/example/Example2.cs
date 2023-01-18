@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.IO;
 using System.Data;
 
@@ -16,7 +13,7 @@ using jp.co.systembase.report.renderer.pdf;
 using jp.co.systembase.report.renderer.xls;
 using jp.co.systembase.report.renderer.xlsx;
 
-// 基本サンプル2 売上明細表
+// チュートリアル2 売上明細表
 namespace example
 {
     class Example2
@@ -24,7 +21,7 @@ namespace example
         public static void Run()
         {
             // 帳票定義ファイルを読み込みます
-            Report report = new Report(Json.Read("report\\example2.rrpt"));
+            Report report = new Report(Json.Read("report/example2.rrpt"));
 
             // GlobalScopeに値を登録します
             report.GlobalScope.Add("startDate", DateTime.ParseExact("2013/02/01", "yyyy/MM/dd", null));
@@ -39,7 +36,7 @@ namespace example
             ReportPages pages = report.GetPages();
 
             // PDF出力
-            using (FileStream fs = new FileStream("output\\example2.pdf", FileMode.Create))
+            using (FileStream fs = new FileStream("output/example2.pdf", FileMode.Create))
             {
                 PdfRenderer renderer = new PdfRenderer(fs);
                 // バックスラッシュ文字を円マーク文字に変換します
@@ -48,7 +45,7 @@ namespace example
             }
 
             // XLS出力
-            using (FileStream fs = new FileStream("output\\example2.xls", FileMode.Create))
+            using (FileStream fs = new FileStream("output/example2.xls", FileMode.Create))
             {
                 HSSFWorkbook workbook = new HSSFWorkbook();
                 XlsRenderer renderer = new XlsRenderer(workbook);
@@ -59,7 +56,7 @@ namespace example
             }
 
             // XLSX出力
-            using (FileStream fs = new FileStream("output\\example2.xlsx", FileMode.Create))
+            using (FileStream fs = new FileStream("output/example2.xlsx", FileMode.Create))
             {
                 XSSFWorkbook workbook = new XSSFWorkbook();
                 XlsxRenderer renderer = new XlsxRenderer(workbook);

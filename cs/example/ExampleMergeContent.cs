@@ -13,7 +13,7 @@ using jp.co.systembase.report.renderer.pdf;
 using jp.co.systembase.report.renderer.xls;
 using jp.co.systembase.report.renderer.xlsx;
 
-// 機能サンプル 差込コンテント
+// 機能サンプル コンテントの差し込み
 namespace example
 {
     class ExampleMergeContent
@@ -25,14 +25,14 @@ namespace example
             ReportDesign sharedReport = new ReportDesign(Json.Read("report/example_shared.rrpt"));
             Report.AddSharedContent("company_info", sharedReport);
 
-            Report report = new Report(Json.Read("report\\example_mergecontent.rrpt"));
+            Report report = new Report(Json.Read("report/example_mergecontent.rrpt"));
             report.GlobalScope.Add("company_name", "株式会社ラピッドレポート");
             report.GlobalScope.Add("tel", "0000-11-2222");
             report.Fill(new ReportDataSource(getDataTable()));
             ReportPages pages = report.GetPages();
 
             // PDF出力
-            using (FileStream fs = new FileStream("output\\example_mergecontent.pdf", FileMode.Create))
+            using (FileStream fs = new FileStream("output/example_mergecontent.pdf", FileMode.Create))
             {
                 PdfRenderer renderer = new PdfRenderer(fs);
                 renderer.Setting.ReplaceBackslashToYen = true;
@@ -40,7 +40,7 @@ namespace example
             }
 
             // XLS出力
-            using (FileStream fs = new FileStream("output\\example_mergecontent.xls", FileMode.Create))
+            using (FileStream fs = new FileStream("output/example_mergecontent.xls", FileMode.Create))
             {
                 HSSFWorkbook workbook = new HSSFWorkbook();
                 XlsRenderer renderer = new XlsRenderer(workbook);
@@ -50,7 +50,7 @@ namespace example
             }
 
             // XLSX出力
-            using (FileStream fs = new FileStream("output\\example_mergecontent.xlsx", FileMode.Create))
+            using (FileStream fs = new FileStream("output/example_mergecontent.xlsx", FileMode.Create))
             {
                 XSSFWorkbook workbook = new XSSFWorkbook();
                 XlsxRenderer renderer = new XlsxRenderer(workbook);

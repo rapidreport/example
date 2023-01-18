@@ -1,0 +1,17 @@
+
+{
+
+  formatter: [
+    {type:"yubin"}
+  ],
+
+  element: [
+    {
+      type:"checkbox", 
+      properties: [
+        {key:"exp", type:"expression", ja:"式"}
+      ]
+    }
+  ]
+
+}

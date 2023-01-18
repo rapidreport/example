@@ -5,12 +5,12 @@ Imports jp.co.systembase.report
 Imports jp.co.systembase.report.data
 Imports jp.co.systembase.report.renderer.pdf
 
-' 基本サンプル2 売上明細表（PDF1000ページ）
+' チュートリアル2 売上明細表（PDF1000ページ）
 Module Example2Huge
 
     Public Sub Run()
         ' 帳票定義ファイルを読込みます
-        Dim report As New Report(Json.Read("report\example2.rrpt"))
+        Dim report As New Report(Json.Read("report/example2.rrpt"))
 
         ' GlobalScopeに値を登録します
         report.GlobalScope.Add("startDate", DateTime.ParseExact("2013/02/01", "yyyy/MM/dd", Nothing))
@@ -29,7 +29,7 @@ Module Example2Huge
         Dim pages As ReportPages = report.GetPages()
 
         ' PDF出力
-        Using fs As New FileStream("output\example2_huge.pdf", IO.FileMode.Create)
+        Using fs As New FileStream("output/example2_huge.pdf", IO.FileMode.Create)
             Dim renderer As New PdfRenderer(fs)
             'バックスラッシュ文字を円マーク文字に変換します
             renderer.Setting.ReplaceBackslashToYen = True
