@@ -18,7 +18,7 @@ import jp.co.systembase.report.renderer.pdf.PdfRenderer;
 import jp.co.systembase.report.renderer.xls.XlsRenderer;
 import jp.co.systembase.report.renderer.xlsx.XlsxRenderer;
 
-// 機能サンプル Contentサイズ変更
+// 機能サンプル コンテントのサイズ変更
 public class ExampleRegion {
 
 	public static void main(String[] args) throws Throwable {

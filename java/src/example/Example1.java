@@ -3,6 +3,9 @@ package example;
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
 import jp.co.systembase.core.DataTable;
 import jp.co.systembase.report.Report;
 import jp.co.systembase.report.ReportPages;
@@ -11,10 +14,7 @@ import jp.co.systembase.report.renderer.pdf.PdfRenderer;
 import jp.co.systembase.report.renderer.xls.XlsRenderer;
 import jp.co.systembase.report.renderer.xlsx.XlsxRenderer;
 
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
-// 基本サンプル1 見積書
+// チュートリアル1 見積書
 public class Example1 {
 
 	public static void main(String[] args) throws Exception {
@@ -182,7 +182,7 @@ public class Example1 {
 		{
 			ExampleBean2 r = new ExampleBean2();
 			r.tokuisaki1 = "株式会社 岩手商事";
-			r.tokuisaki2 ="北上支社";			
+			r.tokuisaki2 ="北上支社";
 			r.mitsumoriNo = 101;
 			r.mitsumoriDate = sdf.parse("2013/03/01");
 			r.hinmei = "モニター";
