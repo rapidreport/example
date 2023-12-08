@@ -2,6 +2,10 @@
 using System.IO;
 using System.Data;
 
+//// DTOを用いる場合
+//using System.Collections;
+//using System.Collections.Generic;
+
 using jp.co.systembase.NPOI.HSSF.UserModel;
 using jp.co.systembase.NPOI.XSSF.UserModel;
 

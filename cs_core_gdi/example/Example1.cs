@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Data;
 
+// DTOを用いる場合
+//using System.Collections;
+//using System.Collections.Generic;
+
 using jp.co.systembase.json;
 using jp.co.systembase.report;
 using jp.co.systembase.report.data;
